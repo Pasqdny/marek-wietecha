@@ -3,61 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certyfikaty | Marek Wietecha</title>
+    <title>Marek Wietecha | Quality Control & Metrology Specialist</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+            margin-left: 15px;
+            align-items: center;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background: #60a5fa;
+            border-color: #60a5fa;
+            color: #0a1120;
+        }
+        [lang="en"] { display: none; }
+    </style>
 </head>
 <body>
 
     <nav class="nav">
         <div class="logo">MW</div>
         <div class="links">
-            <a href="index.html">O mnie</a>
-            <a href="certyfikaty.html" style="color: #60a5fa;">Certyfikaty</a>
-            <a href="projekty.html">Projekty</a>
-            <a href="index.html#download">Pobierz PDF</a>
-            <a href="index.html#contact">Kontakt</a>
+            <a href="#about" class="nav-about"><span lang="pl">O mnie</span><span lang="en">About Me</span></a>
+            <a href="#skills" class="nav-skills"><span lang="pl">Umiejętności</span><span lang="en">Skills</span></a>
+            <a href="#certificates" class="nav-certs"><span lang="pl">Certyfikaty</span><span lang="en">Certificates</span></a>
+            <a href="#projects" class="nav-projects"><span lang="pl">Projekty</span><span lang="en">Projects</span></a>
+            <a href="#download" class="nav-download"><span lang="pl">Pobierz</span><span lang="en">Download</span></a>
+            <a href="#contact" class="nav-contact"><span lang="pl">Kontakt</span><span lang="en">Contact</span></a>
+            <div class="lang-switch">
+                <a id="btn-pl" href="javascript:void(0)" class="lang-btn active" onclick="switchLang('pl')">PL</a>
+                <a id="btn-en" href="javascript:void(0)" class="lang-btn" onclick="switchLang('en')">EN</a>
+            </div>
         </div>
     </nav>
 
-    <section style="padding-top: 120px; padding-bottom: 60px;">
-        <h2>Certyfikaty i Uprawnienia</h2>
-        
-        <div class="grid" style="margin-top: 40px;">
-            
-            <!-- PRZYKŁAD 1: Certyfikat Hexagon -->
-            <div class="card spec-card" style="text-align: center;">
-                <h3>Hexagon Metrology</h3>
-                <p style="color: #9ca3af; margin-bottom: 15px;">Obsługa i Programowanie CMM (PC-DMIS Poziom I & II)</p>
-                <div class="cert-image-container" style="border-radius: 8px; overflow: hidden; background: rgba(255,255,255,0.05); padding: 10px;">
-                    <!-- Podmień 'hexagon.png' na prawdziwą nazwę pliku, który wgrasz do folderu images -->
-                    <img src="images/hexagon.png" alt="Certyfikat Hexagon" style="width: 100%; height: auto; max-height: 200px; object-fit: contain;">
-                </div>
+    <header class="hero" style="background-image: url('images/hero-bg.png'); background-size: cover; background-position: center; position: relative;">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 17, 32, 0.4); backdrop-filter: none; -webkit-backdrop-filter: none;"></div>
+        <div class="content" style="position: relative; z-index: 2;">
+            <div class='profile-photo'>
+                <img src='images/profile.png' alt='Marek Wietecha'>
             </div>
-
-            <!-- PRZYKŁAD 2: ISO 9001 Quality Asia -->
-            <div class="card spec-card" style="text-align: center;">
-                <h3>Audytor Wewnętrzny ISO 9001:2015</h3>
-                <p style="color: #9ca3af; margin-bottom: 15px;">Quality Asia Certifications</p>
-                <div class="cert-image-container" style="border-radius: 8px; overflow: hidden; background: rgba(255,255,255,0.05); padding: 10px;">
-                    <img src="images/quality_asia.png" alt="Certyfikat ISO 9001" style="width: 100%; height: auto; max-height: 200px; object-fit: contain;">
-                </div>
+            <p class="tag">
+                <span lang="pl">JAKOŚĆ | METROLOGIA | AUTOMOTIVE & MACHINING</span>
+                <span lang="en">QUALITY | METROLOGY | AUTOMOTIVE & MACHINING</span>
+            </p>
+            <h1>Marek Wietecha</h1>
+            <h2>Quality Control & Metrology Specialist</h2>
+            <p class="hero-sub">
+                <span lang="pl">Ponad 20 lat w branży produkcyjnej | 13+ lat w Kontroli Jakości i Metrologii</span>
+                <span lang="en">Over 20 years in the manufacturing industry | 13+ years in QA/QC & Metrology</span>
+            </p>
+            <div class="buttons">
+                <a class="btn" href="#projects"><span lang="pl">Zobacz projekty</span><span lang="en">View Projects</span></a>
+                <a class="btn ghost" href="#contact"><span lang="pl">Kontakt</span><span lang="en">Contact</span></a>
             </div>
+        </div>
+    </header>
 
-            <!-- PRZYKŁAD 3: Certyfikat Google -->
-            <div class="card spec-card" style="text-align: center;">
-                <h3>Certyfikat Google AI</h3>
-                <p style="color: #9ca3af; margin-bottom: 15px;">Wykorzystanie AI w rozwoju firmy</p>
-                <div class="cert-image-container" style="border-radius: 8px; overflow: hidden; background: rgba(255,255,255,0.05); padding: 10px;">
-                    <img src="images/google_ai.png" alt="Certyfikat Google AI" style="width: 100%; height: auto; max-height: 200px; object-fit: contain;">
-                </div>
+    <section id="about">
+        <h2><span lang="pl">O mnie</span><span lang="en">About Me</span></h2>
+        <div class="glass">
+            <div lang="pl">
+                <p>Jestem doświadczonym kontrolerem jakości i pomiarowcem z ponad 13-letnim stażem w obszarze QA/QC oraz ponad 20-letnim doświadczeniem w branży produkcyjnej i maszynowej. Specjalizuję się w kontroli wejściowej komponentów stalowych, aluminiowych oraz odlewów, analizie dokumentacji 2D/3D oraz zaawansowanych pomiarach geometrycznych detali.</p>
+                <p style="margin-top: 15px;">W codziennej pracy łączę precyzję metrologiczną z nowoczesnymi technologiami – od obsługi maszyn współrzędnościowych CMM i skanerów 3D, przez analizę tolerancji GD&T w oprogramowaniu Geomagic Control X i PolyWorks, aż po zarządzanie procesami w systemie SAP QM oraz wdrażanie standardów AIAG Core Tools (FMEA, PPAP, MSA, SPC). Stawiam na analityczne podejście i podejmowanie decyzji w oparciu o fakty.</p>
             </div>
+            <div lang="en">
+                <p>I am an experienced quality control inspector and metrologist with over 13 years of experience in the QA/QC area and more than 20 years in the manufacturing and machining industry. I specialize in incoming inspection of steel and aluminum components as well as castings, 2D/3D technical documentation analysis, and advanced dimensional inspection of parts.</p>
+                <p style="margin-top: 15px;">In my daily routine, I combine metrological precision with modern technologies – ranging from operating CMM machines and 3D scanners, through GD&T tolerance analysis in Geomagic Control X and PolyWorks, to process management within the SAP QM system and implementing AIAG Core Tools standards (FMEA, PPAP, MSA, SPC). I focus on an analytical approach and data-driven decision making.</p>
+            </div>
+        </div>
+    </section>
 
+    <section id="skills">
+        <h2><span lang="pl">Kluczowe kompetencje</span><span lang="en">Key Competencies</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3><span lang="pl">Metrologia & 3D</span><span lang="en">Metrology & 3D</span></h3>
+                <p><span lang="pl">Skanowanie 3D, Ramiona pomiarowe Hexagon Absolute Arm, PC-DMIS, Geomagic Control X, PolyWorks, profilometry, wysokościomierze.</span><span lang="en">3D scanning, Hexagon Absolute Arm measurement devices, PC-DMIS, Geomagic Control X, PolyWorks, profilometers, height gauges.</span></p>
+            </div>
+            <div class="card">
+                <h3><span lang="pl">Standardy Jakości</span><span lang="en">Quality Standards</span></h3>
+                <p><span lang="pl">Analiza GD&T, procesy PPAP, FMEA (AIAG & VDA), SPC, MSA, Audyty procesów wg ISO 9001 / TS 16949 (Audytor TÜV Nord).</span><span lang="en">GD&T analysis, PPAP processes, FMEA (AIAG & VDA), SPC, MSA, process audits according to ISO 9001 / TS 16949 (TÜV Nord Auditor).</span></p>
+            </div>
+            <div class="card">
+                <h3><span lang="pl">Systemy & Lean</span><span lang="en">Systems & Lean</span></h3>
+                <p><span lang="pl">SAP S/4HANA QM, Teamcenter PLM, Excel Zaawansowany, Lean Six Sigma (White Belt), Lean Manufacturing (Kaizen, 5S, Ishikawa).</span><span lang="en">SAP S/4HANA QM, Teamcenter PLM, Advanced Excel, Lean Six Sigma (White Belt), Lean Manufacturing (Kaizen, 5S, Ishikawa).</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h2><span lang="pl">Certyfikaty i Uprawnienia</span><span lang="en">Certificates & Qualifications</span></h2>
+        <div class="grid">
+            <div class="card spec-card">
+                <h3><span lang="pl">Automotive & Zarządzanie Jakością</span><span lang="en">Automotive & Quality Management</span></h3>
+                <ul lang="pl">
+                    <li>Certyfikat Hexagon Metrology – Obsługa i Programowanie CMM (PC-DMIS Poziom I & II)</li>
+                    <li>Audytor Wewnętrzny ISO 9001:2015 – Quality Asia Certifications</li>
+                    <li>Audytor Wewnętrzny procesu i organizacji wg ISO 9001 / TS 16949 – TÜV Nord</li>
+                    <li>AIAG & VDA FMEA – Essentials for Transitioning</li>
+                    <li>AIAG APQP/PPAP, SPC, MSA, Control Plan</li>
+                    <li>Quality Management & Certification (UNIDO)</li>
+                    <li>Certified Six Sigma White Belt & Introduction to Six Sigma</li>
+                </ul>
+                <ul lang="en">
+                    <li>Hexagon Metrology Certificate – CMM Operation & Programming (PC-DMIS Level I & II)</li>
+                    <li>Internal Auditor ISO 9001:2015 – Quality Asia Certifications</li>
+                    <li>Internal process and organization auditor according to ISO 9001 / TS 16949 – TÜV Nord</li>
+                    <li>AIAG & VDA FMEA – Essentials for Transitioning</li>
+                    <li>AIAG APQP/PPAP, SPC, MSA, Control Plan</li>
+                    <li>Quality Management & Certification (UNIDO)</li>
+                    <li>Certified Six Sigma White Belt & Introduction to Six Sigma</li>
+                </ul>
+            </div>
+            <div class="card spec-card">
+                <h3><span lang="pl">Systemy ERP & Analiza Danych</span><span lang="en">ERP Systems & Data Analysis</span></h3>
+                <ul lang="pl">
+                    <li>Applying SAP S/4HANA Quality Management (SAP)</li>
+                    <li>SAP Materials Planning, MRP Strategies & Production Planning (LinkedIn)</li>
+                    <li>Microsoft Excel Zaawansowany (OPENMIND)</li>
+                    <li>Raportowanie i zestawianie danych SQL Server</li>
+                    <li>Metody, techniki i narzędzia analizy danych (Politechnika Częstochowska)</li>
+                </ul>
+                <ul lang="en">
+                    <li>Applying SAP S/4HANA Quality Management (SAP)</li>
+                    <li>SAP Materials Planning, MRP Strategies & Production Planning (LinkedIn)</li>
+                    <li>Advanced Microsoft Excel (OPENMIND)</li>
+                    <li>SQL Server data reporting and aggregation</li>
+                    <li>Data analysis methods, techniques, and tools (Czestochowa University of Technology)</li>
+                </ul>
+            </div>
+            <div class="card spec-card">
+                <h3><span lang="pl">Zarządzanie, AI & Techniczne</span><span lang="en">Management, AI & Technical</span></h3>
+                <ul lang="pl">
+                    <li>Certyfikat Google – Wykorzystanie AI w rozwoju firmy (98% egzamin)</li>
+                    <li>Zarządzanie Innowacjami & Zrównoważone Zarządzanie Łańcuchem Dostaw (UNIDO)</li>
+                    <li>Umiejętności Kierownicze & Zarządzanie Projektami (PARP / AEH Warszawa)</li>
+                    <li>Rysunek Techniczny Maszynowy (BIMv) & Budowlany (PK)</li>
+                    <li>Uprawnienia UDT (Żurawie stacjonarne, Suwnice, wciągniki i wciągarki)</li>
+                </ul>
+                <ul lang="en">
+                    <li>Google Certificate – Using AI in business development (98% exam score)</li>
+                    <li>Innovation Management & Sustainable Supply Chain Management (UNIDO)</li>
+                    <li>Managerial Skills & Project Management (PARP / AEH Warsaw)</li>
+                    <li>Technical Drawing: Mechanical (BIMv) & Construction (Cracow University of Technology)</li>
+                    <li>UDT Qualifications (Stationary cranes, overhead cranes, hoists, and winches)</li>
+                </ul>
+            </div>
+            <div class="card spec-card">
+                <h3><span lang="pl">Języki Obce i Ojczyste</span><span lang="en">Languages</span></h3>
+                <ul lang="pl">
+                    <li><strong>Polski:</strong> Ojczysty (Native)</li>
+                    <li><strong>Angielski:</strong> Biznesowy C2 (Certyfikat Saylor Academy, USA)</li>
+                    <li><strong>Rosyjski:</strong> Podstawy komunikacji (Kurs DigitalUni)</li>
+                    <li><strong>Hiszpański:</strong> Poziom A1 (W trakcie nauki)</li>
+                </ul>
+                <ul lang="en">
+                    <li><strong>Polish:</strong> Native</li>
+                    <li><strong>English:</strong> Business C2 (Saylor Academy Certificate, USA)</li>
+                    <li><strong>Russian:</strong> Communication basics (DigitalUni Course)</li>
+                    <li><strong>Spanish:</strong> Level A1 (In progress)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2><span lang="pl">Projekty i Doświadczenie</span><span lang="en">Projects & Experience</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3><span lang="pl">Inspekcja 3D & Raportowanie PPAP</span><span lang="en">3D Inspection & PPAP Reporting</span></h3>
+                <p><span lang="pl">Wdrażanie zaawansowanych pomiarów i skanowania 3D dla komponentów maszynowych i motoryzacyjnych. Tworzenie kompletnych raportów wymiarowych i pełnej dokumentacji na potrzeby zatwierdzania części do produkcji seryjnej (PPAP).</span><span lang="en">Implementing advanced measurement workflows and 3D scanning for industrial and automotive components. Generating comprehensive dimensional layouts and full documentation package required for part production approval process (PPAP).</span></p>
+            </div>
+            <div class="card">
+                <h3><span lang="pl">Nadzór i Reklamacje Dostawców</span><span lang="en">Supplier Quality & Claims Handling</span></h3>
+                <p><span lang="pl">Prowadzenie kontroli wejściowej, identyfikacja i dokumentowanie niezgodności oraz zarządzanie procesem reklamacji (współpraca interdyscyplinarna Produkcja-Inżynieria-Dostawca) z wykorzystaniem systemów SAP i Teamcenter.</span><span lang="en">Executing receiving inspections, identifying and documenting non-conformities, and managing supplier quality claims via cross-functional collaboration (Production-Engineering-Supplier) using SAP and Teamcenter.</span></p>
+            </div>
+            <div class="card">
+                <h3><span lang="pl">Optymalizacja Procesów & Lean AI</span><span lang="en">Process Optimization & Lean AI</span></h3>
+                <p><span lang="pl">Analiza i redukcja strat z wykorzystaniem wskaźnika OEE oraz narzędzi takich jak 5Why czy FMEA. Wykorzystanie rozwiązań z obszaru sztucznej inteligencji (Generative AI) do automatyzacji procesów analizy danych w strukturach biznesowych.</span><span lang="en">Analyzing and reducing technical waste based on OEE targets and core quality tools like 5Why or FMEA. Incorporating Generative AI solutions to automate data analysis pipelines within business operational frameworks.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" style="text-align: center; padding: 60px 20px;">
+        <h2><span lang="pl">Pobierz Pełne Portfolio</span><span lang="en">Download Full Portfolio</span></h2>
+        <div class="glass" style="max-width: 600px; margin: 0 auto; padding: 30px;">
+            <p style="margin-bottom: 20px; color: #9ca3af;">
+                <span lang="pl">Zapoznaj się ze szczegółowym opisem moich projektów, wdrożeń oraz pełną specyfikacją techniczną maszyn pomiarowych i systemów ERP w wygodnym formacie PDF.</span>
+                <span lang="en">Review detailed case studies, implementations, and comprehensive technical specs of measurement hardware and ERP architectures in a convenient PDF format.</span>
+            </p>
+            <a href="images/Marek_Wietecha_Portfolio.pdf" download="Marek_Wietecha_Portfolio.pdf" class="btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                <span lang="pl">Pobierz Portfolio (PDF)</span><span lang="en">Download Portfolio (PDF)</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2><span lang="pl">Kontakt</span><span lang="en">Contact</span></h2>
+        <div class="glass contact-container">
+            <p><span lang="pl">Zapraszam do kontaktu biznesowego i technicznego:</span><span lang="en">Feel free to reach out for business or technical inquiries:</span></p>
+            <div class="contact-links" style="display: flex; flex-direction: column; gap: 15px; max-width: 320px; margin: 20px auto 0;">
+                <a href="https://www.linkedin.com/in/marek-wietecha" target="_blank" rel="noopener noreferrer" class="contact-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="mailto:m.p.wietecha@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    m.p.wietecha@gmail.com
+                </a>
+                <a href="tel:+48536144501" class="contact-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    +48 536 144 501
+                </a>
+            </div>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Marek Wietecha. Wszystkie prawa zastrzeżone.
+        <span lang="pl">&copy; 2026 Marek Wietecha. Wszystkie prawa zastrzeżone.</span>
+        <span lang="en">&copy; 2026 Marek Wietecha. All rights reserved.</span>
     </footer>
 
+    <script src="js/script.js"></script>
+    <script>
+        function switchLang(lang) {
+            const plElements = document.querySelectorAll('[lang="pl"]');
+            const enElements = document.querySelectorAll('[lang="en"]');
+            
+            if (lang === 'pl') {
+                plElements.forEach(el => el.style.display = 'inline-block');
+                document.querySelectorAll('div[lang="pl"], ul[lang="pl"]').forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+            } else {
+                enElements.forEach(el => el.style.display = 'inline-block');
+                document.querySelectorAll('div[lang="en"], ul[lang="en"]').forEach(el => el.style.display = 'block');
+                plElements.forEach(el => el.style.display = 'none');
+            }
+
+            const btnPl = document.getElementById('btn-pl');
+            const btnEn = document.getElementById('btn-en');
+            if (lang === 'pl') {
+                if(btnPl) btnPl.classList.add('active');
+                if(btnEn) btnEn.classList.remove('active');
+            } else {
+                if(btnEn) btnEn.classList.add('active');
+                if(btnPl) btnPl.classList.remove('active');
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            switchLang('pl');
+        });
+    </script>
 </body>
 </html>
