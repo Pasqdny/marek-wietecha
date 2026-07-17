@@ -6,11 +6,11 @@
     <title>Marek Wietecha | Quality Control & Metrology Specialist</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Style dla przełącznika języków w menu */
         .lang-switch {
             display: flex;
             gap: 10px;
             margin-left: 15px;
+            align-items: center;
         }
         .lang-btn {
             background: rgba(255, 255, 255, 0.1);
@@ -28,7 +28,6 @@
             border-color: #60a5fa;
             color: #0a1120;
         }
-        /* Ukrywanie elementów językowych */
         [lang="en"] { display: none; }
     </style>
 </head>
@@ -44,8 +43,8 @@
             <a href="#download" class="nav-download"><span lang="pl">Pobierz</span><span lang="en">Download</span></a>
             <a href="#contact" class="nav-contact"><span lang="pl">Kontakt</span><span lang="en">Contact</span></a>
             <div class="lang-switch">
-                <button class="lang-btn active" onclick="switchLang('pl')">PL</button>
-                <button class="lang-btn" onclick="switchLang('en')">EN</button>
+                <button id="btn-pl" class="lang-btn active" onclick="switchLang('pl')">PL</button>
+                <button id="btn-en" class="lang-btn" onclick="switchLang('en')">EN</button>
             </div>
         </div>
     </nav>
@@ -241,32 +240,31 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Skrypt przełączania języków
         function switchLang(lang) {
-            // Ukryj lub pokaż odpowiednie elementy
             const plElements = document.querySelectorAll('[lang="pl"]');
             const enElements = document.querySelectorAll('[lang="en"]');
             
             if (lang === 'pl') {
                 plElements.forEach(el => el.style.display = 'inline-block');
-                // Jeśli element nadrzędny był blokiem (np. div, ul), zachowaj poprawną strukturę
                 document.querySelectorAll('div[lang="pl"], ul[lang="pl"]').forEach(el => el.style.display = 'block');
-                
                 enElements.forEach(el => el.style.display = 'none');
             } else {
                 enElements.forEach(el => el.style.display = 'inline-block');
                 document.querySelectorAll('div[lang="en"], ul[lang="en"]').forEach(el => el.style.display = 'block');
-                
                 plElements.forEach(el => el.style.display = 'none');
             }
 
-            // Aktualizacja wyglądu przycisków PL / EN
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            const btnPl = document.getElementById('btn-pl');
+            const btnEn = document.getElementById('btn-en');
+            if (lang === 'pl') {
+                btnPl.classList.add('active');
+                btnEn.classList.remove('active');
+            } else {
+                btnEn.classList.add('active');
+                btnPl.classList.remove('active');
+            }
         }
         
-        // Wywołaj początkowe ustawienie dla języka polskiego
         document.addEventListener("DOMContentLoaded", function() {
             switchLang('pl');
         });
