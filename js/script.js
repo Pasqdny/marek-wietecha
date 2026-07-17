@@ -1,29 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Pobieramy elementy do animacji pojawiania się
-    const elementsToAnimate = document.querySelectorAll(".card, .glass");
-    
-    // Dynamicznie dodajemy bazową klasę zamiast pisać inline-style w HTML, dla czystości kodu
-    elementsToAnimate.forEach(el => {
-        el.classList.add("reveal");
-    });
-
-    // Skonfigurowany Intersection Observer z odpowiednim progiem
-    const observerOptions = {
-        root: null, // Obserwacja w kontekście widoku przeglądarki
-        rootMargin: "0px 0px -50px 0px", // Animacja odpala się 50px przed całkowitym wejściem na ekran
-        threshold: 0.15 // 15% elementu musi być widoczne
-    };
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                observer.unobserve(entry.target); // Element animuje się tylko raz podczas przewijania
+// Płynne przewijanie menu (smooth scroll) dla linków zaczynających się od '#'
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        
+        // Sprawdzamy, czy link nie jest pustym '#' ani przełącznikiem języka
+        if (targetId && targetId !== '#') {
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
-        });
-    }, observerOptions);
-
-    elementsToAnimate.forEach(element => {
-        revealObserver.observe(element);
+        }
     });
 });
+
+// Zabezpieczenie dla urządzeń mobilnych – automatyczne zamykanie menu (jeśli istnieje) po kliknięciu linku
+const navLinks = document.querySelectorAll('.links a');
+const navMenu = document.querySelector('.links');
+
+if (navLinks && navMenu) {
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Jeśli w CSS była używana klasa 'active' lub 'show' do otwierania menu mobilnego, tutaj ją zdejmujemy
+            navMenu.classList.remove('active');
+            navMenu.classList.remove('show');
+        });
+    });
+}
