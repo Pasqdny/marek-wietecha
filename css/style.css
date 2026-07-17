@@ -1,77 +1,366 @@
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#030712;color:#fff;line-height:1.6}
+/* Reset i style globalne */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0a1120;
+    color: #f3f4f6;
+    line-height: 1.6;
+}
+
+/* Kontener strukturalny */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
 
 /* Nawigacja */
-.nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:rgba(3,7,18,.75);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.05)}
-.logo{font-weight:700;font-size:1.4rem;color:#3b82f6;letter-spacing:1px}
-.links a{color:#9ca3af;text-decoration:none;margin-left:24px;transition:color .2s;font-weight:500;font-size:0.95rem}
-.links a:hover{color:#3b82f6}
-
-/* Hero */
-.hero{height:100vh;background:url("../images/hero-bg.png") center/cover no-repeat;display:flex;align-items:center;justify-content:center;position:relative}
-.overlay{position:absolute;inset:0;background:linear-gradient(rgba(2,6,23,.8),rgba(2,6,23,.85))}
-.content{position:relative;z-index:2;text-align:center;max-width:900px;padding:20px}
-
-/* Zdjęcie profilowe z płynnym powiększeniem */
-.profile-photo img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid #2563eb;margin-bottom:24px;box-shadow:0 0 30px rgba(37,99,235,.35);transition:transform 0.3s ease}
-.profile-photo img:hover{transform:scale(1.05)}
-
-.tag{display:inline-block;padding:6px 16px;border-radius:999px;background:rgba(37,99,235,.15);color:#60a5fa;border:1px solid rgba(37,99,235,.3);margin-bottom:20px;font-size:0.85rem;letter-spacing:1px;font-weight:600}
-h1{font-size:4.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:10px;background:linear-gradient(135deg, #fff 60%, #9ca3af);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-h2{color:#bfdbfe;font-size:1.8rem;margin-bottom:12px;font-weight:600}
-.hero-sub{color:#9ca3af;font-size:1.15rem;max-width:700px;margin:0 auto}
-
-/* Przyciski i cienie neonowe */
-.buttons{margin-top:36px}
-.btn{display:inline-block;padding:14px 28px;background:#2563eb;color:#fff;text-decoration:none;border-radius:10px;margin:0 8px;font-weight:500;transition:all .25s ease;box-shadow:0 4px 14px rgba(37,99,235,0.3)}
-.btn:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.45)}
-.ghost{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);box-shadow:none}
-.ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);box-shadow:none}
-
-/* Sekcje i Akcent pod nagłówkami */
-section{max-width:1200px;margin:auto;padding:110px 8%}
-section h2{font-size:2.2rem;color:#fff;margin-bottom:45px;position:relative;display:inline-block}
-section h2::after{content:'';position:absolute;bottom:-10px;left:0;width:50px;height:4px;background:#2563eb;border-radius:2px}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
-.card,.glass{background:rgba(255,255,255,.03);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:32px;transition:all .35s cubic-bezier(0.4, 0, 0.2, 1);color:#d1d5db}
-.card h3{color:#fff;font-size:1.3rem;margin-bottom:12px;font-weight:600}
-.card p{font-size:0.95rem;line-height:1.6;color:#9ca3af}
-
-/* Zaawansowane efekty najechania dla Kart Kompetencji i Projektów */
-.card:hover{transform:translateY(-6px);border-color:rgba(37,99,235,.4);box-shadow:0 20px 35px rgba(37,99,235,.12);color:#fff}
-.card:hover h3{color:#60a5fa}
-
-/* Sekcja Kontaktowa - Nowoczesne Podświetlenia Przycisków i Ikon */
-.contact-container{text-align:center;padding:45px 20px}
-.contact-container p{margin-bottom:24px;font-size:1.1rem;color:#e5e7eb}
-.contact-links{display:flex;justify-content:center;gap:20px}
-.contact-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:#d1d5db;text-decoration:none;font-weight:500;transition:all 0.25s ease}
-.contact-btn svg{transition:transform 0.25s ease;color:#9ca3af}
-
-/* Podświetlenie przycisku i zmiana koloru samej ikony SVG */
-.contact-btn:hover{background:rgba(37,99,235,0.15);border-color:rgba(37,99,235,0.4);color:#fff}
-.contact-btn:hover svg{transform:scale(1.15);color:#60a5fa}
-
-/* Stopka */
-footer{text-align:center;padding:40px;background:#020617;color:#6b7280;font-size:0.9rem;border-top:1px solid rgba(255,255,255,0.05)}
-
-/* Klasy wejścia dla silnika JS Reveal */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+.nav {
+    background-color: rgba(10, 17, 32, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-@media(max-width:900px){
-    h1{font-size:3rem}
-    section{padding:80px 5%}
-    .links{display:none}
-    .contact-links{flex-direction:column;align-items:center}
-    .contact-btn{width:100%;max-width:260px;justify-content:center}
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+/* Nowoczesne Logo CSS */
+.logo-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    font-family: 'Arial Black', Gadget, sans-serif;
+    letter-spacing: -3px;
+    padding-right: 3px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #fff 40%, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav .links a {
+    color: #9ca3af;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav .links a:hover {
+    color: #3b82f6;
+}
+
+/* Sekcja Hero - Nowy asymetryczny układ */
+.hero {
+    min-height: 100vh;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.hero-text-block {
+    background: linear-gradient(90deg, rgba(10,17,32,0.9) 60%, rgba(10,17,32,0.4) 100%);
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.hero .tag {
+    color: #3b82f6;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.hero h2 {
+    font-size: 22px;
+    color: #60a5fa;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-sub {
+    font-size: 16px;
+    color: #9ca3af;
+    margin-bottom: 30px;
+    max-width: 540px;
+}
+
+/* Nowy styl zdjęcia profilowego */
+.profile-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo-new {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 4 / 5;
+    border-radius: 16px;
+    border: 3px solid rgba(59, 130, 246, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(59, 130, 246, 0.15);
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.profile-photo-new:hover {
+    transform: scale(1.02) translateY(-4px);
+    border-color: #60a5fa;
+}
+
+.profile-photo-new img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Przyciski */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3b82f6;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #3b82f6;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+.btn.ghost {
+    background-color: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+}
+
+.btn.ghost:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+}
+
+/* Sekcje ogólne */
+section {
+    padding: 100px 0 40px 0;
+}
+
+section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+    color: #ffffff;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #3b82f6;
+    border-radius: 2px;
+}
+
+/* Efekt szkła (Glassmorphism) */
+.glass {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 40px;
+    backdrop-filter: blur(8px);
+}
+
+/* Siatka i Kafelki (Grid z równą wysokością) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Równa wysokość kafelków */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.05);
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card p {
+    color: #9ca3af;
+    font-size: 15px;
+}
+
+/* Kafelki ze szczegółowymi listami certyfikatów */
+.spec-card ul {
+    list-style-type: none;
+}
+
+.spec-card li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.spec-card li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-size: 10px;
+    top: 2px;
+}
+
+.spec-card li strong {
+    color: #e5e7eb;
+}
+
+/* Stopka i kontakt */
+.contact-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e5e7eb;
+    padding: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #6b7280;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 60px;
+}
+
+/* Responsywność dla urządzeń mobilnych */
+@media (max-width: 968px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .hero-text-block {
+        background: rgba(10, 17, 32, 0.85);
+        padding: 20px;
+    }
+
+    .profile-block {
+        order: -1; /* Zdjęcie ląduje nad tekstem na telefonach */
+    }
+
+    .profile-photo-new {
+        max-width: 260px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .nav .links {
+        display: none; /* Uproszczenie dla urządzeń mobilnych */
+    }
 }
