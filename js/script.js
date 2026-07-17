@@ -1,3 +1,1 @@
-document.querySelectorAll('nav a').forEach(a=>{
-a.addEventListener('click',()=>console.log('Navigate:',a.getAttribute('href')));
-});
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});
