@@ -1,1 +1,1 @@
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});
+document.querySelectorAll('[data-count]').forEach(el=>{let t=+el.dataset.count,c=0;let i=setInterval(()=>{c++;el.textContent=c;if(c>=t)clearInterval(i)},25)});document.getElementById('themeBtn').onclick=()=>document.body.classList.toggle('light');
