@@ -1,1 +1,3 @@
-document.querySelectorAll('[data-count]').forEach(el=>{let t=+el.dataset.count,c=0;let i=setInterval(()=>{c++;el.textContent=c;if(c>=t)clearInterval(i)},25)});document.getElementById('themeBtn').onclick=()=>document.body.classList.toggle('light');
+const texts=['Quality Control Specialist','Metrology Expert','CMM • GD&T • 3D Scanning'];let i=0,j=0,el=document.getElementById('typed');function type(){if(j<texts[i].length){el.textContent+=texts[i][j++];setTimeout(type,60)}else{setTimeout(()=>{el.textContent='';j=0;i=(i+1)%texts.length;type()},1400)}}type();
+document.querySelectorAll('[data-count]').forEach(e=>{let t=+e.dataset.count,c=0;let iv=setInterval(()=>{c++;e.textContent=c;if(c>=t)clearInterval(iv)},30)});
+document.getElementById('menuBtn').onclick=()=>{let m=document.getElementById('menu');m.style.display=m.style.display=='flex'?'none':'flex';};
