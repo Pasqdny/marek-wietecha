@@ -9,6 +9,7 @@
         .lang-switch { display: flex; gap: 10px; margin-left: 20px; align-items: center; }
         .lang-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px; font-weight: bold; transition: all 0.3s ease; }
         .lang-btn:hover, .lang-btn.active { background: #60a5fa; border-color: #60a5fa; color: #0a1120; }
+        .tech-category-title { color: #60a5fa; font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600; border-left: 3px solid #60a5fa; padding-left: 10px; }
     </style>
 </head>
 <body>
@@ -20,7 +21,7 @@
             </div>
             <div class="links" style="margin-left: auto;">
                 <a href="#about">O mnie</a>
-                <a href="#skills">Umiejętności</a>
+                <a href="#skills">Park Maszynowy & Soft</a>
                 <a href="#certificates">Certyfikaty</a>
                 <a href="#projects">Projekty</a>
                 <a href="#download">Pobierz</a>
@@ -62,20 +63,64 @@
             </div>
         </section>
 
+        <!-- SEKCJA ZMODYFIKOWANA: ZAAWANSOWANY PARK MASZYNOWY I OPROGRAMOWANIE -->
         <section id="skills">
-            <h2>Kluczowe kompetencje</h2>
+            <h2>Park Maszynowy & Kompetencje Cyfrowe</h2>
+            
+            <div class="tech-category-title">Aparatura & Sprzęt Pomiarowy</div>
             <div class="grid">
                 <div class="card">
-                    <h3>Metrologia & 3D</h3>
-                    <p>Skanowanie 3D, Ramiona pomiarowe Hexagon Absolute Arm, PC-DMIS, Geomagic Control X, PolyWorks, profilometry, wysokościomierze.</p>
+                    <h3>Maszyny Współrzędnościowe (CMM)</h3>
+                    <p>Współrzędnościowa maszyna pomiarowa <strong>DEA (Hexagon)</strong>. Precyzyjna weryfikacja wymiarowa, sprawdzanie geometrii 3D oraz pomiary odchyłek kształtu i położenia komponentów.</p>
                 </div>
                 <div class="card">
-                    <h3>Standardy Jakości</h3>
-                    <p>Analiza GD&T, procesy PPAP, FMEA (AIAG & VDA), SPC, MSA, Audyty procesów wg ISO 9001 / TS 16949 (Audytor TÜV Nord).</p>
+                    <h3>Ramiona Pomiarowe & Skanery</h3>
+                    <p>Mobilne, 7-osiowe ramię pomiarowe <strong>Hexagon Absolute Arm</strong> oraz optyczny system skanowania 3D <strong>Smart Solutions (ZG-Track)</strong> dedykowany do kontroli konstrukcji spawanych.</p>
                 </div>
                 <div class="card">
-                    <h3>Systemy & Lean</h3>
-                    <p>SAP S/4HANA QM, Teamcenter PLM, Excel Zaawansowany, Lean Six Sigma (White Belt), Lean Manufacturing (Kaizen, 5S, Ishikawa).</p>
+                    <h3>Metrologia Struktury i Powłok</h3>
+                    <p>Pomiary chropowatości (<strong>Taylor Hobson Form Talysurf</strong>, <strong>TESA Rugosurf 90G</strong>), wysokościomierze (<strong>TESA Micro-Hite 6</strong>) oraz nieniszczące badania grubości powłok lakierniczych <strong>ElektroPhysik</strong>.</p>
+                </div>
+            </div>
+
+            <div class="tech-category-title">Oprogramowanie Metrologiczne & Systemy Klasy Enterprise</div>
+            <div class="grid">
+                <div class="card spec-card">
+                    <h3>Metrologia & Skanowanie 3D</h3>
+                    <ul>
+                        <li><strong>PC-DMIS</strong> – tworzenie rutyn i zaawansowane programowanie maszyn CMM</li>
+                        <li><strong>PolyWorks</strong> – uniwersalne oprogramowanie metrologiczne 3D</li>
+                        <li><strong>Geomagic Control X</strong> – zaawansowana kontrola i analiza map odchyłek CAD</li>
+                        <li><strong>HX HyperScan</strong> – akwizycja i przetwarzanie gęstych chmur punktów</li>
+                    </ul>
+                </div>
+                <div class="card spec-card">
+                    <h3>Systemy ERP & PLM</h3>
+                    <ul>
+                        <li><strong>SAP / SAP QM</strong> – zarządzanie partiami kontrolnymi, statusami i reklamacjami</li>
+                        <li><strong>Siemens Teamcenter</strong> – operowanie na dokumentacji w środowisku PLM</li>
+                        <li><strong>BAAN / Impuls</strong> – operacyjne wsparcie procesów produkcyjno-logistycznych</li>
+                    </ul>
+                </div>
+                <div class="card spec-card">
+                    <h3>Analiza Statystyczna & Inżynierska</h3>
+                    <ul>
+                        <li><strong>Minitab / Statistica</strong> – statystyczne sterowanie procesem (SPC) oraz analizy MSA</li>
+                        <li><strong>Microsoft Excel Zaawansowany</strong> – makra, dynamiczne raportowanie i analizy jakościowe</li>
+                        <li><strong>Wsparcie CAD 2D/3D</strong> – bezpośrednia praca na modelach i rysunkach technicznych</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tech-category-title">Normy, Standardy & Tolerowanie Geometryczne</div>
+            <div class="grid">
+                <div class="card">
+                    <h3>Interpretacja Rysunku & GD&T (ISO GPS)</h3>
+                    <p>Biegła, bezproblemowa interpretacja skomplikowanych rysunków technicznych zgodnie ze standardami <strong>ISO GPS / ASME GD&T</strong>. Weryfikacja pozycji, profilu, płaskości i bicia w złożonych układach bazowych.</p>
+                </div>
+                <div class="card">
+                    <h3>Otoczenie Normatywne & Core Tools</h3>
+                    <p>Praca w reżimie systemów <strong>ISO 9001:2015</strong> oraz <strong>IATF 16949</strong> (Audytor TÜV NORD). Praktyczna znajomość i wdrażanie narzędzi jakościowych <strong>AIAG Core Tools</strong>: PPAP, FMEA, SPC, MSA.</p>
                 </div>
             </div>
         </section>
