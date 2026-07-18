@@ -10,6 +10,15 @@
         .lang-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px; font-weight: bold; transition: all 0.3s ease; }
         .lang-btn:hover, .lang-btn.active { background: #60a5fa; border-color: #60a5fa; color: #0a1120; }
         .tech-category-title { color: #60a5fa; font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600; border-left: 3px solid #60a5fa; padding-left: 10px; }
+        
+        /* SVG Icon container styling */
+        .card-icon-container { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 8px; margin-bottom: 15px; color: #60a5fa; transition: all 0.3s ease; }
+        .card:hover .card-icon-container { background: #60a5fa; color: #0a1120; transform: translateY(-2px); }
+        .card-icon-container svg { fill: currentcolor; }
+        
+        .btn-sm { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; font-size: 0.8rem; background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.3); color: #60a5fa; border-radius: 4px; text-decoration: none; margin-top: 10px; font-weight: 500; transition: all 0.2s ease; }
+        .btn-sm:hover { background: #60a5fa; color: #0a1120; }
+        .btn-sm svg { fill: currentcolor; }
     </style>
 </head>
 <body>
@@ -37,7 +46,7 @@
     <header class="hero" style="background: #0a1120 url('images/hero-bg.png') no-repeat center center; background-size: contain;">
         <div class="container hero-container">
             <div class="hero-text-block">
-                <p class="tag">QUALITY | METROLOGIA | AUTOMOTIVE & MACHINING</p>
+                <p class="tag">QUALITY | METROLOGY | AUTOMOTIVE & MACHINING</p>
                 <h1>Marek Wietecha</h1>
                 <h2>Quality Control & Metrology Specialist</h2>
                 <p class="hero-sub">Over 20 years in the manufacturing industry | 13+ years in QA/QC & Metrology</p>
@@ -63,21 +72,29 @@
             </div>
         </section>
 
-        <!-- ZMODYFIKOWANA SEKCJA SKILLS W WERSJI ANGIELSKIEJ -->
         <section id="skills">
             <h2>Machinery Park & Digital Competencies</h2>
             
             <div class="tech-category-title">Measurement Equipment & Hardware</div>
             <div class="grid">
                 <div class="card">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    </div>
                     <h3>Coordinate Measuring Machines (CMM)</h3>
                     <p>High-precision <strong>DEA (Hexagon) CMM</strong>. Dimensional verification, geometric analysis, and dimensional layouts of technical components and shop-floor fixtures.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    </div>
                     <h3>Articulated Arms & 3D Scanners</h3>
                     <p>Portable 7-axis <strong>Hexagon Absolute Arm</strong> and <strong>Smart Solutions (ZG-Track)</strong> optical 3D scanning system engineered for heavy welded structures and raw components.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm5 10H7v-2h10v2z"/></svg>
+                    </div>
                     <h3>Form, Surface & Coating Inspection</h3>
                     <p>Surface roughness and profile analysis via <strong>Taylor Hobson Form Talysurf</strong> and <strong>TESA Rugosurf 90G</strong>. Precision height inspection using <strong>TESA Micro-Hite 6</strong> and non-destructive <strong>ElektroPhysik</strong> coating thickness gauges.</p>
                 </div>
@@ -86,6 +103,9 @@
             <div class="tech-category-title">Metrology Software & Enterprise Systems</div>
             <div class="grid">
                 <div class="card spec-card">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M21.9 15.4c-.2-.7-.5-1.3-.9-1.9l.4-.4c.5-.5.5-1.3 0-1.8l-1.4-1.4c-.5-.5-1.3-.5-1.8 0l-.4.4c-.6-.4-1.2-.7-1.9-.9V9c0-.7-.6-1.3-1.3-1.3h-2c-.7 0-1.3.6-1.3 1.3v.4c-.7.2-1.3.5-1.9.9l-.4-.4c-.5-.5-1.3-.5-1.8 0L6 11.3c-.5.5-.5 1.3 0 1.8l.4.4c-.4.6-.7 1.2-.9 1.9H5c-.7 0-1.3.6-1.3 1.3v2c0 .7.6 1.3 1.3 1.3h.4c.2.7.5 1.3.9 1.9l-.4.4c-.5.5-.5 1.3 0 1.8l1.4 1.4c.5.5 1.3.5 1.8 0l.4-.4c.6.4 1.2.7 1.9.9v.4c0 .7.6 1.3 1.3 1.3h2c.7 0 1.3-.6 1.3-1.3v-.4c.7-.2 1.3-.5 1.9-.9l.4.4c.5.5 1.3.5 1.8 0l1.4-1.4c.5-.5.5-1.3 0-1.8l-.4-.4c.4-.6.7-1.2.9-1.9h.4c.7 0 1.3-.6 1.3-1.3v-2c0-.7-.6-1.3-1.3-1.3h-.4zM14 18c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
+                    </div>
                     <h3>Metrology & 3D Data Processing</h3>
                     <ul>
                         <li><strong>PC-DMIS</strong> – CMM programming, creation and execution of inspection routines</li>
@@ -95,6 +115,9 @@
                     </ul>
                 </div>
                 <div class="card spec-card">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+                    </div>
                     <h3>ERP & PLM Architecture</h3>
                     <ul>
                         <li><strong>SAP / SAP QM</strong> – Quality inspection lots, status verification, and supplier claims management</li>
@@ -103,6 +126,9 @@
                     </ul>
                 </div>
                 <div class="card spec-card">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H7v-7h3v7zm4 0h-3V7h3v10zm4 0h-3v-4h3v4z"/></svg>
+                    </div>
                     <h3>Statistical Analysis & Productivity</h3>
                     <ul>
                         <li><strong>Minitab / Statistica</strong> – Process capability evaluation (Cp/Cpk) and extensive MSA studies</li>
