@@ -9,6 +9,7 @@
         .lang-switch { display: flex; gap: 10px; margin-left: 20px; align-items: center; }
         .lang-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px; font-weight: bold; transition: all 0.3s ease; }
         .lang-btn:hover, .lang-btn.active { background: #60a5fa; border-color: #60a5fa; color: #0a1120; }
+        .tech-category-title { color: #60a5fa; font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600; border-left: 3px solid #60a5fa; padding-left: 10px; }
     </style>
 </head>
 <body>
@@ -20,7 +21,7 @@
             </div>
             <div class="links" style="margin-left: auto;">
                 <a href="#about">About Me</a>
-                <a href="#skills">Skills</a>
+                <a href="#skills">Machinery & Soft</a>
                 <a href="#certificates">Certificates</a>
                 <a href="#projects">Projects</a>
                 <a href="#download">Download</a>
@@ -36,7 +37,7 @@
     <header class="hero" style="background: #0a1120 url('images/hero-bg.png') no-repeat center center; background-size: contain;">
         <div class="container hero-container">
             <div class="hero-text-block">
-                <p class="tag">QUALITY | METROLOGY | AUTOMOTIVE & MACHINING</p>
+                <p class="tag">QUALITY | METROLOGIA | AUTOMOTIVE & MACHINING</p>
                 <h1>Marek Wietecha</h1>
                 <h2>Quality Control & Metrology Specialist</h2>
                 <p class="hero-sub">Over 20 years in the manufacturing industry | 13+ years in QA/QC & Metrology</p>
@@ -62,20 +63,64 @@
             </div>
         </section>
 
+        <!-- ZMODYFIKOWANA SEKCJA SKILLS W WERSJI ANGIELSKIEJ -->
         <section id="skills">
-            <h2>Key Competencies</h2>
+            <h2>Machinery Park & Digital Competencies</h2>
+            
+            <div class="tech-category-title">Measurement Equipment & Hardware</div>
             <div class="grid">
                 <div class="card">
-                    <h3>Metrology & 3D</h3>
-                    <p>3D scanning, Hexagon Absolute Arm measurement devices, PC-DMIS, Geomagic Control X, PolyWorks, profilometers, height gauges.</p>
+                    <h3>Coordinate Measuring Machines (CMM)</h3>
+                    <p>High-precision <strong>DEA (Hexagon) CMM</strong>. Dimensional verification, geometric analysis, and dimensional layouts of technical components and shop-floor fixtures.</p>
                 </div>
                 <div class="card">
-                    <h3>Quality Standards</h3>
-                    <p>GD&T analysis, PPAP processes, FMEA (AIAG & VDA), SPC, MSA, process audits according to ISO 9001 / TS 16949 (TÜV Nord Auditor).</p>
+                    <h3>Articulated Arms & 3D Scanners</h3>
+                    <p>Portable 7-axis <strong>Hexagon Absolute Arm</strong> and <strong>Smart Solutions (ZG-Track)</strong> optical 3D scanning system engineered for heavy welded structures and raw components.</p>
                 </div>
                 <div class="card">
-                    <h3>Systems & Lean</h3>
-                    <p>SAP S/4HANA QM, Teamcenter PLM, Advanced Excel, Lean Six Sigma (White Belt), Lean Manufacturing (Kaizen, 5S, Ishikawa).</p>
+                    <h3>Form, Surface & Coating Inspection</h3>
+                    <p>Surface roughness and profile analysis via <strong>Taylor Hobson Form Talysurf</strong> and <strong>TESA Rugosurf 90G</strong>. Precision height inspection using <strong>TESA Micro-Hite 6</strong> and non-destructive <strong>ElektroPhysik</strong> coating thickness gauges.</p>
+                </div>
+            </div>
+
+            <div class="tech-category-title">Metrology Software & Enterprise Systems</div>
+            <div class="grid">
+                <div class="card spec-card">
+                    <h3>Metrology & 3D Data Processing</h3>
+                    <ul>
+                        <li><strong>PC-DMIS</strong> – CMM programming, creation and execution of inspection routines</li>
+                        <li><strong>PolyWorks</strong> – Universal 3D metrology and advanced dimensional analysis</li>
+                        <li><strong>Geomagic Control X</strong> – 3D inspection, CAD comparison, and color deviation maps</li>
+                        <li><strong>HX HyperScan</strong> – Point cloud acquisition, processing, and scanning alignment</li>
+                    </ul>
+                </div>
+                <div class="card spec-card">
+                    <h3>ERP & PLM Architecture</h3>
+                    <ul>
+                        <li><strong>SAP / SAP QM</strong> – Quality inspection lots, status verification, and supplier claims management</li>
+                        <li><strong>Siemens Teamcenter</strong> – Managing technical data and drawings within the corporate PLM structure</li>
+                        <li><strong>BAAN / Impuls</strong> – Operational support for production tracking and manufacturing workflows</li>
+                    </ul>
+                </div>
+                <div class="card spec-card">
+                    <h3>Statistical Analysis & Productivity</h3>
+                    <ul>
+                        <li><strong>Minitab / Statistica</strong> – Process capability evaluation (Cp/Cpk) and extensive MSA studies</li>
+                        <li><strong>Advanced Microsoft Excel</strong> – Custom macros, automated quality reporting, and data consolidation</li>
+                        <li><strong>2D/3D CAD Support</strong> – Extensive hands-on experience working directly with 3D models and native drawings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tech-category-title">Quality Standards & Blueprint Analysis</div>
+            <div class="grid">
+                <div class="card">
+                    <h3>GD&T / GPS Blueprint Interpretation</h3>
+                    <p>Flawless interpretation of complex blueprints under <strong>ISO GPS / ASME GD&T</strong> standards. Verification of position, profile, flatness, parallelism, and runout using sophisticated datum reference frames.</p>
+                </div>
+                <div class="card">
+                    <h3>Quality Systems & Core Tools</h3>
+                    <p>Operating fluidly within <strong>ISO 9001:2015</strong> and <strong>IATF 16949</strong> environments (TÜV NORD Certified Internal Auditor). Hands-on mastery of <strong>AIAG Core Tools</strong>: PPAP, FMEA, SPC, and MSA.</p>
                 </div>
             </div>
         </section>
@@ -121,7 +166,7 @@
                         <li><strong>Polish:</strong> Native</li>
                         <li><strong>English:</strong> Business C2 (Saylor Academy Certificate, USA)</li>
                         <li><strong>Russian:</strong> Communication basics (DigitalUni Course)</li>
-                        <li><strong>Hiszpański:</strong> Poziom A1 (W trakcie nauki)</li>
+                        <li><strong>Spanish:</strong> Level A1 (In progress)</li>
                     </ul>
                 </div>
             </div>
