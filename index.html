@@ -11,10 +11,11 @@
         .lang-btn:hover, .lang-btn.active { background: #60a5fa; border-color: #60a5fa; color: #0a1120; }
         .tech-category-title { color: #60a5fa; font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600; border-left: 3px solid #60a5fa; padding-left: 10px; }
         
-        /* Dodatkowe style dla multimediów w kartach */
-        .card-media { width: 100%; height: 160px; margin-bottom: 15px; border-radius: 6px; overflow: hidden; background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-        .card:hover .card-media img { transform: scale(1.05); }
+        /* Styl kontenera ikony SVG */
+        .card-icon-container { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 8px; margin-bottom: 15px; color: #60a5fa; transition: all 0.3s ease; }
+        .card:hover .card-icon-container { background: #60a5fa; color: #0a1120; transform: translateY(-2px); }
+        .card-icon-container svg { fill: currentcolor; }
+        
         .btn-sm { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; font-size: 0.8rem; background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.3); color: #60a5fa; border-radius: 4px; text-decoration: none; margin-top: 10px; font-weight: 500; transition: all 0.2s ease; }
         .btn-sm:hover { background: #60a5fa; color: #0a1120; }
         .btn-sm svg { fill: currentcolor; }
@@ -71,29 +72,28 @@
             </div>
         </section>
 
-        <!-- SEKCJA PARK MASZYNOWY Z MULTIMEDIAMI -->
         <section id="skills">
             <h2>Park Maszynowy & Kompetencje Cyfrowe</h2>
             
             <div class="tech-category-title">Aparatura & Sprzęt Pomiarowy</div>
             <div class="grid">
                 <div class="card">
-                    <div class="card-media">
-                        <img src="images/cmm-dea.jpg" alt="Maszyna współrzędnościowa CMM DEA Hexagon">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
                     </div>
                     <h3>Maszyny Współrzędnościowe (CMM)</h3>
                     <p>Współrzędnościowa maszyna pomiarowa <strong>DEA (Hexagon)</strong>. Precyzyjna weryfikacja wymiarowa, sprawdzanie geometrii 3D oraz pomiary odchyłek kształtu i położenia komponentów.</p>
                 </div>
                 <div class="card">
-                    <div class="card-media">
-                        <img src="images/hexagon-arm.jpg" alt="Ramię pomiarowe Hexagon Absolute Arm">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
                     </div>
                     <h3>Ramiona Pomiarowe & Skanery</h3>
                     <p>Mobilne, 7-osiowe ramię pomiarowe <strong>Hexagon Absolute Arm</strong> oraz optyczny system skanowania 3D <strong>Smart Solutions (ZG-Track)</strong> dedykowany do kontroli konstrukcji spawanych.</p>
                 </div>
                 <div class="card">
-                    <div class="card-media">
-                        <img src="images/surface-gauges.jpg" alt="Profilometry Taylor Hobson i TESA">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm5 10H7v-2h10v2z"/></svg>
                     </div>
                     <h3>Metrologia Struktury i Powłok</h3>
                     <p>Pomiary chropowatości (<strong>Taylor Hobson Form Talysurf</strong>, <strong>TESA Rugosurf 90G</strong>), wysokościomierze (<strong>TESA Micro-Hite 6</strong>) oraz nieniszczące badania grubości powłok lakierniczych <strong>ElektroPhysik</strong>.</p>
@@ -103,8 +103,8 @@
             <div class="tech-category-title">Oprogramowanie Metrologiczne & Systemy Klasy Enterprise</div>
             <div class="grid">
                 <div class="card spec-card">
-                    <div class="card-media">
-                        <img src="images/geomagic-colormap.jpg" alt="Mapa odchyłek 3D Geomagic Control X Color Map">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M21.9 15.4c-.2-.7-.5-1.3-.9-1.9l.4-.4c.5-.5.5-1.3 0-1.8l-1.4-1.4c-.5-.5-1.3-.5-1.8 0l-.4.4c-.6-.4-1.2-.7-1.9-.9V9c0-.7-.6-1.3-1.3-1.3h-2c-.7 0-1.3.6-1.3 1.3v.4c-.7.2-1.3.5-1.9.9l-.4-.4c-.5-.5-1.3-.5-1.8 0L6 11.3c-.5.5-.5 1.3 0 1.8l.4.4c-.4.6-.7 1.2-.9 1.9H5c-.7 0-1.3.6-1.3 1.3v2c0 .7.6 1.3 1.3 1.3h.4c.2.7.5 1.3.9 1.9l-.4.4c-.5.5-.5 1.3 0 1.8l1.4 1.4c.5.5 1.3.5 1.8 0l.4-.4c.6.4 1.2.7 1.9.9v.4c0 .7.6 1.3 1.3 1.3h2c.7 0 1.3-.6 1.3-1.3v-.4c.7-.2 1.3-.5 1.9-.9l.4.4c.5.5 1.3.5 1.8 0l1.4-1.4c.5-.5.5-1.3 0-1.8l-.4-.4c.4-.6.7-1.2.9-1.9h.4c.7 0 1.3-.6 1.3-1.3v-2c0-.7-.6-1.3-1.3-1.3h-.4zM14 18c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
                     </div>
                     <h3>Metrologia & Skanowanie 3D</h3>
                     <ul>
@@ -113,14 +113,10 @@
                         <li><strong>Geomagic Control X</strong> – analiza map odchyłek CAD (Color Map) i analizy GD&T</li>
                         <li><strong>HX HyperScan</strong> – akwizycja i przetwarzanie gęstych chmur punktów</li>
                     </ul>
-                    <a href="images/sample-colormap-large.jpg" target="_blank" class="btn-sm">
-                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                        Pokaż mapę odchyłek CAD
-                    </a>
                 </div>
                 <div class="card spec-card">
-                    <div class="card-media">
-                        <img src="images/sap-qm-interface.jpg" alt="Interfejs systemu SAP QM">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
                     </div>
                     <h3>Systemy ERP & PLM</h3>
                     <ul>
@@ -130,8 +126,8 @@
                     </ul>
                 </div>
                 <div class="card spec-card">
-                    <div class="card-media">
-                        <img src="images/minitab-spc.jpg" alt="Analizy statystyczne Minitab SPC">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H7v-7h3v7zm4 0h-3V7h3v10zm4 0h-3v-4h3v4z"/></svg>
                     </div>
                     <h3>Analiza Statystyczna & Inżynierska</h3>
                     <ul>
@@ -185,7 +181,7 @@
                     <ul>
                         <li>Certyfikat Google – Wykorzystanie AI w rozwoju firmy (98% egzamin)</li>
                         <li>Zarządzanie Innowacjami & Zrównoważone Zarządzanie Łańcuchem Dostaw (UNIDO)</li>
-                        <li>Umiejętności Kierownicze & Zarządzanie Projektami (PARP / AEH Warszawa)</li>
+                        <li>Umiejętności Kierownicze & Zarządzanie Projektami (PARP / AEH Warsaw)</li>
                         <li>Rysunek Techniczny Maszynowy (BIMv) & Budowlany (PK)</li>
                         <li>Uprawnienia UDT (Żurawie stacjonarne, Suwnice, wciągniki i wciągarki)</li>
                     </ul>
@@ -208,10 +204,6 @@
                 <div class="card">
                     <h3>Inspekcja 3D & Raportowanie PPAP</h3>
                     <p>Wdrażanie zaawansowanych pomiarów i skanowania 3D dla komponentów maszynowych i motoryzacyjnych. Tworzenie kompletnych raportów wymiarowych i pełnej dokumentacji na potrzeby zatwierdzania części do produkcji seryjnej (PPAP).</p>
-                    <a href="images/sample-ppap-report.pdf" target="_blank" class="btn-sm">
-                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                        Zobacz przykładowy raport
-                    </a>
                 </div>
                 <div class="card">
                     <h3>Nadzór i Reklamacje Dostawców</h3>
