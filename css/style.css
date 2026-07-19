@@ -90,17 +90,19 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background-position: center center !important;
+    /* ZMIANA: Powiększenie tła i przesunięcie go w lewo, aby odsłonić napisy */
+    background-size: 145% !important;
+    background-position: left 20% center !important;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Zmienione na center, żeby wycentrować układ bazowy */
+    justify-content: flex-end; 
+    gap: 40px;
     width: 100%;
-    max-width: 1200px;
-    margin: -10px auto 0 auto; /* Obniżenie zachowane */
-    padding: 0 20px;
+    padding-left: 120px;
+    margin-top: -10px; /* Obniżenie o 1 cm zachowane */
     position: relative;
     z-index: 2;
 }
@@ -110,22 +112,18 @@ body {
     background: linear-gradient(270deg, rgba(10,17,32,0.95) 85%, rgba(10,17,32,0.1) 100%);
     padding: 25px 35px;
     border-radius: 16px;
+    order: 1; 
     max-width: 650px;
     width: 100%;
-    margin-right: 180px; /* Przestrzeń wygospodarowana na zdjęcie po prawej */
 }
 
-/* Zdjęcie profilowe - WYMUSZONE PRZESUNIĘCIE NA PRAWO */
+/* Zdjęcie profilowe - PO PRAWEJ STRONIE */
 .profile-block {
-    position: absolute;
-    right: 40px; /* Sztywne wyrównanie do prawej krawędzi kontenera */
-    top: 50%;
-    transform: translateY(-50%); /* Idealne centrowanie w pionie */
     display: flex;
     justify-content: center;
     align-items: center;
+    order: 2; 
     flex-shrink: 0;
-    z-index: 3;
 }
 
 .profile-photo-new {
@@ -139,7 +137,7 @@ body {
 }
 
 .profile-photo-new:hover {
-    transform: scale(1.05) translateY(-50%); /* Poprawka dla efektu hover przy transformacji */
+    transform: scale(1.05);
     border-color: #60a5fa;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 30px rgba(59, 130, 246, 0.3);
 }
@@ -356,6 +354,8 @@ footer {
         justify-content: center;
         text-align: center;
         gap: 30px;
+        margin-left: 0;
+        padding-left: 0;
         margin-top: 0;
         width: 100%;
     }
@@ -363,23 +363,17 @@ footer {
     .hero-text-block {
         background: rgba(10, 17, 32, 0.9);
         padding: 20px;
+        order: 2;
         max-width: 100%;
-        margin-right: 0;
     }
 
     .profile-block {
-        position: static;
-        transform: none;
-        margin-top: 20px;
+        order: 1;
     }
 
     .profile-photo-new {
         width: 180px;
         height: 180px;
-    }
-    
-    .profile-photo-new:hover {
-        transform: scale(1.05);
     }
 
     .hero h1 {
