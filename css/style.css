@@ -81,7 +81,7 @@ body {
     color: #3b82f6;
 }
 
-/* Sekcja Hero - SKORYGOWANA WYSOKOŚĆ */
+/* Sekcja Hero */
 .hero {
     height: 75vh; 
     min-height: 450px;
@@ -100,7 +100,7 @@ body {
     gap: 40px;
     width: 100%;
     padding-left: 120px;
-    margin-top: -45px; /* Zmniejszono z -80px, żeby obniżyć baner o ok. 1 cm */
+    margin-top: -10px; /* Zmniejszono z -45px, żeby obniżyć baner o kolejny 1 cm */
     position: relative;
     z-index: 2;
 }
