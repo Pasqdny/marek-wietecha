@@ -81,13 +81,13 @@ body {
     color: #3b82f6;
 }
 
-/* Sekcja Hero */
+/* Sekcja Hero - UNIESIONA W GÓRĘ */
 .hero {
-    height: 85vh;
-    min-height: 500px;
-    padding-top: 35px; /* Zmniejszono z 70px, aby podnieść sekcję wyżej */
+    height: 70vh; /* Zmniejszona wysokość, by podnieść dół */
+    min-height: 450px;
+    padding-top: 0; 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
     overflow: hidden;
     background-position: center center !important;
@@ -96,21 +96,32 @@ body {
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Przywrócono oryginalne wyrównanie do prawej */
+    justify-content: flex-end; 
     gap: 40px;
     width: 100%;
     padding-left: 120px;
-    margin-top: -20px; /* Zmieniono z +25px na -20px, co unosi całość o ok. 1 cm w górę */
+    margin-top: -80px; /* Mocne uniesienie całego kompletu w górę */
     position: relative;
     z-index: 2;
 }
 
-/* Zdjęcie profilowe po lewej stronie wewnątrz kontenera flex */
+/* Blok tekstowy - SZTYWNIE PO LEWEJ STRONIE ZDJĘCIA */
+.hero-text-block {
+    background: linear-gradient(270deg, rgba(10,17,32,0.95) 85%, rgba(10,17,32,0.1) 100%);
+    padding: 25px 35px;
+    border-radius: 16px;
+    order: 1; /* Tekst zawsze pierwszy od lewej strony w parze */
+    max-width: 650px;
+    width: 100%;
+}
+
+/* Zdjęcie profilowe - SZTYWNIE PO PRAWEJ STRONIE TEKSTU */
 .profile-block {
     display: flex;
     justify-content: center;
     align-items: center;
-    order: 1;
+    order: 2; /* Zdjęcie zawsze drugie po prawej stronie w parze */
+    flex-shrink: 0;
 }
 
 .profile-photo-new {
@@ -133,15 +144,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* Blok tekstowy po prawej stronie */
-.hero-text-block {
-    background: linear-gradient(270deg, rgba(10,17,32,0.95) 85%, rgba(10,17,32,0.1) 100%);
-    padding: 25px 35px;
-    border-radius: 16px;
-    order: 2;
-    max-width: 650px;
 }
 
 .hero .tag {
