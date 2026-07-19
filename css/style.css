@@ -100,12 +100,12 @@ body {
     gap: 40px;
     width: 100%;
     padding-left: 120px;
-    margin-top: -10px; /* Zmniejszono z -45px, żeby obniżyć baner o kolejny 1 cm */
+    margin-top: -10px; /* JEDYNA ZMIANA: Obniżono baner o 1 cm z -45px na -10px */
     position: relative;
     z-index: 2;
 }
 
-/* Blok tekstowy - SZTYWNIE PO LEWEJ STRONIE ZDJĘCIA */
+/* Blok tekstowy - PO LEWEJ STRONIE */
 .hero-text-block {
     background: linear-gradient(270deg, rgba(10,17,32,0.95) 85%, rgba(10,17,32,0.1) 100%);
     padding: 25px 35px;
@@ -115,7 +115,7 @@ body {
     width: 100%;
 }
 
-/* Zdjęcie profilowe - SZTYWNIE PO PRAWEJ STRONIE TEKSTU */
+/* Zdjęcie profilowe - PO PRAWEJ STRONIE */
 .profile-block {
     display: flex;
     justify-content: center;
