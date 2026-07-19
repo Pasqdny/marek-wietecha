@@ -95,12 +95,12 @@ body {
 
 .hero-container {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr; 
+    grid-template-columns: 0.6fr 1.4fr; /* Przesunięcie zdjęcia maksymalnie w prawo */
     gap: 40px;
     align-items: center;
     width: 90%;
     margin-left: 8%; /* Odsunięcie w prawo od napisów "QUALITY" */
-    margin-top: -30px; /* Siłowe wyciągnięcie całego bloku mocno w górę */
+    margin-top: -65px; /* Wyciągnięcie zdjęcia i bloku tekstu mocniej w górę */
     position: relative;
     z-index: 2;
 }
