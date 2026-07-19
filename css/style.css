@@ -100,7 +100,7 @@ body {
     gap: 40px;
     width: 100%;
     padding-left: 120px;
-    margin-top: 25px; /* Zmieniono z -25px na +25px, aby obniżyć sekcję i odsłonić nazwisko */
+    margin-top: 25px;
     position: relative;
     z-index: 2;
 }
@@ -150,6 +150,9 @@ body {
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 10px;
+    text-align: left; /* Wyrównanie tekstu tagu do lewej */
+    width: 100%;       /* Wymuszenie pełnej szerokości, by nie uciekał do prawej */
+    display: block;    /* Poprawne zachowanie marginesów i szerokości */
 }
 
 .hero h1 {
@@ -361,6 +364,10 @@ footer {
         padding: 20px;
         order: 2;
         max-width: 100%;
+    }
+
+    .hero .tag {
+        text-align: center; /* Przywrócenie centrowania napisu na telefonach */
     }
 
     .profile-block {
