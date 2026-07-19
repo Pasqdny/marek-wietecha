@@ -81,26 +81,26 @@ body {
     color: #3b82f6;
 }
 
-/* Sekcja Hero - Drastyczne wyciągnięcie zawartości w górę */
+/* Sekcja Hero */
 .hero {
-    height: 85vh; /* Zmniejszona wysokość sekcji, by nie pchała elementów w dół */
+    height: 85vh;
     min-height: 500px;
     padding-top: 70px;
     display: flex;
-    align-items: flex-start; /* Pozycjonowanie od samej góry */
+    align-items: flex-start;
     position: relative;
     overflow: hidden;
     background-position: center center !important;
 }
 
 .hero-container {
-    display: flex; /* Zmiana na flex pozwala łatwiej grupować elementy */
+    display: flex;
     align-items: center;
-    justify-content: flex-end; /* Wypycha zdjęcie i tekst na prawą stronę, odsłaniając tło */
+    justify-content: flex-end;
     gap: 40px;
     width: 100%;
-    padding-left: 120px; /* Dodatkowy margines wewnętrzny od lewej, by przesunąć zdjęcie bardziej w prawo */
-    margin-top: -25px; /* Obniżono z -85px na -25px – teraz nie jest już za wysoko */
+    padding-left: 120px;
+    margin-top: 25px; /* Zmieniono z -25px na +25px, aby obniżyć sekcję i odsłonić nazwisko */
     position: relative;
     z-index: 2;
 }
@@ -346,12 +346,12 @@ footer {
     }
 
     .hero-container {
-        flex-direction: column; /* Układ pionowy na telefonach */
+        flex-direction: column;
         justify-content: center;
         text-align: center;
         gap: 30px;
         margin-left: 0;
-        padding-left: 0; /* Wyłączamy przesunięcie w prawo na telefonach */
+        padding-left: 0;
         margin-top: 0;
         width: 100%;
     }
