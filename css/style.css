@@ -94,18 +94,17 @@ body {
 }
 
 .hero-container {
-    display: grid;
-    grid-template-columns: 0.6fr 1.4fr; /* Przesunięcie zdjęcia maksymalnie w prawo */
-    gap: 40px;
+    display: flex; /* Zmiana na flex pozwala łatwiej grupować elementy */
     align-items: center;
-    width: 90%;
-    margin-left: 8%; /* Odsunięcie w prawo od napisów "QUALITY" */
-    margin-top: -65px; /* Wyciągnięcie zdjęcia i bloku tekstu mocniej w górę */
+    justify-content: flex-end; /* Wypycha zdjęcie i tekst na prawą stronę, odsłaniając tło */
+    gap: 40px;
+    width: 100%;
+    margin-top: -85px; /* Mocniejsze pociągnięcie zdjęcia i tekstu w górę */
     position: relative;
     z-index: 2;
 }
 
-/* Zdjęcie profilowe po lewej stronie */
+/* Zdjęcie profilowe po lewej stronie wewnątrz kontenera flex */
 .profile-block {
     display: flex;
     justify-content: center;
@@ -142,7 +141,6 @@ body {
     border-radius: 16px;
     order: 2;
     max-width: 650px;
-    justify-self: end;
 }
 
 .hero .tag {
@@ -347,7 +345,8 @@ footer {
     }
 
     .hero-container {
-        grid-template-columns: 1fr;
+        flex-direction: column; /* Układ pionowy na telefonach */
+        justify-content: center;
         text-align: center;
         gap: 30px;
         margin-left: 0;
