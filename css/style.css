@@ -96,11 +96,11 @@ body {
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* To trzyma baner dokładnie tam, gdzie było dobrze */
+    justify-content: flex-end;
     gap: 40px;
     width: 100%;
     padding-left: 120px;
-    margin-top: 25px; /* Wysokość idealna, która nie przycina nazwiska */
+    margin-top: 25px;
     position: relative;
     z-index: 2;
 }
@@ -142,16 +142,22 @@ body {
     border-radius: 16px;
     order: 2;
     max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Zmusza wszystkie elementy wewnątrz bloku (w tym tag) do wyrównania do lewej krawędzi */
 }
 
-/* Napis nad imieniem i nazwiskiem - teraz wyrównany bezwzględnie do lewej */
+/* Napis nad imieniem i nazwiskiem - wymuszone wyrównanie do lewej */
 .hero .tag {
     color: #3b82f6;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    text-align: left !important;  /* Wymuszenie wyrównania do lewej strony bloku tekstu */
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    align-self: flex-start !important;
 }
 
 .hero h1 {
@@ -363,10 +369,12 @@ footer {
         padding: 20px;
         order: 2;
         max-width: 100%;
+        align-items: center; /* Centrowanie na urządzeniach mobilnych */
     }
 
     .hero .tag {
-        text-align: center !important; /* Przywrócenie centrowania napisu na telefonach */
+        text-align: center !important;
+        align-self: center !important;
     }
 
     .profile-block {
