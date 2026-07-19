@@ -99,7 +99,8 @@ body {
     justify-content: flex-end; /* Wypycha zdjęcie i tekst na prawą stronę, odsłaniając tło */
     gap: 40px;
     width: 100%;
-    margin-top: -85px; /* Mocniejsze pociągnięcie zdjęcia i tekstu w górę */
+    padding-left: 120px; /* Dodatkowy margines wewnętrzny od lewej, by przesunąć zdjęcie bardziej w prawo */
+    margin-top: -25px; /* Obniżono z -85px na -25px – teraz nie jest już za wysoko */
     position: relative;
     z-index: 2;
 }
@@ -350,6 +351,7 @@ footer {
         text-align: center;
         gap: 30px;
         margin-left: 0;
+        padding-left: 0; /* Wyłączamy przesunięcie w prawo na telefonach */
         margin-top: 0;
         width: 100%;
     }
