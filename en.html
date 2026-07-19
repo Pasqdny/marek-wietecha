@@ -102,7 +102,7 @@
             box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
         }
 
-        /* Hero Section */
+        /* Hero Section with background image */
         .hero {
             padding: 200px 0 120px 0;
             min-height: 90vh;
@@ -111,10 +111,25 @@
             position: relative;
         }
 
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* HERE: Add your hero background image path, e.g. 'background-image.jpg' */
+            background-image: url('tutaj-twoje-zdjecie-w-tle.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: -2;
+            pointer-events: none;
+        }
+
         .hero::before {
             content: '';
             position: absolute;
-            top: 20%, left: 50%;
+            top: 20%; left: 50%;
             width: 600px;
             height: 600px;
             background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, transparent 70%);
@@ -214,6 +229,32 @@
             font-size: 1.1rem;
         }
 
+        /* About Section layout with profile photo grid slot */
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-img-box {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 210, 255, 0.3);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
+            background: var(--bg-card);
+        }
+
+        .profile-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
         /* Grid and Glassmorphism Cards */
         .grid {
             display: grid;
@@ -256,6 +297,7 @@
         .spec-list {
             list-style: none;
             margin-top: 20px;
+            text-align: left;
         }
 
         .spec-list li {
@@ -390,6 +432,7 @@
             .nav-links { display: none; }
             .hero h1 { font-size: 2.8rem; }
             .hero h2 { font-size: 1.7rem; }
+            .about-content { grid-template-columns: 1fr; gap: 30px; }
             .contact-container { padding: 30px 20px; }
             .btn-outline { margin-left: 0; margin-top: 15px; display: flex; }
         }
@@ -415,8 +458,9 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with background image -->
     <section id="home" class="hero">
+        <div class="hero-bg-image"></div>
         <div class="container">
             <div class="hero-content">
                 <h1>Precision & Absolute <span class="highlight">Quality</span></h1>
@@ -430,13 +474,23 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section with profile image slot -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">Professional Profile</h2>
             <p class="section-subtitle">My approach to measurement engineering and inspection standards</p>
-            <div class="card">
-                <p>As an experienced Quality Control Inspector and Metrology Specialist, I am responsible for securing uncompromising compliance of products with technical documentation. My daily loop relies on Geometric Dimensioning and Tolerancing (GD&T) analysis and verification of complex mechanical components. I merge a passion for engineering accuracy with thorough Root Cause Analysis of defects to support manufacturing stability.</p>
+            
+            <div class="about-content">
+                <!-- Profile text -->
+                <div class="card">
+                    <p>As an experienced Quality Control Inspector and Metrology Specialist, I am responsible for securing uncompromising compliance of products with technical documentation. My daily loop relies on Geometric Dimensioning and Tolerancing (GD&T) analysis and verification of complex mechanical components. I merge a passion for engineering accuracy with thorough Root Cause Analysis of defects to support manufacturing stability.</p>
+                </div>
+                
+                <!-- Profile image container -->
+                <div class="profile-img-box">
+                    <!-- HERE: Insert your profile photo image filename, e.g. 'profile.jpg' -->
+                    <img src="tutaj-twoje-zdjecie-profilowe.jpg" alt="Profile Picture">
+                </div>
             </div>
         </div>
     </section>
