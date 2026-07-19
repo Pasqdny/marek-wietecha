@@ -3,640 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Quality Control Inspector - Metrologist</title>
+    <title>Marek Wietecha | Quality Control & Metrology Specialist</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        :root {
-            --primary-color: #00d2ff;
-            --secondary-color: #0066ff;
-            --bg-dark: #0a0f24;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --border-glow: rgba(0, 210, 255, 0.15);
-            --text-main: #ffffff;
-            --text-muted: #8fa0dd;
-        }
+        .lang-switch { display: flex; gap: 10px; margin-left: 20px; align-items: center; }
+        .lang-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px; font-weight: bold; transition: all 0.3s ease; }
+        .lang-btn:hover, .lang-btn.active { background: #60a5fa; border-color: #60a5fa; color: #0a1120; }
+        .tech-category-title { color: #60a5fa; font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600; border-left: 3px solid #60a5fa; padding-left: 10px; }
+        
+        /* SVG Icon container styling */
+        .card-icon-container { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 8px; margin-bottom: 15px; color: #60a5fa; transition: all 0.3s ease; }
+        .card:hover .card-icon-container { background: #60a5fa; color: #0a1120; transform: translateY(-2px); }
+        .card-icon-container svg { fill: currentcolor; }
+        
+        .btn-sm { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; font-size: 0.8rem; background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.3); color: #60a5fa; border-radius: 4px; text-decoration: none; margin-top: 10px; font-weight: 500; transition: all 0.2s ease; }
+        .btn-sm:hover { background: #60a5fa; color: #0a1120; }
+        .btn-sm svg { fill: currentcolor; }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: radial-gradient(circle at 50% 0%, #141b41 0%, var(--bg-dark) 70%);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 25px;
-        }
-
-        /* Navigation */
-        header {
-            background: rgba(10, 15, 36, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-            text-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
-        }
-
-        .lang-switch {
-            border: 1px solid var(--primary-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            color: var(--primary-color) !important;
-            font-weight: 600;
-            background: rgba(0, 210, 255, 0.05);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.1);
-        }
-
-        .lang-switch:hover {
-            background: var(--primary-color) !important;
-            color: var(--bg-dark) !important;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-        }
-
-        /* Hero Section with background image */
-        .hero {
-            padding: 200px 0 120px 0;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-bg-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* HERE: Add your hero background image path, e.g. 'background-image.jpg' */
-            background-image: url('tutaj-twoje-zdjecie-w-tle.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.15;
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 20%; left: 50%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero h2 {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            margin-bottom: 25px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 700px;
-        }
-
-        /* General Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: #ffffff;
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(0, 210, 255, 0.5);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #ffffff;
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            margin-left: 20px;
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary-color);
-            background: rgba(0, 210, 255, 0.03);
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.1);
-            color: var(--primary-color);
-        }
-
-        /* Core Section Styles */
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            text-align: center;
-            letter-spacing: -0.5px;
-        }
-
-        .section-subtitle {
-            color: var(--text-muted);
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: 1.1rem;
-        }
-
-        /* About Section layout with profile photo grid slot */
-        .about-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .profile-img-box {
-            width: 100%;
-            max-width: 280px;
-            margin: 0 auto;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 2px solid rgba(0, 210, 255, 0.3);
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
-            background: var(--bg-card);
-        }
-
-        .profile-img-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        /* Grid and Glassmorphism Cards */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 35px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-glow);
-            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.05);
-        }
-
-        .card h3 {
-            margin-bottom: 20px;
-            font-size: 1.35rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .card-icon {
-            width: 24px;
-            height: 24px;
-            fill: var(--primary-color);
-        }
-
-        .spec-list {
-            list-style: none;
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .spec-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            color: var(--text-muted);
-            font-size: 0.98rem;
-        }
-
-        .spec-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 6px;
-            width: 6px;
-            height: 11px;
-            border: solid var(--primary-color);
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-
-        /* Download Section Grid Setup */
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .download-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-
-        .download-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-glow);
-            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.08);
-        }
-
-        .download-icon-box {
-            width: 60px;
-            height: 60px;
-            background: rgba(0, 212, 255, 0.05);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-            border: 1px solid rgba(0, 212, 255, 0.1);
-        }
-
-        .download-icon-box svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--primary-color);
-        }
-
-        .download-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-            font-weight: 700;
-            justify-content: center;
-        }
-
-        .download-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-        }
-
-        /* Contact Form */
-        .contact-container {
-            max-width: 650px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 45px;
-            border-radius: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--text-main);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px 18px;
-            background: rgba(10, 15, 36, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
-            background: rgba(10, 15, 36, 0.8);
-        }
-
-        footer {
-            background: #060917;
-            padding: 40px 0;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.8rem; }
-            .hero h2 { font-size: 1.7rem; }
-            .about-content { grid-template-columns: 1fr; gap: 30px; }
-            .contact-container { padding: 30px 20px; }
-            .btn-outline { margin-left: 0; margin-top: 15px; display: flex; }
-        }
+        /* Grid for download buttons */
+        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 25px; }
+        .download-grid .btn { display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px 15px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation -->
-    <header>
+    <nav class="nav">
         <div class="container nav-container">
-            <a href="#home" class="logo">Metrology.IO</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#machines">Equipment</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#download">Download</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="index.html" class="lang-switch">PL</a></li>
-                </ul>
-            </nav>
+            <div class="logo-custom">
+                <span class="logo-text">MW</span>
+            </div>
+            <div class="links" style="margin-left: auto;">
+                <a href="#about">About Me</a>
+                <a href="#skills">Machinery & Soft</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#projects">Projects</a>
+                <a href="#download">Download</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="lang-switch">
+                <a href="./" class="lang-btn">PL</a>
+                <a href="en.html" class="lang-btn active">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="background: #0a1120 url('images/hero-bg.png') no-repeat center center; background-size: contain;">
+        <div class="container hero-container">
+            <div class="hero-text-block">
+                <p class="tag">QUALITY | METROLOGY | AUTOMOTIVE & MACHINING</p>
+                <h1>Marek Wietecha</h1>
+                <h2>Quality Control & Metrology Specialist</h2>
+                <p class="hero-sub">Over 20 years in the manufacturing industry | 13+ years in QA/QC & Metrology</p>
+                <div class="buttons">
+                    <a class="btn" href="#projects">View Projects</a>
+                    <a class="btn ghost" href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="profile-block">
+                <div class="profile-photo-new">
+                    <img src="images/profile.png" alt="Marek Wietecha">
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section with background image -->
-    <section id="home" class="hero">
-        <div class="hero-bg-image"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Precision & Absolute <span class="highlight">Quality</span></h1>
-                <h2>Quality Control Inspector - Metrologist</h2>
-                <p>I specialize in advanced industrial metrology, high-precision 3D geometric measurements (CMM), and overseeing production standards according to strict quality management norms.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn">Explore Projects</a>
-                    <a href="#contact" class="btn btn-outline">Message Me</a>
-                </div>
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="glass">
+                <p>I am an experienced quality control inspector and metrologist with over 13 years of experience in the QA/QC area and more than 20 years in the manufacturing and machining industry. I specialize in incoming inspection of steel and aluminum components as well as castings, 2D/3D technical documentation analysis, and advanced dimensional inspection of parts.</p>
+                <p style="margin-top: 15px;">In my daily routine, I combine metrological precision with modern technologies – ranging from operating CMM machines and 3D scanners, through GD&T tolerance analysis in Geomagic Control X and PolyWorks, to process management within the SAP QM system and implementing AIAG Core Tools standards (FMEA, PPAP, MSA, SPC). I focus on an analytical approach and data-driven decision making.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section with profile image slot -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">Professional Profile</h2>
-            <p class="section-subtitle">My approach to measurement engineering and inspection standards</p>
+        <section id="skills">
+            <h2>Machinery Park & Digital Competencies</h2>
             
-            <div class="about-content">
-                <!-- Profile text -->
-                <div class="card">
-                    <p>As an experienced Quality Control Inspector and Metrology Specialist, I am responsible for securing uncompromising compliance of products with technical documentation. My daily loop relies on Geometric Dimensioning and Tolerancing (GD&T) analysis and verification of complex mechanical components. I merge a passion for engineering accuracy with thorough Root Cause Analysis of defects to support manufacturing stability.</p>
-                </div>
-                
-                <!-- Profile image container -->
-                <div class="profile-img-box">
-                    <!-- HERE: Insert your profile photo image filename, e.g. 'profile.jpg' -->
-                    <img src="tutaj-twoje-zdjecie-profilowe.jpg" alt="Profile Picture">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Equipment/Machines Section -->
-    <section id="machines">
-        <div class="container">
-            <h2 class="section-title">Laboratory & Hardware</h2>
-            <p class="section-subtitle">Measurement systems and inspection instruments I operate daily</p>
+            <div class="tech-category-title">Measurement Equipment & Hardware</div>
             <div class="grid">
                 <div class="card">
-                    <h3>
-                        <svg class="card-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-                        Coordinate Measuring Technique (CMM)
-                    </h3>
-                    <p>Advanced validation of complex 3D engineering geometries and machine parts.</p>
-                    <ul class="spec-list">
-                        <li>Probe path programming and sensor system calibration</li>
-                        <li>Analysis of form, orientation, location, and runout tolerances</li>
-                    </ul>
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    </div>
+                    <h3>Coordinate Measuring Machines (CMM)</h3>
+                    <p>High-precision <strong>DEA (Hexagon) CMM</strong>. Dimensional verification, geometric analysis, and dimensional layouts of technical components and shop-floor fixtures.</p>
                 </div>
                 <div class="card">
-                    <h3>
-                        <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                        Optical Systems & 3D Scanning
-                    </h3>
-                    <p>Non-contact point cloud acquisition and digital reconstruction of geometries.</p>
-                    <ul class="spec-list">
-                        <li>3D inspection mapping relative to nominal CAD models</li>
-                        <li>Operation of profile projectors and digital control microscopes</li>
-                    </ul>
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    </div>
+                    <h3>Articulated Arms & 3D Scanners</h3>
+                    <p>Portable 7-axis <strong>Hexagon Absolute Arm</strong> and <strong>Smart Solutions (ZG-Track)</strong> optical 3D scanning system engineered for heavy welded structures and raw components.</p>
                 </div>
                 <div class="card">
-                    <h3>
-                        <svg class="card-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 12H7v-2h10v2zm0-4H7V9h10v2z"/></svg>
-                        Shop-Floor Metrology
-                    </h3>
-                    <p>Continuous supervision and checkup of gauge and control tooling.</p>
-                    <ul class="spec-list">
-                        <li>High-precision tasks: micrometers, bore gauges, 2D height gauges</li>
-                        <li>Technical state inspection and routine validation of tools</li>
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm5 10H7v-2h10v2z"/></svg>
+                    </div>
+                    <h3>Form, Surface & Coating Inspection</h3>
+                    <p>Surface roughness and profile analysis via <strong>Taylor Hobson Form Talysurf</strong> and <strong>TESA Rugosurf 90G</strong>. Precision height inspection using <strong>TESA Micro-Hite 6</strong> and non-destructive <strong>ElektroPhysik</strong> coating thickness gauges.</p>
+                </div>
+            </div>
+
+            <div class="tech-category-title">Metrology Software & Enterprise Systems</div>
+            <div class="grid">
+                <div class="card spec-card">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M21.9 15.4c-.2-.7-.5-1.3-.9-1.9l.4-.4c.5-.5.5-1.3 0-1.8l-1.4-1.4c-.5-.5-1.3-.5-1.8 0l-.4.4c-.6-.4-1.2-.7-1.9-.9V9c0-.7-.6-1.3-1.3-1.3h-2c-.7 0-1.3.6-1.3 1.3v.4c-.7.2-1.3.5-1.9.9l-.4-.4c-.5-.5-1.3-.5-1.8 0L6 11.3c-.5.5-.5 1.3 0 1.8l.4.4c-.4.6-.7 1.2-.9 1.9H5c-.7 0-1.3.6-1.3 1.3v2c0 .7.6 1.3 1.3 1.3h.4c.2.7.5 1.3.9 1.9l-.4.4c-.5.5-.5 1.3 0 1.8l1.4 1.4c.5.5 1.3.5 1.8 0l.4-.4c.6.4 1.2.7 1.9.9v.4c0 .7.6 1.3 1.3 1.3h2c.7 0 1.3-.6 1.3-1.3v-.4c.7-.2 1.3-.5 1.9-.9l.4.4c.5.5 1.3.5 1.8 0l1.4-1.4c.5-.5.5-1.3 0-1.8l-.4-.4c.4-.6.7-1.2.9-1.9h.4c.7 0 1.3-.6 1.3-1.3v-2c0-.7-.6-1.3-1.3-1.3h-.4zM14 18c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
+                    </div>
+                    <h3>Metrology & 3D Data Processing</h3>
+                    <ul>
+                        <li><strong>PC-DMIS</strong> – CMM programming, creation and execution of inspection routines</li>
+                        <li><strong>PolyWorks</strong> – Universal 3D metrology and advanced dimensional analysis</li>
+                        <li><strong>Geomagic Control X</strong> – 3D inspection, CAD comparison, and color deviation maps</li>
+                        <li><strong>HX HyperScan</strong> – Point cloud acquisition, processing, and scanning alignment</li>
+                    </ul>
+                </div>
+                <div class="card spec-card">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+                    </div>
+                    <h3>ERP & PLM Architecture</h3>
+                    <ul>
+                        <li><strong>SAP / SAP QM</strong> – Quality inspection lots, status verification, and supplier claims management</li>
+                        <li><strong>Siemens Teamcenter</strong> – Managing technical data and drawings within the corporate PLM structure</li>
+                        <li><strong>BAAN / Impuls</strong> – Operational support for production tracking and manufacturing workflows</li>
+                    </ul>
+                </div>
+                <div class="card spec-card">
+                    <div class="card-icon-container">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H7v-7h3v7zm4 0h-3V7h3v10zm4 0h-3v-4h3v4z"/></svg>
+                    </div>
+                    <h3>Statistical Analysis & Productivity</h3>
+                    <ul>
+                        <li><strong>Minitab / Statistica</strong> – Process capability evaluation (Cp/Cpk) and extensive MSA studies</li>
+                        <li><strong>Advanced Microsoft Excel</strong> – Custom macros, automated quality reporting, and data consolidation</li>
+                        <li><strong>2D/3D CAD Support</strong> – Extensive hands-on experience working directly with 3D models and native drawings</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Case Studies</h2>
-            <p class="section-subtitle">Real deployments targeted at high precision and output performance</p>
+            <div class="tech-category-title">Quality Standards & Blueprint Analysis</div>
             <div class="grid">
                 <div class="card">
-                    <h3>CMM Inspection Plan Optimization</h3>
-                    <p>Rebuilt the stylus routing logic on a CMM machine for high-volume automotive parts. Successfully shaved 22% off the cycle time by cutting redundant air paths, retaining total measurement data integrity and accuracy.</p>
+                    <h3>GD&T / GPS Blueprint Interpretation</h3>
+                    <p>Flawless interpretation of complex blueprints under <strong>ISO GPS / ASME GD&T</strong> standards. Verification of position, profile, flatness, parallelism, and runout using sophisticated datum reference frames.</p>
                 </div>
                 <div class="card">
-                    <h3>SPC Control Chart Implementation</h3>
-                    <p>Introduced statistical control charts (X-bar R) for critical-to-quality features. The shift unlocked earlier tracking of cutting tool wear trends, dropping scrap rates by 15% quarter-over-quarter.</p>
+                    <h3>Quality Systems & Core Tools</h3>
+                    <p>Operating fluidly within <strong>ISO 9001:2015</strong> and <strong>IATF 16949</strong> environments (TÜV NORD Certified Internal Auditor). Hands-on mastery of <strong>AIAG Core Tools</strong>: PPAP, FMEA, SPC, and MSA.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Download Section -->
-    <section id="download">
-        <div class="container">
-            <h2 class="section-title">Documentation & Assets</h2>
-            <p class="section-subtitle">Download complete document bundles in PDF format</p>
-            
-            <div class="download-grid">
-                <!-- Portfolio PL -->
-                <div class="download-card">
-                    <div class="download-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-                    </div>
-                    <h3>Portfolio PL</h3>
-                    <p>Project showcase (PDF)</p>
-                    <a href="portfolio-pl.pdf" download class="btn" style="width: 100%;">Download PL</a>
+        <section id="certificates">
+            <h2>Certificates & Qualifications</h2>
+            <div class="grid">
+                <div class="card spec-card">
+                    <h3>Automotive & Quality Management</h3>
+                    <ul>
+                        <li>Hexagon Metrology Certificate – CMM Operation & Programming (PC-DMIS Level I & II)</li>
+                        <li>Internal Auditor ISO 9001:2015 – Quality Asia Certifications</li>
+                        <li>Internal process and organization auditor according to ISO 9001 / TS 16949 – TÜV Nord</li>
+                        <li>AIAG & VDA FMEA – Essentials for Transitioning</li>
+                        <li>AIAG APQP/PPAP, SPC, MSA, Control Plan</li>
+                        <li>Quality Management & Certification (UNIDO)</li>
+                        <li>Certified Six Sigma White Belt & Introduction to Six Sigma</li>
+                    </ul>
                 </div>
-
-                <!-- Portfolio EN -->
-                <div class="download-card">
-                    <div class="download-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-                    </div>
-                    <h3>Portfolio EN</h3>
-                    <p>Project showcase (PDF)</p>
-                    <a href="portfolio-en.pdf" download class="btn" style="width: 100%;">Download EN</a>
+                <div class="card spec-card">
+                    <h3>ERP Systems & Data Analysis</h3>
+                    <ul>
+                        <li>Applying SAP S/4HANA Quality Management (SAP)</li>
+                        <li>SAP Materials Planning, MRP Strategies & Production Planning (LinkedIn)</li>
+                        <li>Advanced Microsoft Excel (OPENMIND)</li>
+                        <li>SQL Server data reporting and aggregation</li>
+                        <li>Data analysis methods, techniques, and tools (Czestochowa University of Technology)</li>
+                    </ul>
                 </div>
-
-                <!-- CV PL -->
-                <div class="download-card">
-                    <div class="download-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                    </div>
-                    <h3>CV PL</h3>
-                    <p>Polish Resume (PDF)</p>
-                    <a href="cv-pl.pdf" download class="btn" style="width: 100%;">Download PL</a>
+                <div class="card spec-card">
+                    <h3>Management, AI & Technical</h3>
+                    <ul>
+                        <li>Google Certificate – Using AI in business development (98% exam score)</li>
+                        <li>Innovation Management & Sustainable Supply Chain Management (UNIDO)</li>
+                        <li>Managerial Skills & Project Management (PARP / AEH Warsaw)</li>
+                        <li>Technical Drawing: Mechanical (BIMv) & Construction (Cracow University of Technology)</li>
+                        <li>UDT Qualifications (Stationary cranes, overhead cranes, hoists, and winches)</li>
+                    </ul>
                 </div>
-
-                <!-- CV EN -->
-                <div class="download-card">
-                    <div class="download-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                    </div>
-                    <h3>CV EN</h3>
-                    <p>English Resume (PDF)</p>
-                    <a href="cv-en.pdf" download class="btn" style="width: 100%;">Download EN</a>
+                <div class="card spec-card">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li><strong>Polish:</strong> Native</li>
+                        <li><strong>English:</strong> Business C2 (Saylor Academy Certificate, USA)</li>
+                        <li><strong>Russian:</strong> Communication basics (DigitalUni Course)</li>
+                        <li><strong>Spanish:</strong> Level A1 (In progress)</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Initiate Contact</h2>
-            <p class="section-subtitle">Let's discuss inspection projects or technical collaboration</p>
-            <div class="contact-container">
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name / Represented entity</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correspondence Email</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Engineering inquiry details</label>
-                        <textarea id="message" class="form-control" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
-                </form>
+        <section id="projects">
+            <h2>Projects & Experience</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>3D Inspection & PPAP Reporting</h3>
+                    <p>Implementing advanced dimensional inspection and 3D scanning solutions for automotive and mechanical parts. Preparing dimensional layouts and full documentation packages for serial production sign-off (PPAP).</p>
+                </div>
+                <div class="card">
+                    <h3>Supplier Quality & Claims Management</h3>
+                    <p>Execution of incoming inspections, non-conformance tracking, and cross-functional supplier claims management (Production-Engineering-Supplier) using SAP and Teamcenter enterprise tools.</p>
+                </div>
+                <div class="card">
+                    <h3>Process Optimization & Lean AI</h3>
+                    <p>Evaluating and reducing manufacturing waste through OEE monitoring and root-cause analysis (5Why, FMEA). Utilizing Generative AI platforms to automate technical data processing and engineering workflow streams.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Quality Inspector - Metrologist. All rights reserved.</p>
-        </div>
-    </footer>
+        <section id="download" style="text-align: center; padding: 60px 20px;">
+            <h2>Download Documents</h2>
+            <div class="glass" style="max-width: 800px; margin: 0 auto; padding: 30px;">
+                <p style="margin-bottom: 20px; color: #9ca3af;">Review the comprehensive documentation of my qualifications, engineering milestones, and credentials. Select a file to download in PDF format.</p>
+                <div class="download-grid">
+                    <a href="images/Marek_Wietecha_Portfolio.pdf" download="Marek_Wietecha_Portfolio.pdf" class="btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                        Portfolio (PDF)
+                    </a>
+                    <a href="images/Marek_Wietecha_CV.pdf" download="Marek_Wietecha_CV.pdf" class="btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                        CV (PDF)
+                    </a>
+                    <a href="images/Marek_Wietecha_Certyfikaty_Metrologia.pdf" download="Marek_Wietecha_Certyfikaty_Metrologia.pdf" class="btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                        Metrology Certificates
+                    </a>
+                    <a href="images/Marek_Wietecha_Certyfikaty_Jakosc.pdf" download="Marek_Wietecha_Certyfikaty_Jakosc.pdf" class="btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                        Quality Certificates
+                    </a>
+                </div>
+            </div>
+        </section>
 
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="glass" style="text-align: center;">
+                <p>Feel free to reach out for business or technical inquiries:</p>
+                <div class="contact-links" style="display: flex; flex-direction: column; gap: 15px; max-width: 320px; margin: 20px auto 0;">
+                    <a href="https://www.linkedin.com/in/marek-wietecha" target="_blank" rel="noopener noreferrer" class="contact-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="mailto:m.p.wietecha@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        m.p.wietecha@gmail.com
+                    </a>
+                    <a href="tel:+48536144501" class="contact-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +48 536 144 501
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Marek Wietecha. All rights reserved.
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
