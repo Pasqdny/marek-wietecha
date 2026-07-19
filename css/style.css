@@ -96,11 +96,12 @@ body {
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end; 
+    justify-content: center; 
     gap: 40px;
     width: 100%;
-    padding-left: 120px;
-    margin-top: -10px; /* JEDYNA ZMIANA: Obniżono baner o 1 cm z -45px na -10px */
+    max-width: 1200px;
+    margin: -10px auto 0 auto; /* Utrzymane obniżenie o 1 cm */
+    padding: 0 20px;
     position: relative;
     z-index: 2;
 }
@@ -115,7 +116,7 @@ body {
     width: 100%;
 }
 
-/* Zdjęcie profilowe - PO PRAWEJ STRONIE */
+/* Zdjęcie profilowe - PRZENIESIONE NA PRAWO BEZ UCINANIA KRAWĘDZI */
 .profile-block {
     display: flex;
     justify-content: center;
