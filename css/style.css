@@ -142,22 +142,18 @@ body {
     border-radius: 16px;
     order: 2;
     max-width: 650px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Zmusza wszystkie elementy wewnątrz bloku (w tym tag) do wyrównania do lewej krawędzi */
 }
 
-/* Napis nad imieniem i nazwiskiem - wymuszone wyrównanie do lewej */
+/* ZMIANA TYLKO TUTAJ: Wymuszenie pozycji napisu całkowicie do lewej strony */
 .hero .tag {
     color: #3b82f6;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    margin-left: 0 !important;
-    margin-right: auto !important;
+    display: block !important;
     text-align: left !important;
-    align-self: flex-start !important;
+    width: 100% !important;
 }
 
 .hero h1 {
@@ -369,12 +365,10 @@ footer {
         padding: 20px;
         order: 2;
         max-width: 100%;
-        align-items: center; /* Centrowanie na urządzeniach mobilnych */
     }
 
     .hero .tag {
         text-align: center !important;
-        align-self: center !important;
     }
 
     .profile-block {
