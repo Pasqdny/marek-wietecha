@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Close Mobile Menu on Link Click & Active Link Highlight
+            // Close Mobile Menu on Link Click & Smooth Scroll handling
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     document.body.classList.remove('menu-open');
@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         mobileMenuBtn.setAttribute('aria-expanded', 'false');
                     }
 
-                    // Smooth Scroll handling
                     const targetId = link.getAttribute('href');
                     if (targetId && targetId.startsWith('#')) {
                         e.preventDefault();
@@ -88,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const animateCounter = (counter) => {
                 const target = parseInt(counter.getAttribute('data-target') || '0', 10);
-                const duration = 2000; // ms
+                const duration = 1800; // ms
                 const stepTime = 20; // ms
                 const steps = duration / stepTime;
                 const increment = target / steps;
@@ -140,11 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const matchesSearch = cardTitle.includes(searchQuery) || cardIssuer.includes(searchQuery);
 
                     if (matchesCategory && matchesSearch) {
-                        card.style.display = 'block';
+                        card.style.display = 'flex';
                         setTimeout(() => {
                             card.style.opacity = '1';
                             card.style.transform = 'translateY(0)';
-                        }, 50);
+                        }, 30);
                     } else {
                         card.style.opacity = '0';
                         card.style.transform = 'translateY(10px)';
@@ -184,11 +183,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (details) {
                         const isExpanded = btn.getAttribute('aria-expanded') === 'true';
                         btn.setAttribute('aria-expanded', !isExpanded);
-                        details.classList.toggle('active');
-
+                        
                         if (!isExpanded) {
+                            details.style.display = 'block';
                             btn.textContent = btn.getAttribute('data-text-less') || 'Hide Details';
                         } else {
+                            details.style.display = 'none';
                             btn.textContent = btn.getAttribute('data-text-more') || 'Show Details';
                         }
                     }
@@ -220,7 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
            7. ACCESSIBILITY ENHANCEMENTS
            ========================================================================== */
         initAccessibility() {
-            // Keyboard navigation enhancement for custom interactive elements
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     document.body.classList.remove('menu-open');
@@ -233,6 +232,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Execute application logic
     App.init();
 });
