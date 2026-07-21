@@ -115,11 +115,10 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION - PRZESUNIĘCIE DLA TEKSTU I NAZWISKA
    ========================================================================== */
 .hero {
-    padding: 130px 0 70px 0;
-    background: var(--bg-color);
+    padding: 140px 0 80px 0;
     border-bottom: 1px solid var(--card-border);
     position: relative;
 }
@@ -128,34 +127,38 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 20px;
+    position: relative;
 }
 
 .hero-text-block {
-    flex: 1;
-    max-width: 650px;
-    z-index: 2;
+    flex: 0 0 380px; /* Sztywna szerokość bloku tekstu, by mieścił się idealnie po lewej stronie obrazka */
+    max-width: 380px;
+    margin-right: auto; /* Odepchnięcie w lewo */
+    z-index: 5;
 }
 
 .tag {
     color: var(--accent-color);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     margin-bottom: 12px;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .hero h1 {
-    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-size: 2.5rem;
     line-height: 1.1;
     margin-bottom: 10px;
     color: #ffffff;
     font-weight: 800;
+    white-space: nowrap;
 }
 
 .hero h2 {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-size: 1.15rem;
     font-weight: 400;
     color: var(--text-secondary);
     margin-bottom: 15px;
@@ -163,9 +166,10 @@ body {
 }
 
 .hero-sub {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    line-height: 1.4;
 }
 
 /* Blok ze zdjęciem profilowym */
@@ -174,16 +178,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 5;
+    margin-left: 20px;
 }
 
 .profile-photo-new {
-    width: 240px;
-    height: 240px;
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid var(--accent-color);
-    box-shadow: 0 0 35px rgba(96, 165, 250, 0.25);
+    box-shadow: 0 0 30px rgba(96, 165, 250, 0.25);
     aspect-ratio: 1 / 1;
 }
 
@@ -198,19 +203,22 @@ body {
    ========================================================================== */
 .buttons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
+    z-index: 5;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 10px 20px;
     background: var(--accent-color);
     color: var(--bg-color);
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
     border: 1px solid var(--accent-color);
+    white-space: nowrap;
 }
 
 .btn:hover {
@@ -232,13 +240,14 @@ body {
 }
 
 .contact-btn {
-    padding: 12px 20px;
+    padding: 10px 18px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--card-border);
     color: var(--text-primary);
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
 }
 
@@ -395,10 +404,25 @@ footer {
 /* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
+@media (max-width: 992px) {
+    .hero-text-block {
+        flex: 1;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
+    }
+
+    .hero-text-block {
+        margin-right: 0;
+    }
+
+    .hero h1, .tag {
+        white-space: normal;
     }
 
     .buttons {
