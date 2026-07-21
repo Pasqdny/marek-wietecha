@@ -115,18 +115,16 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION - TŁO PRZESUNIĘTE MAKSYMALNIE W LEWO
+   HERO SECTION - DOPASOWANIE TŁA DO AKAPITU (CONTAINERA)
    ========================================================================== */
 .hero {
     padding: 140px 0 80px 0;
     border-bottom: 1px solid var(--card-border);
     position: relative;
-    /* Przesunięcie tła maksymalnie w lewo bez rozciągania */
-    background-position: left center !important;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
+    background: none !important; /* Wyłączamy tło z pełnej szerokości ekranu */
 }
 
+/* Tło trafia do kontenera z treścią, więc zaczyna się DOKŁADNIE tam gdzie akapit poniżej */
 .hero-container {
     display: flex;
     align-items: center;
@@ -134,9 +132,12 @@ body {
     gap: 20px;
     position: relative;
     z-index: 2;
+    background-position: left center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
 }
 
-/* Blok z nazwiskami usytuowany po prawej stronie tła */
+/* Blok tekstowy z nazwiskiem umieszczony po prawej stronie baneru */
 .hero-text-block {
     flex: 0 0 360px !important;
     width: 360px !important;
@@ -178,7 +179,7 @@ body {
     line-height: 1.4;
 }
 
-/* Blok ze zdjęciem profilowym po prawej stronie */
+/* Blok ze zdjęciem profilowym */
 .profile-block {
     flex-shrink: 0;
     display: flex;
@@ -414,6 +415,7 @@ footer {
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
+        background: none !important;
     }
 
     .hero-text-block {
