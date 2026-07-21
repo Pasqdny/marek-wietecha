@@ -5,81 +5,373 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     
-    <title>Marek Wietecha | Quality Inspector &amp; Metrology Specialist | Portfolio</title>
-    <meta name="description" content="Portfolio of a Senior Quality Inspector &amp; Industrial Metrology Specialist with over 13 years of experience in Quality Control and 20 years in mechanical engineering. Expertise: CMM, 3D Scanning, PolyWorks, IATF 16949, Automotive &amp; Heavy Industry.">
-    <meta name="keywords" content="Quality Inspector, Metrology Specialist, Quality Control Technician, CMM Inspection, PolyWorks, PC-DMIS, Hexagon Absolute Arm, IATF 16949, Supplier Quality Inspection, Automotive Metrology, Heavy Industry">
+    <title>Marek Wietecha | Industrial Metrology & Quality Control Expert</title>
+    <meta name="description" content="Portfolio of a Quality Control & Industrial Metrology Specialist with 13+ years of experience in QC and 20+ years in manufacturing. Specializing in 3D Measurement, CMM, PolyWorks, IATF 16949, Automotive, and Heavy Industry.">
+    <meta name="keywords" content="Quality Inspector, Industrial Metrologist, Quality Engineer, 3D Measurement, PolyWorks, PC-DMIS, Hexagon Absolute Arm, IATF 16949, Supplier Quality, Automotive Metrology">
     <meta name="author" content="Marek Wietecha">
-    <link rel="canonical" href="https://marekwietecha.pl/en.html">
 
-    <!-- Language Alternates -->
-    <link rel="alternate" hreflang="pl" href="https://marekwietecha.pl/">
-    <link rel="alternate" hreflang="en" href="https://marekwietecha.pl/en.html">
+    <style>
+      /* ==========================================================================
+         Marek Wietecha - Portfolio Stylesheet (English Version)
+         ========================================================================== */
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="alternate icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+      :root {
+        --bg-primary: #090d16;
+        --bg-secondary: #0f172a;
+        --bg-card: #1e293b;
+        --bg-card-hover: #334155;
+        
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        
+        --accent-amber: #f59e0b;
+        --accent-amber-hover: #d97706;
+        --accent-amber-light: rgba(245, 158, 11, 0.1);
+        --accent-blue: #3b82f6;
+        --accent-blue-light: rgba(59, 130, 246, 0.1);
+        
+        --border-color: #334155;
+        --border-color-light: #475569;
+        
+        --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        
+        --container-width: 1200px;
+        --header-height: 70px;
+        --border-radius-sm: 6px;
+        --border-radius-md: 12px;
+        --border-radius-lg: 16px;
+        
+        --transition-fast: 0.2s ease;
+        --transition-normal: 0.3s ease;
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+      }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://marekwietecha.pl/en.html">
-    <meta property="og:title" content="Marek Wietecha | Quality Inspector &amp; Metrology Specialist">
-    <meta property="og:description" content="Industrial Metrology and Quality Control Specialist. Over 13 years in 3D measurements, part inspection, and quality audits in Automotive &amp; Manufacturing.">
-    <meta property="og:image" content="https://marekwietecha.pl/og-image.jpg">
-    <meta property="og:locale" content="en_US">
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Marek Wietecha | Quality Inspector &amp; Metrology Specialist">
-    <meta name="twitter:description" content="Industrial Metrology and Quality Control Specialist with 13+ years of technical experience.">
-    <meta name="twitter:image" content="https://marekwietecha.pl/og-image.jpg">
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+      }
 
-    <!-- CSS Links -->
-    <link rel="stylesheet" href="style.css">
+      body {
+        font-family: var(--font-family);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    <!-- JSON-LD Structured Data (Schema.org Person) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Marek Wietecha",
-      "jobTitle": "Quality Inspector & Metrology Specialist",
-      "description": "Industrial Metrology and Quality Control Specialist with over 13 years of dedicated quality inspection experience and 20 years in mechanical manufacturing.",
-      "url": "https://marekwietecha.pl/en.html",
-      "knowsAbout": [
-        "Industrial Metrology",
-        "Coordinate Measuring Machines (CMM)",
-        "3D Scanning",
-        "PolyWorks Metrology",
-        "PC-DMIS",
-        "ISO 9001",
-        "IATF 16949",
-        "Supplier Quality Inspection",
-        "Quality Control"
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "ISO 9001 / IATF 16949 Quality Systems & Metrology Certifications"
-        }
-      ]
-    }
-    </script>
+      ul, ol { list-style: none; }
+      a { color: inherit; text-decoration: none; transition: color var(--transition-fast); }
+      img { max-width: 100%; height: auto; display: block; }
+      button, input, textarea { font-family: inherit; font-size: inherit; color: inherit; }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 1rem;
+        background: var(--accent-amber);
+        color: #000;
+        font-weight: 700;
+        padding: 0.75rem 1.25rem;
+        z-index: 9999;
+        border-radius: var(--border-radius-sm);
+        transition: top var(--transition-fast);
+      }
+      .skip-link:focus { top: 1rem; }
+
+      .container {
+        width: 100%;
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3.5rem auto;
+      }
+
+      .section-title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        color: var(--text-primary);
+        margin-bottom: 0.75rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 4px;
+        background: var(--accent-amber);
+        margin: 0.75rem auto 0 auto;
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem 1.75rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: var(--border-radius-sm);
+        transition: all var(--transition-fast);
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background-color: var(--accent-amber);
+        color: #0f172a;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--accent-amber-hover);
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--text-primary);
+        border-color: var(--border-color-light);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--bg-card);
+        border-color: var(--text-secondary);
+      }
+
+      /* Header Nav */
+      .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        background-color: rgba(9, 13, 22, 0.92);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .logo { display: flex; flex-direction: column; }
+      .logo-name { font-size: 1.2rem; font-weight: 800; color: var(--text-primary); }
+      .logo-title { font-size: 0.75rem; font-weight: 600; color: var(--accent-amber); text-transform: uppercase; letter-spacing: 0.05em; }
+
+      .nav-list { display: flex; gap: 1.75rem; }
+      .nav-link { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); padding: 0.5rem 0; position: relative; }
+      .nav-link:hover, .nav-link.active { color: var(--accent-amber); }
+      .nav-link.active::after {
+        content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--accent-amber);
+      }
+
+      .nav-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .hamburger-bar {
+        display: block; width: 24px; height: 2px; background-color: var(--text-primary); transition: all var(--transition-fast);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                    radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
+                    var(--bg-primary);
+        padding: 6rem 0 5rem 0;
+      }
+
+      .hero-container {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .hero-subtitle {
+        font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-amber); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; font-weight: 600;
+      }
+
+      .hero-title {
+        font-size: 2.75rem; font-weight: 900; line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -0.03em;
+        background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      }
+
+      .hero-description { font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.7; }
+      .hero-description strong { color: var(--text-primary); }
+
+      .hero-stats {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; padding: 1.5rem;
+        background-color: rgba(30, 41, 59, 0.5); border: 1px solid var(--border-color); border-radius: var(--border-radius-md);
+      }
+
+      .stat-number { display: block; font-size: 2rem; font-weight: 800; color: var(--accent-amber); line-height: 1; margin-bottom: 0.35rem; }
+      .stat-label { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.3; }
+
+      .hero-actions { display: flex; gap: 1rem; }
+
+      .placeholder-media {
+        width: 100%; height: 350px; background: var(--bg-card); border: 2px dashed var(--border-color-light);
+        border-radius: var(--border-radius-lg); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; padding: 2rem;
+      }
+
+      /* About Section */
+      .about { background-color: var(--bg-secondary); }
+      .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; }
+      .about-text-card, .about-highlights-card {
+        background-color: var(--bg-card); padding: 2.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color);
+      }
+      .about-text-card h3, .about-highlights-card h3 { font-size: 1.35rem; color: var(--text-primary); margin-bottom: 1.25rem; }
+      .about-text-card p { color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.7; }
+      .highlight-list { display: flex; flex-direction: column; gap: 1rem; }
+      .highlight-list li { color: var(--text-secondary); font-size: 0.95rem; padding-left: 1.5rem; position: relative; line-height: 1.5; }
+      .highlight-list li::before { content: "■"; position: absolute; left: 0; top: 0; color: var(--accent-amber); font-size: 0.75rem; }
+
+      /* Experience Timeline */
+      .experience { background-color: var(--bg-primary); }
+      .timeline { position: relative; max-width: 900px; margin: 0 auto; }
+      .timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 20px; width: 2px; background-color: var(--border-color); }
+      .timeline-item { position: relative; padding-left: 60px; margin-bottom: 3rem; }
+      .timeline-marker { position: absolute; top: 0; left: 11px; width: 20px; height: 20px; border-radius: 50%; background-color: var(--bg-primary); border: 4px solid var(--accent-amber); z-index: 2; }
+      .timeline-content { background-color: var(--bg-card); padding: 2rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-md); }
+      .timeline-header { margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+      .timeline-period { display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-amber); background-color: var(--accent-amber-light); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); margin-bottom: 0.5rem; font-weight: 600; }
+      .timeline-role { font-size: 1.35rem; font-weight: 700; color: var(--text-primary); }
+      .timeline-company { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
+      .timeline-body ul { display: flex; flex-direction: column; gap: 0.75rem; }
+      .timeline-body li { color: var(--text-secondary); font-size: 0.95rem; padding-left: 1.25rem; position: relative; line-height: 1.6; }
+      .timeline-body li::before { content: "•"; position: absolute; left: 0; color: var(--accent-amber); font-weight: bold; }
+
+      /* Skills, Equipment, Software */
+      .skills, .software { background-color: var(--bg-secondary); }
+      .equipment, .certificates { background-color: var(--bg-primary); }
+
+      .skills-grid, .equipment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+      .skill-category, .equipment-group { background-color: var(--bg-card); padding: 2rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); }
+      .skill-category h3, .equipment-group-header h3 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); }
+      .equipment-group-header h3 { color: var(--accent-amber); }
+      
+      .skill-list, .equipment-group ul { display: flex; flex-direction: column; gap: 0.75rem; }
+      .skill-list li { color: var(--text-secondary); font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; }
+      .skill-list li::before { content: "✓"; color: var(--accent-blue); font-weight: bold; }
+      .equipment-group li { color: var(--text-secondary); font-size: 0.9rem; }
+      .equipment-group strong { color: var(--text-primary); display: block; }
+
+      .software-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+      .software-card { background-color: var(--bg-card); padding: 1.75rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); }
+      .software-badge { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-blue); background-color: var(--accent-blue-light); padding: 0.2rem 0.5rem; border-radius: var(--border-radius-sm); margin-bottom: 1rem; font-weight: 600; display: inline-block; }
+
+      .certificates-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+      .cert-card { background-color: var(--bg-card); padding: 1.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); display: flex; gap: 1.25rem; align-items: center; }
+      .cert-icon { color: var(--accent-amber); background-color: var(--accent-amber-light); padding: 0.75rem; border-radius: var(--border-radius-sm); }
+
+      /* Contact & Form */
+      .contact { background-color: var(--bg-secondary); }
+      .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; max-width: 1000px; margin: 0 auto; }
+      .contact-info h3 { font-size: 1.35rem; color: var(--text-primary); margin-bottom: 1rem; }
+      .contact-info p { color: var(--text-secondary); margin-bottom: 2rem; }
+      .contact-methods { display: flex; flex-direction: column; gap: 1.5rem; }
+      .contact-item { display: flex; align-items: center; gap: 1rem; }
+      .contact-icon { color: var(--accent-amber); background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: var(--border-radius-sm); }
+      .contact-label { display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; }
+      .contact-link, .contact-text { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+
+      .contact-form { background-color: var(--bg-card); padding: 2.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); }
+      .form-group { margin-bottom: 1.5rem; }
+      .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
+      .required { color: var(--accent-amber); }
+      .form-input { width: 100%; background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); padding: 0.75rem 1rem; color: var(--text-primary); }
+      .form-input:focus { outline: none; border-color: var(--accent-amber); }
+      .form-submit { width: 100%; }
+
+      /* Footer */
+      .footer { background-color: #05080f; padding: 2.5rem 0; border-top: 1px solid var(--border-color); text-align: center; }
+      .footer-copyright { font-size: 0.9rem; color: var(--text-secondary); }
+      .footer-role { font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 0.25rem; }
+
+      /* Responsive Rules */
+      @media (max-width: 992px) {
+        .hero-container, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+        .skills-grid, .equipment-grid, .software-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 768px) {
+        .nav-toggle { display: flex; }
+        .nav { position: absolute; top: var(--header-height); left: 0; width: 100%; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 1.5rem; display: none; }
+        .nav.is-open { display: block; }
+        .nav-list { flex-direction: column; gap: 1rem; }
+        .hero-title { font-size: 2.15rem; }
+        .hero-stats, .skills-grid, .equipment-grid, .software-grid, .certificates-grid { grid-template-columns: 1fr; }
+        .hero-actions { flex-direction: column; }
+      }
+    </style>
 </head>
 <body>
 
-    <!-- Skip link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation Header -->
+    <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="container header-container">
-            <a href="#hero" class="logo" aria-label="Homepage - Marek Wietecha">
+            <a href="#hero" class="logo" aria-label="Home page">
                 <span class="logo-name">Marek Wietecha</span>
                 <span class="logo-title">Quality &amp; Metrology</span>
             </a>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
@@ -87,89 +379,90 @@
 
             <nav class="nav" id="primary-navigation" aria-label="Primary navigation">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="#hero" class="nav-link active" aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
-                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#equipment" class="nav-link">Equipment</a></li>
-                    <li class="nav-item"><a href="#software" class="nav-link">Software</a></li>
-                    <li class="nav-item"><a href="#certificates" class="nav-link">Certificates</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#equipment" class="nav-link">Equipment</a></li>
+                    <li><a href="#software" class="nav-link">Software</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content Wrapper -->
+    <!-- Main Content -->
     <main id="main-content">
 
         <!-- Hero Section -->
-        <section id="hero" class="hero section" aria-label="Welcome section">
+        <section id="hero" class="hero section">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <p class="hero-subtitle">Industrial Metrology &amp; Quality Control Expert</p>
+                    <p class="hero-subtitle">Industrial Metrology &amp; Quality Control Specialist</p>
                     <h1 class="hero-title">Senior Quality Inspector &amp; Metrology Specialist</h1>
                     <p class="hero-description">
-                        High-precision dimensional inspection, advanced 3D metrological analysis, and technical compliance verification for <strong>Automotive</strong>, <strong>Agricultural Machinery</strong>, <strong>Manufacturing</strong>, and <strong>Heavy Industry</strong>.
+                        Precision dimensional inspection, advanced 3D metrological measurement, and part compliance verification for <strong>Automotive</strong>, <strong>Agricultural Machinery</strong>, <strong>Manufacturing</strong>, and <strong>Heavy Industry</strong>.
                     </p>
                     
                     <div class="hero-stats">
                         <div class="stat-card">
                             <span class="stat-number">13+</span>
-                            <span class="stat-label">Years in Quality Control &amp; Inspection</span>
+                            <span class="stat-label">Years in Quality Control</span>
                         </div>
                         <div class="stat-card">
                             <span class="stat-number">20+</span>
-                            <span class="stat-label">Years in Mechanical Engineering</span>
+                            <span class="stat-label">Years in Manufacturing Industry</span>
                         </div>
                         <div class="stat-card">
                             <span class="stat-number">100%</span>
-                            <span class="stat-label">Precision &amp; Norm Compliance</span>
+                            <span class="stat-label">Precision &amp; Standards Compliance</span>
                         </div>
                     </div>
 
                     <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                        <a href="#experience" class="btn btn-secondary">View Work Experience</a>
+                        <a href="#contact" class="btn btn-primary">Contact Me</a>
+                        <a href="#experience" class="btn btn-secondary">View Experience</a>
                     </div>
                 </div>
 
                 <div class="hero-media">
-                    <figure class="hero-figure">
-                        <img src="assets/images/metrology-hero.jpg" alt="Marek Wietecha operating a 3D portable measuring arm" class="hero-img" width="600" height="600" loading="eager" decoding="async">
-                        <figcaption class="sr-only">Metrology specialist Marek Wietecha performing precision inspection using high-tech equipment</figcaption>
-                    </figure>
+                    <div class="placeholder-media">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                        <p style="margin-top: 1rem; font-weight: 600;">Image Placeholder</p>
+                        <span style="font-size: 0.8rem;">(Add metrology-hero.jpg to the folder)</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- About Me Section -->
-        <section id="about" class="about section" aria-labelledby="about-title">
+        <section id="about" class="about section">
             <div class="container">
-                header class="section-header">
-                    <h2 id="about-title" class="section-title">About Me</h2>
-                    <p class="section-subtitle">Engineering precision, hands-on expertise, and relentless focus on quality standards</p>
+                <header class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Passion for precision, practical technical expertise, and continuous focus on quality</p>
                 </header>
 
                 <div class="about-grid">
                     <article class="about-text-card">
-                        <h3>Technical Precision Across Every Inspection Phase</h3>
+                        <h3>Engineering Precision at Every Inspection Stage</h3>
                         <p>
-                            Hands-on professional with over 13 years of practical experience in Quality Control (QC) and more than 20 years within industrial and manufacturing environments. My primary focus is on advanced industrial metrology, 3D tactile and optical measurements, and comprehensive component inspection against engineering blueprints.
+                            A practical expert with over 13 years of professional experience in Quality Control (QC) and more than 20 years in industrial and manufacturing environments. My competencies focus on advanced industrial metrology, tactile and optical 3D measurements, and comprehensive verification of part compliance against engineering drawings.
                         </p>
                         <p>
-                            I specialize in inspecting safety-critical components for the <strong>Automotive sector</strong>, <strong>agricultural machinery</strong>, <strong>welded heavy structures</strong>, and <strong>precision machinery</strong>. Fully versed in IATF 16949 and ISO 9001 standards, I bridge shop-floor manufacturing practices with strict Geometric Dimensioning and Tolerancing (GD&amp;T) analysis.
+                            I specialize in working with critical components for the <strong>Automotive</strong> sector, <strong>agricultural machinery</strong>, <strong>welded structures</strong>, and <strong>heavy industry</strong>. I have deep knowledge of IATF 16949 and ISO 9001 quality systems, combining manufacturing process insight with a rigorous approach to Geometric Dimensioning and Tolerancing (GD&amp;T).
                         </p>
                     </article>
 
                     <aside class="about-highlights-card">
-                        <h3>Key Areas of Expertise</h3>
+                        <h3>Key Specialization Areas</h3>
                         <ul class="highlight-list">
-                            <li><strong>3D Metrology:</strong> Hexagon Absolute Arms, 3D scanning, laser inspection, optical metrology.</li>
-                            <li><strong>Inspection Software:</strong> PolyWorks Inspector, PC-DMIS, Geomagic Control X.</li>
-                            <li><strong>Supplier Quality Inspection:</strong> Incoming goods verification, initial sample inspection (FAI), product audits.</li>
-                            <li><strong>Blueprint Reading:</strong> Engineering drawing interpretation, GD&amp;T / ISO GPS tolerancing.</li>
-                            <li><strong>Quality Methods:</strong> 8D problem solving, 5Why, Ishikawa, FMEA, PPAP/APQP compliance.</li>
+                            <li><strong>3D Measurement:</strong> Hexagon Absolute Arm articulated arms, 3D scanning, optical metrology.</li>
+                            <li><strong>Metrology Software:</strong> PolyWorks Inspector, PC-DMIS, Geomagic Control X.</li>
+                            <li><strong>Supplier Quality Management:</strong> Incoming part inspection, product audits, FAI verification.</li>
+                            <li><strong>Drawing Analysis:</strong> Engineering drawing interpretation, GD&amp;T / ISO GPS tolerancing.</li>
+                            <li><strong>Quality Tools:</strong> 8D, 5Why, Ishikawa, FMEA, PPAP/APQP control, non-conformance management.</li>
                         </ul>
                     </aside>
                 </div>
@@ -177,68 +470,65 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="experience section" aria-labelledby="experience-title">
+        <section id="experience" class="experience section">
             <div class="container">
                 <header class="section-header">
-                    <h2 id="experience-title" class="section-title">Work Experience</h2>
-                    <p class="section-subtitle">Complete career path in Quality Inspection and Industrial Metrology</p>
+                    <h2 class="section-title">Work Experience</h2>
+                    <p class="section-subtitle">Career history in quality control and industrial metrology</p>
                 </header>
 
                 <div class="timeline">
-                    <!-- Job 1 -->
                     <article class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <header class="timeline-header">
                                 <span class="timeline-period">2018 - Present</span>
-                                <h3 class="timeline-role">Senior Quality Inspector &amp; Metrology Specialist</h3>
-                                <p class="timeline-company">Mechanical Industry / Automotive / Heavy Industry</p>
+                                <h3 class="timeline-role">Senior Quality Inspector / Metrology Specialist</h3>
+                                <p class="timeline-company">Machinery / Automotive / Heavy Industry</p>
                             </header>
                             <div class="timeline-body">
                                 <ul>
-                                    <li>Performing high-precision 3D dimensional and geometric measurements using Hexagon Absolute Arms powered by PolyWorks Inspector.</li>
-                                    <li>Conducting First Article Inspection (FAI), final release testing, and incoming supplier quality verifications based on GD&amp;T specifications.</li>
-                                    <li>Developing, validating, and optimizing measurement routines and inspection protocols for complex engineered parts.</li>
-                                    <li>Collaborating with process engineering and production teams to resolve quality deviations (8D reports, root-cause analysis).</li>
+                                    <li>Performing high-precision 3D geometric measurements using Hexagon Absolute Arms and PolyWorks software.</li>
+                                    <li>Conducting First Article Inspection (FAI), in-process, and final inspection of complex housings, shafts, and welded structures.</li>
+                                    <li>Creating, validating, and optimizing measurement programs and inspection routines for new production components.</li>
+                                    <li>Analyzing dimensional non-conformances, working closely with engineering and design teams within 8D problem-solving processes.</li>
                                 </ul>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Job 2 -->
                     <article class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <header class="timeline-header">
                                 <span class="timeline-period">2013 - 2018</span>
                                 <h3 class="timeline-role">Quality Control Specialist / Metrologist</h3>
-                                <p class="timeline-company">Agricultural Machinery &amp; Steel Structures Manufacturing</p>
+                                <p class="timeline-company">Agricultural Machinery &amp; Steel Structures Plant</p>
                             </header>
                             <div class="timeline-body">
                                 <ul>
-                                    <li>Managing shop-floor inspection routines and metrology room operations for machined bodies, shafts, and large welded frames.</li>
-                                    <li>Operating CMM measuring machines (PC-DMIS) and traditional gauges (micrometers, bore gauges, height gauges).</li>
-                                    <li>Supervising inspection, measuring, and test equipment (IMTE) calibration and maintenance schedules.</li>
-                                    <li>Preparing detailed inspection reports, non-conformance records, and PPAP documentation for Key Accounts.</li>
+                                    <li>Supervising measurement processes and the metrology lab across machining and welding departments.</li>
+                                    <li>Performing measurements on Coordinate Measuring Machines (CMM using PC-DMIS) and traditional gauges.</li>
+                                    <li>Managing inspection, measuring, and test equipment (calibration, verification, MSA).</li>
+                                    <li>Preparing detailed inspection reports for clients and documentation for part submission (PPAP).</li>
                                 </ul>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Job 3 -->
                     <article class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <header class="timeline-header">
                                 <span class="timeline-period">2006 - 2013</span>
                                 <h3 class="timeline-role">Quality Control Technician</h3>
-                                <p class="timeline-company">Metal Processing &amp; Industrial Manufacturing Plant</p>
+                                <p class="timeline-company">Manufacturing &amp; Machining Enterprise</p>
                             </header>
                             <div class="timeline-body">
                                 <ul>
-                                    <li>In-process quality monitoring across CNC machining cells and fabrication lines.</li>
-                                    <li>Visual and dimensional inspection of parts to ensure compliance with customer drawings and internal standards.</li>
-                                    <li>Non-conformance logging in SAP QM system and quarantine management of non-compliant batches.</li>
+                                    <li>Monitoring quality during CNC machining processes.</li>
+                                    <li>Conducting visual and dimensional inspections according to engineering drawings.</li>
+                                    <li>Logging non-conformances in the system and handling non-conforming product control.</li>
                                 </ul>
                             </div>
                         </div>
@@ -248,56 +538,44 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="skills section" aria-labelledby="skills-title">
+        <section id="skills" class="skills section">
             <div class="container">
                 <header class="section-header">
-                    <h2 id="skills-title" class="section-title">Technical Skills</h2>
-                    <p class="section-subtitle">Structured core competencies in industrial inspection and quality assurance</p>
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-subtitle">Core competencies acquired through industrial practice</p>
                 </header>
 
                 <div class="skills-grid">
-                    <!-- Category 1 -->
                     <article class="skill-category">
-                        <div class="category-icon" aria-hidden="true">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="12" x2="16" y2="14"></line></svg>
-                        </div>
-                        <h3>3D Metrology &amp; Inspection</h3>
+                        <h3>Metrology &amp; 3D Measurement</h3>
                         <ul class="skill-list">
-                            <li>Tactile &amp; 3D optical measurements</li>
-                            <li>Hexagon Articulated Arm operation</li>
-                            <li>3D scanning &amp; CAD-to-Part comparison</li>
-                            <li>Blueprints reading (ISO GPS / ASME GD&amp;T)</li>
-                            <li>Geometrical tolerance verification</li>
+                            <li>Tactile and optical 3D measurements</li>
+                            <li>Hexagon articulated arm operation</li>
+                            <li>3D scanning and CAD comparison</li>
+                            <li>Engineering drawing reading (GD&amp;T)</li>
+                            <li>ISO GPS geometrical tolerancing</li>
                         </ul>
                     </article>
 
-                    <!-- Category 2 -->
                     <article class="skill-category">
-                        <div class="category-icon" aria-hidden="true">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        </div>
-                        <h3>Quality Control &amp; Methodologies</h3>
+                        <h3>Quality Control &amp; Methodology</h3>
                         <ul class="skill-list">
                             <li>Incoming, in-process, and final inspection</li>
-                            <li>Supplier Quality verification &amp; audits</li>
-                            <li>Problem solving: 8D, 5Why, Ishikawa</li>
-                            <li>FAI (First Article Inspection) &amp; PPAP packs</li>
-                            <li>Weldment &amp; casting surface defect evaluation</li>
+                            <li>Supplier Quality verification</li>
+                            <li>Problem Solving (8D, 5Why, Ishikawa)</li>
+                            <li>FAI reporting and PPAP documentation</li>
+                            <li>Surface defect and weld inspection</li>
                         </ul>
                     </article>
 
-                    <!-- Category 3 -->
                     <article class="skill-category">
-                        <div class="category-icon" aria-hidden="true">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                        </div>
                         <h3>Quality Systems &amp; Standards</h3>
                         <ul class="skill-list">
-                            <li>IATF 16949 (Automotive standard)</li>
-                            <li>ISO 9001 Quality Management System</li>
-                            <li>AIAG Core Tools (SPC, MSA, FMEA)</li>
-                            <li>Gauging &amp; IMTE calibration workflows</li>
-                            <li>Lean Manufacturing &amp; 5S Metrology lab setup</li>
+                            <li>IATF 16949 automotive standard requirements</li>
+                            <li>ISO 9001 Quality Management Systems</li>
+                            <li>AIAG Core Tools fundamentals (SPC, MSA)</li>
+                            <li>Calibration and gauge control</li>
+                            <li>5S / Lean workplace organization</li>
                         </ul>
                     </article>
                 </div>
@@ -305,44 +583,44 @@
         </section>
 
         <!-- Equipment Section -->
-        <section id="equipment" class="equipment section" aria-labelledby="equipment-title">
+        <section id="equipment" class="equipment section">
             <div class="container">
                 <header class="section-header">
-                    <h2 id="equipment-title" class="section-title">Measuring Equipment</h2>
-                    <p class="section-subtitle">Practical proficiency with advanced metrology instruments</p>
+                    <h2 class="section-title">Measurement Equipment</h2>
+                    <p class="section-subtitle">Hands-on expertise with professional inspection devices</p>
                 </header>
 
                 <div class="equipment-grid">
                     <article class="equipment-group">
                         <header class="equipment-group-header">
-                            <h3>Measuring Arms &amp; CMM Machines</h3>
+                            <h3>Articulated Arms &amp; 3D Systems</h3>
                         </header>
                         <ul>
-                            <li><strong>Hexagon Absolute Arm</strong> – 6-axis &amp; 7-axis portable arms with tactile probes and laser scanners.</li>
-                            <li><strong>Coordinate Measuring Machines (CMM)</strong> – Manual and DCC automatic inspection for complex parts.</li>
-                            <li><strong>3D Laser &amp; Optical Scanners</strong> – Non-contact high-density surface inspection.</li>
+                            <li><strong>Hexagon Absolute Arm</strong> – 6 and 7-axis portable arms with tactile probes and laser scanners.</li>
+                            <li><strong>CMM Machines</strong> – CNC coordinate measuring machines and manual CMMs.</li>
+                            <li><strong>3D Optical Scanners</strong> – Structured light scanners for freeform surface analysis.</li>
                         </ul>
                     </article>
 
                     <article class="equipment-group">
                         <header class="equipment-group-header">
-                            <h3>Conventional &amp; Shop-Floor Gauges</h3>
+                            <h3>Conventional Instruments</h3>
                         </header>
                         <ul>
-                            <li><strong>Digital Height Gauging Systems</strong> – High-accuracy 1D/2D vertical layout measurements on granite plates.</li>
-                            <li><strong>Micrometers &amp; Bore Gauges</strong> – Digital &amp; analog external/internal precision micrometers.</li>
-                            <li><strong>Calipers &amp; Depth Gauges</strong> – Standard, extended-jaw, and custom dimensional tools.</li>
+                            <li><strong>Digital Height Gauges</strong> – Precision 1D/2D measuring columns on granite surface plates.</li>
+                            <li><strong>Bore Gauges &amp; Micrometers</strong> – External/internal micrometers, bore gauges, and indicator gauges.</li>
+                            <li><strong>Calipers &amp; Depth Gauges</strong> – Standard, digital, and extended-jaw calipers.</li>
                         </ul>
                     </article>
 
                     <article class="equipment-group">
                         <header class="equipment-group-header">
-                            <h3>Surface &amp; Material Testing Tools</h3>
+                            <h3>Surface Integrity Equipment</h3>
                         </header>
                         <ul>
-                            <li><strong>Roughness Testers (Profilometers)</strong> – Surface finish analysis (Ra, Rz, Rt metrics).</li>
-                            <li><strong>Hardness Testers</strong> – Portable &amp; benchtop testing (Rockwell, Vickers, Leeb).</li>
-                            <li><strong>Coating Thickness &amp; Flaw Gauges</strong> – Basic NDT and coating integrity checking.</li>
+                            <li><strong>Surface Roughness Testers</strong> – Measurement of Ra, Rz, Rt parameters on machined surfaces.</li>
+                            <li><strong>Hardness Testers</strong> – Stationary and portable hardness testing (Rockwell, Leeb).</li>
+                            <li><strong>Coating Thickness Gauges</strong> – Paint and plating thickness inspection.</li>
                         </ul>
                     </article>
                 </div>
@@ -350,91 +628,79 @@
         </section>
 
         <!-- Software Section -->
-        <section id="software" class="software section" aria-labelledby="software-title">
+        <section id="software" class="software section">
             <div class="container">
                 <header class="section-header">
-                    <h2 id="software-title" class="section-title">Metrology Software &amp; QMS Tools</h2>
-                    <p class="section-subtitle">Digital inspection applications used in daily quality operations</p>
+                    <h2 class="section-title">Metrology Software</h2>
+                    <p class="section-subtitle">Software tools used in daily operations</p>
                 </header>
 
                 <div class="software-grid">
                     <article class="software-card">
-                        <div class="software-badge">3D Metrology</div>
+                        <span class="software-badge">3D Metrology</span>
                         <h3>PolyWorks Inspector</h3>
-                        <p>Advanced CAD-based inspection, multi-piece reporting, surface analysis, and measurement automation.</p>
+                        <p>Advanced CAD inspection, measurement automation, dimensional reporting, and deviation analysis.</p>
                     </article>
 
                     <article class="software-card">
-                        <div class="software-badge">CMM Software</div>
+                        <span class="software-badge">CMM Software</span>
                         <h3>PC-DMIS</h3>
-                        <p>Programming and operating coordinate measuring machines for geometric feature evaluations.</p>
+                        <p>Programming and operating coordinate measuring machines for simple and complex geometries.</p>
                     </article>
 
                     <article class="software-card">
-                        <div class="software-badge">3D Scanning</div>
+                        <span class="software-badge">3D Scanning</span>
                         <h3>Geomagic Control X</h3>
-                        <p>Point cloud processing, color deviation maps generation, and automated quality reporting.</p>
+                        <p>Quality inspection of 3D scan data and color map deviation analysis.</p>
                     </article>
 
                     <article class="software-card">
-                        <div class="software-badge">ERP &amp; QMS</div>
+                        <span class="software-badge">ERP &amp; Quality</span>
                         <h3>SAP QM / MS Excel</h3>
-                        <p>SAP Quality Management module, non-conformance tracking, and custom SPC spreadsheets.</p>
+                        <p>Non-conformance tracking, SAP Quality Management modules, and custom calculation sheets.</p>
                     </article>
                 </div>
             </div>
         </section>
 
         <!-- Certificates Section -->
-        <section id="certificates" class="certificates section" aria-labelledby="certificates-title">
+        <section id="certificates" class="certificates section">
             <div class="container">
                 <header class="section-header">
-                    <h2 id="certificates-title" class="section-title">Certifications &amp; Training</h2>
-                    <p class="section-subtitle">Verified qualifications in metrology standards and quality management</p>
+                    <h2 class="section-title">Certificates &amp; Training</h2>
+                    <p class="section-subtitle">Continuous professional development and standards mastery</p>
                 </header>
 
                 <div class="certificates-grid">
                     <article class="cert-card">
-                        <div class="cert-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l9-9l-9-9l2 5l-8 4z"></path></svg>
-                        </div>
-                        <div class="cert-details">
-                            <h3>PolyWorks Inspector – 3D Metrology Training</h3>
-                            <p class="cert-issuer">InnovMetric / Authorized Professional Training</p>
-                            <span class="cert-tag">3D Metrology</span>
+                        <div class="cert-icon">✓</div>
+                        <div>
+                            <h3>PolyWorks Inspector – 3D Measurement Training</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Authorized Course / 3D Metrology</p>
                         </div>
                     </article>
 
                     <article class="cert-card">
-                        <div class="cert-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l9-9l-9-9l2 5l-8 4z"></path></svg>
-                        </div>
-                        <div class="cert-details">
-                            <h3>Technical Drawing &amp; GD&amp;T / ISO GPS Tolerancing</h3>
-                            <p class="cert-issuer">Certified Metrology Training Center</p>
-                            <span class="cert-tag">Blueprint Reading</span>
+                        <div class="cert-icon">✓</div>
+                        <div>
+                            <h3>Geometric Dimensioning &amp; Tolerancing (GD&amp;T / ISO GPS)</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Advanced Technical Drawing Interpretation</p>
                         </div>
                     </article>
 
                     <article class="cert-card">
-                        <div class="cert-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l9-9l-9-9l2 5l-8 4z"></path></svg>
-                        </div>
-                        <div class="cert-details">
-                            <h3>ISO 9001 &amp; IATF 16949 Requirements</h3>
-                            <p class="cert-issuer">Quality Management Systems</p>
-                            <span class="cert-tag">Quality Systems</span>
+                        <div class="cert-icon">✓</div>
+                        <div>
+                            <h3>IATF 16949 &amp; ISO 9001 System Requirements</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Industrial Quality Management</p>
                         </div>
                     </article>
 
                     <article class="cert-card">
-                        <div class="cert-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l9-9l-9-9l2 5l-8 4z"></path></svg>
-                        </div>
-                        <div class="cert-details">
-                            <h3>AIAG Core Tools (PPAP / APQP / FMEA)</h3>
-                            <p class="cert-issuer">Automotive Quality Methodologies</p>
-                            <span class="cert-tag">Automotive Tools</span>
+                        <div class="cert-icon">✓</div>
+                        <div>
+                            <h3>Problem Solving Methodology (8D, 5Why, Ishikawa)</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Quality Root Cause Analysis</p>
                         </div>
                     </article>
                 </div>
@@ -442,23 +708,21 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact section" aria-labelledby="contact-title">
+        <section id="contact" class="contact section">
             <div class="container">
                 <header class="section-header">
-                    <h2 id="contact-title" class="section-title">Contact</h2>
-                    <p class="section-subtitle">Open for communication with technical recruiters and quality managers</p>
+                    <h2 class="section-title">Contact</h2>
+                    <p class="section-subtitle">Open to inquiries from recruiters and quality managers</p>
                 </header>
 
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h3>Contact Information</h3>
-                        <p>I am available for career opportunities as a Senior Quality Inspector or Metrology Specialist (on-site, hybrid, or supplier quality audit assignments).</p>
+                        <p>I am available for career opportunities as a Senior Quality Inspector, Metrology Specialist, or Supplier Quality Engineer.</p>
                         
                         <div class="contact-methods">
                             <div class="contact-item">
-                                <span class="contact-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </span>
+                                <span class="contact-icon">✉</span>
                                 <div>
                                     <span class="contact-label">Email:</span>
                                     <a href="mailto:kontakt@marekwietecha.pl" class="contact-link">kontakt@marekwietecha.pl</a>
@@ -466,9 +730,7 @@
                             </div>
 
                             <div class="contact-item">
-                                <span class="contact-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                                </span>
+                                <span class="contact-icon">in</span>
                                 <div>
                                     <span class="contact-label">LinkedIn:</span>
                                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn Profile</a>
@@ -476,21 +738,19 @@
                             </div>
 
                             <div class="contact-item">
-                                <span class="contact-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                </span>
+                                <span class="contact-icon">📍</span>
                                 <div>
                                     <span class="contact-label">Location:</span>
-                                    <span class="contact-text">Poland / Płock / Masovian Voivodeship</span>
+                                    <span class="contact-text">Poland / Płock / Mazovian Voivodeship</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <form class="contact-form" id="contactForm" action="#" method="POST" aria-label="Contact form">
+                    <form class="contact-form" id="contactForm" action="#" method="POST">
                         <div class="form-group">
                             <label for="name">Name / Company <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" required placeholder="e.g. John Smith (Company Inc.)" class="form-input">
+                            <input type="text" id="name" name="name" required placeholder="e.g. John Smith (Company Name)" class="form-input">
                         </div>
 
                         <div class="form-group">
@@ -500,12 +760,12 @@
 
                         <div class="form-group">
                             <label for="subject">Subject <span class="required">*</span></label>
-                            <input type="text" id="subject" name="subject" required placeholder="e.g. Recruitment Inquiry - Quality Inspector" class="form-input">
+                            <input type="text" id="subject" name="subject" required placeholder="e.g. Job Opportunity - Quality Inspector" class="form-input">
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Hello, I would like to discuss a potential opportunity..." class="form-input"></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Hello, I would like to discuss potential collaboration..." class="form-input"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary form-submit">Send Message</button>
@@ -518,13 +778,34 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-container">
+        <div class="container">
             <p class="footer-copyright">&copy; 2026 Marek Wietecha. All rights reserved.</p>
-            <p class="footer-role">Quality Inspector &amp; Metrology Specialist</p>
+            <p class="footer-role">Senior Quality Inspector &amp; Metrology Specialist</p>
         </div>
     </footer>
 
-    <!-- JavaScript Link -->
-    <script src="script.js" defer></script>
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('navToggle');
+        const primaryNav = document.getElementById('primary-navigation');
+
+        if (navToggle && primaryNav) {
+          navToggle.addEventListener('click', () => {
+            const isOpen = primaryNav.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+          });
+        }
+
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+          contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! The form has been submitted (demo mode).');
+            contactForm.reset();
+          });
+        }
+      });
+    </script>
 </body>
 </html>
