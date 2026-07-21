@@ -115,20 +115,24 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION - WPISANA POPRAWNA ŚCIEŻKA I WYRÓWNANIE DO AKAPITU
+   HERO SECTION - ROZCIĄGNIĘTE TŁO (COVER) Z GRADIENTOWĄ NAKŁADKĄ
    ========================================================================== */
 .hero {
     padding: 140px 0 80px 0;
     border-bottom: 1px solid var(--card-border);
     position: relative;
     
-    /* Ścieżka do pliku widocznego na zrzucie GitHub */
-    background-image: url('../images/hero-bg.png') !important;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
+    /* Tło rozciągnięte na całą sekcję z delikatną nakładką przyciemniającą prawą stronę */
+    background-image: linear-gradient(
+        to right, 
+        rgba(10, 17, 32, 0.3) 0%, 
+        rgba(10, 17, 32, 0.75) 50%, 
+        rgba(10, 17, 32, 0.92) 100%
+    ), url('../images/hero-bg.png') !important;
     
-    /* Wyrównanie lewej krawędzi zdjęcia tła równo z lewą krawędzią akapitu (container 1200px) */
-    background-position: calc((100vw - 1200px) / 2 + 20px) center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
 }
 
 .hero-container {
@@ -414,15 +418,13 @@ footer {
 /* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
-@media (max-width: 1240px) {
-    .hero {
-        background-position: 20px center !important;
-    }
-}
-
 @media (max-width: 768px) {
     .hero {
-        background-position: center top !important;
+        background-image: linear-gradient(
+            to bottom, 
+            rgba(10, 17, 32, 0.5) 0%, 
+            rgba(10, 17, 32, 0.9) 100%
+        ), url('../images/hero-bg.png') !important;
     }
 
     .hero-container {
