@@ -115,25 +115,25 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION - NATURALNE PROPORCJE OBRAZU (CONTAIN) I PŁYNNE PRZEJŚCIE
+   HERO SECTION - DOPASOWANY OBRAZ NA CAŁĄ SZEROKOŚĆ BEZ NADMIERNIE DUŻEGO KADRU
    ========================================================================== */
 .hero {
-    padding: 140px 0 80px 0;
+    padding: 120px 0 60px 0;
     border-bottom: 1px solid var(--card-border);
     position: relative;
     
-    /* Obraz zachowuje proporcje, a prawa strona płynnie wygasza się do ciemnego tła */
+    /* Ciemniejszy gradient pod tekstem i zdjęciem, delikatniejszy nad maszyną */
     background-image: linear-gradient(
         to right, 
-        rgba(10, 17, 32, 0.1) 0%, 
-        rgba(10, 17, 32, 0.4) 40%, 
-        rgba(10, 17, 32, 0.95) 70%,
-        var(--bg-color) 100%
+        rgba(10, 17, 32, 0.2) 0%, 
+        rgba(10, 17, 32, 0.5) 40%, 
+        rgba(10, 17, 32, 0.9) 75%,
+        rgba(10, 17, 32, 0.98) 100%
     ), url('../images/hero-bg.png') !important;
     
     background-repeat: no-repeat !important;
-    background-size: contain !important;
-    background-position: left center !important;
+    background-size: 100% auto !important; /* Rozciąga na całą szerokość, zachowując proporcje wysokości */
+    background-position: center center !important;
 }
 
 .hero-container {
@@ -421,6 +421,7 @@ footer {
    ========================================================================== */
 @media (max-width: 768px) {
     .hero {
+        background-size: cover !important;
         background-image: linear-gradient(
             to bottom, 
             rgba(10, 17, 32, 0.5) 0%, 
