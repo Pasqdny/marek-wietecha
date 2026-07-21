@@ -1,282 +1,1012 @@
-<!DOCTYPE html>
-<html lang="pl" class="scroll-smooth dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marek Wietecha | Quality Control & Metrology Specialist</title>
-  <meta name="description" content="Portfolio Marka Wietecha - Specjalisty ds. Kontroli Jakości i Metrologii z 13+ letnim doświadczeniem w kontroli jakości i 20+ w przemyśle maszynowym. CMM, 3D Scanning, PPAP, AIAG Core Tools.">
-  <meta name="keywords" content="Marek Wietecha, Metrologia, Kontrola Jakości, CMM, Hexagon Absolute Arm, Geomagic Control X, PolyWorks, PC-DMIS, PPAP, GD&T, ISO 9001, Six Sigma">
-  <meta name="author" content="Marek Wietecha">
+/* ==========================================================================
+   Marek Wietecha - Portfolio Stylesheet
+   Role: Quality Inspector & Metrology Specialist
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Variables & Theme Configuration
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette - Technical Dark Theme */
+  --bg-primary: #090d16;
+  --bg-secondary: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
   
-  <!-- OpenGraph Metadata -->
-  <meta property="og:title" content="Marek Wietecha | Quality Control & Metrology Specialist">
-  <meta property="og:description" content="13+ lat w kontroli jakości i metrologii 2D/3D. Skanowanie 3D, CMM, PPAP, AIAG Core Tools, ISO 9001.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pasqdny.github.io/marek-wietecha/">
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --accent-amber: #f59e0b;
+  --accent-amber-hover: #d97706;
+  --accent-amber-light: rgba(245, 158, 11, 0.1);
+  --accent-blue: #3b82f6;
+  --accent-blue-light: rgba(59, 130, 246, 0.1);
+  
+  --border-color: #334155;
+  --border-color-light: #475569;
+  
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Layout & Spacing */
+  --container-width: 1200px;
+  --header-height: 70px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  
+  /* Transitions & Shadows */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.18);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+}
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              navy: '#0f172a',
-              accent: '#f59e0b',
-              blue: '#2563eb'
-            }
-          }
-        }
-      }
-    }
-  </script>
+/* --------------------------------------------------------------------------
+   2. Reset & General Base Styles
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Schema.org JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Marek Wietecha",
-    "jobTitle": "Quality Control & Metrology Specialist",
-    "description": "Quality Control Specialist with over 13 years in Metrology and Quality Control, and 20+ years in manufacturing and machinery industry.",
-    "url": "https://pasqdny.github.io/marek-wietecha/",
-    "knowsAbout": [
-      "Dimensional Metrology",
-      "Coordinate Measuring Machines (CMM)",
-      "Hexagon Absolute Arm",
-      "Geomagic Control X",
-      "PolyWorks",
-      "PC-DMIS",
-      "AIAG Core Tools (APQP, PPAP, FMEA, MSA, SPC)",
-      "ISO 9001:2015 Internal Auditing",
-      "Lean Six Sigma",
-      "SAP S/4HANA Quality Management"
-    ],
-    "alumniOf": "Saylor Academy, Google Umiejętności Jutra AI, Quality Asia",
-    "hasCredential": [
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "ISO 9001:2015 Internal Auditor",
-        "credentialCategory": "Certification",
-        "recognizedBy": { "@type": "Organization", "name": "Quality Asia Certifications" }
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Certified Six Sigma White Belt",
-        "credentialCategory": "Certification",
-        "recognizedBy": { "@type": "Organization", "name": "The Council for Six Sigma Certification (CSSC)" }
-      }
-    ]
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Utility Class for Accessibility (Screen Readers Only) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip Link for Keyboard Accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--accent-amber);
+  color: #000;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  z-index: 9999;
+  border-radius: var(--border-radius-sm);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Common Layout */
+.section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--accent-amber);
+  margin: 0.75rem auto 0 auto;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--accent-amber);
+  color: #0f172a;
+}
+
+.btn-primary:hover, .btn-primary:focus-visible {
+  background-color: var(--accent-amber-hover);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color-light);
+}
+
+.btn-secondary:hover, .btn-secondary:focus-visible {
+  background-color: var(--bg-card);
+  border-color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   3. Header & Navigation
+   -------------------------------------------------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: rgba(9, 13, 22, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.logo-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link.active {
+  color: var(--accent-amber);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-amber);
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* --------------------------------------------------------------------------
+   4. Hero Section
+   -------------------------------------------------------------------------- */
+.hero {
+  background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
+              var(--bg-primary);
+  padding: 6rem 0 5rem 0;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-description strong {
+  color: var(--text-primary);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-amber);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-media {
+  position: relative;
+}
+
+.hero-figure {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   5. About Me Section
+   -------------------------------------------------------------------------- */
+.about {
+  background-color: var(--bg-secondary);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+}
+
+.about-text-card, .about-highlights-card {
+  background-color: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.about-text-card h3, .about-highlights-card h3 {
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.about-text-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.about-text-card p:last-child {
+  margin-bottom: 0;
+}
+
+.highlight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.highlight-list li {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.highlight-list li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-amber);
+  font-size: 0.75rem;
+}
+
+.highlight-list strong {
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   6. Experience Timeline Section
+   -------------------------------------------------------------------------- */
+.experience {
+  background-color: var(--bg-primary);
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  left: 11px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  border: 4px solid var(--accent-amber);
+  z-index: 2;
+}
+
+.timeline-content {
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  transition: border-color var(--transition-fast);
+}
+
+.timeline-content:hover {
+  border-color: var(--border-color-light);
+}
+
+.timeline-header {
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.timeline-period {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-amber);
+  background-color: var(--accent-amber-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.timeline-role {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.timeline-company {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.timeline-body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timeline-body li {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.timeline-body li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-amber);
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   7. Skills Section
+   -------------------------------------------------------------------------- */
+.skills {
+  background-color: var(--bg-secondary);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.skill-category {
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-fast);
+}
+
+.skill-category:hover {
+  transform: translateY(-4px);
+}
+
+.category-icon {
+  color: var(--accent-amber);
+  margin-bottom: 1.25rem;
+}
+
+.skill-category h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-list li {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-list li::before {
+  content: "✓";
+  color: var(--accent-blue);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Equipment Section
+   -------------------------------------------------------------------------- */
+.equipment {
+  background-color: var(--bg-primary);
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.equipment-group {
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.equipment-group-header h3 {
+  font-size: 1.2rem;
+  color: var(--accent-amber);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.equipment-group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.equipment-group li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.equipment-group strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Software Section
+   -------------------------------------------------------------------------- */
+.software {
+  background-color: var(--bg-secondary);
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.software-card {
+  background-color: var(--bg-card);
+  padding: 1.75rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.software-badge {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent-blue);
+  background-color: var(--accent-blue-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.software-card h3 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.software-card p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   10. Certificates Section
+   -------------------------------------------------------------------------- */
+.certificates {
+  background-color: var(--bg-primary);
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.cert-icon {
+  color: var(--accent-amber);
+  background-color: var(--accent-amber-light);
+  padding: 0.75rem;
+  border-radius: var(--border-radius-sm);
+  flex-shrink: 0;
+}
+
+.cert-details h3 {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.cert-issuer {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.cert-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   11. Contact Section
+   -------------------------------------------------------------------------- */
+.contact {
+  background-color: var(--bg-secondary);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info h3 {
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon {
+  color: var(--accent-amber);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.contact-link, .contact-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contact-link:hover {
+  color: var(--accent-amber);
+}
+
+.contact-form {
+  background-color: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.required {
+  color: var(--accent-amber);
+}
+
+.form-input {
+  width: 100%;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-amber);
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+.form-submit {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   12. Footer
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: #05080f;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.footer-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* --------------------------------------------------------------------------
+   13. Responsive Media Queries (RWD)
+   -------------------------------------------------------------------------- */
+
+/* Tablet Layout (<= 992px) */
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  </script>
-</head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+  
+  .hero-media {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 
-  <!-- NAVIGATION HEADER -->
-  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-        <span class="text-amber-500">&lt;MW&gt;</span>
-        <span>Marek Wietecha</span>
-      </a>
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-        <a href="#about" class="hover:text-amber-400 transition-colors" data-i18n-key="nav.about">O mnie</a>
-        <a href="#experience" class="hover:text-amber-400 transition-colors" data-i18n-key="nav.experience">Doświadczenie</a>
-        <a href="#equipment" class="hover:text-amber-400 transition-colors" data-i18n-key="nav.equipment">Aparatura Pomiarowa</a>
-        <a href="#software" class="hover:text-amber-400 transition-colors" data-i18n-key="nav.software">Oprogramowanie</a>
-        <a href="#certificates" class="hover:text-amber-400 transition-colors" data-i18n-key="nav.certificates">Certyfikaty</a>
-      </nav>
+  .skills-grid,
+  .equipment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-      <!-- Language Switcher & Mobile Menu Toggle -->
-      <div class="flex items-center gap-3">
-        <div class="inline-flex rounded-md shadow-sm bg-slate-800 p-1 border border-slate-700">
-          <button id="btn-lang-pl" class="px-3 py-1 text-xs font-bold rounded bg-amber-500 text-slate-950 transition-all">PL</button>
-          <button id="btn-lang-en" class="px-3 py-1 text-xs font-bold rounded text-slate-400 hover:text-white transition-all">EN</button>
-        </div>
+  .software-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        </button>
-      </div>
-    </div>
+/* Mobile Layout (<= 768px) */
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
 
-    <!-- Mobile Nav Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 py-4 space-y-3 text-sm">
-      <a href="#about" class="block hover:text-amber-400" data-i18n-key="nav.about">O mnie</a>
-      <a href="#experience" class="block hover:text-amber-400" data-i18n-key="nav.experience">Doświadczenie</a>
-      <a href="#equipment" class="block hover:text-amber-400" data-i18n-key="nav.equipment">Aparatura Pomiarowa</a>
-      <a href="#software" class="block hover:text-amber-400" data-i18n-key="nav.software">Oprogramowanie</a>
-      <a href="#certificates" class="block hover:text-amber-400" data-i18n-key="nav.certificates">Certyfikaty</a>
-    </div>
-  </header>
+  .section-title {
+    font-size: 1.85rem;
+  }
 
-  <!-- HERO & ABOUT SECTION -->
-  <section id="about" class="py-20 bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center md:text-left">
-        <div class="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono rounded-full mb-4">
-          Quality Assurance & Dimensional Metrology
-        </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
-          Marek Wietecha
-        </h1>
-        <h2 id="hero-title" class="text-xl md:text-2xl text-amber-400 font-semibold mb-6">
-          Specjalista ds. Kontroli Jakości i Metrologii
-        </h2>
-        <p id="hero-about" class="text-slate-300 text-base md:text-lg leading-relaxed mb-8">
-          <!-- Dynamic Text Loaded via script.js -->
-        </p>
+  /* Navigation Mobile Toggle Drawer */
+  .nav-toggle {
+    display: flex;
+  }
 
-        <!-- Key Metrics Badges -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-slate-800">
-          <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-            <div class="text-3xl font-extrabold text-amber-400">13+</div>
-            <div class="text-xs text-slate-400 mt-1" data-i18n-key="metric.qc_years">Lat w Kontroli Jakości</div>
-          </div>
-          <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-            <div class="text-3xl font-extrabold text-amber-400">20+</div>
-            <div class="text-xs text-slate-400 mt-1" data-i18n-key="metric.industry_years">Lat w Przemyśle</div>
-          </div>
-          <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-            <div class="text-3xl font-extrabold text-amber-400">16+</div>
-            <div class="text-xs text-slate-400 mt-1" data-i18n-key="metric.certifications">Certyfikatów Branżowych</div>
-          </div>
-          <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-            <div class="text-3xl font-extrabold text-amber-400">C2</div>
-            <div class="text-xs text-slate-400 mt-1" data-i18n-key="metric.english">Business English</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  .nav {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display: none;
+    box-shadow: var(--shadow-lg);
+  }
 
-  <!-- PROFESSIONAL EXPERIENCE TIMELINE -->
-  <section id="experience" class="py-20 bg-slate-950 border-b border-slate-800">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-white mb-2" data-i18n-key="experience.heading">Doświadczenie Zawodowe</h2>
-        <p class="text-slate-400 text-sm mb-10" data-i18n-key="experience.subheading">Kompleksowy przebieg kariery zawodowej (2005 – obecnie)</p>
-        
-        <!-- Experience Container (Populated via Script) -->
-        <div id="experience-list" class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-0.5 before:bg-slate-800">
-          <!-- Cards injected via script.js -->
-        </div>
-      </div>
-    </div>
-  </section>
+  .nav.is-open {
+    display: block;
+  }
 
-  <!-- METROLOGY EQUIPMENT MATRIX -->
-  <section id="equipment" class="py-16 bg-slate-900 border-b border-slate-800">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8 text-amber-500 border-b border-amber-500/20 pb-3" data-i18n-key="equipment.title">
-          Wyposażenie Pomiarowe & Metrologia
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <div class="p-6 bg-slate-800/80 rounded-xl border border-slate-700">
-            <div class="text-amber-400 text-xl font-bold mb-3">Skanowanie 3D & CMM Mobilne</div>
-            <ul class="text-slate-300 space-y-2 text-sm leading-relaxed">
-              <li>• <strong>Hexagon Absolute Arm:</strong> Pomiary stykowe i bezstykowe 3D.</li>
-              <li>• <strong>Skanery 3D:</strong> Digitalizacja optyczno-laserowa.</li>
-              <li>• <strong>HyperScan:</strong> Szybkie skanowanie przemysłowe.</li>
-            </ul>
-          </div>
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-          <div class="p-6 bg-slate-800/80 rounded-xl border border-slate-700">
-            <div class="text-amber-400 text-xl font-bold mb-3">CMM Stacjonarne & Profilometria</div>
-            <ul class="text-slate-300 space-y-2 text-sm leading-relaxed">
-              <li>• <strong>CMM DEA (Hexagon):</strong> Maszyny współrzędnościowe.</li>
-              <li>• <strong>Profilometr Taylor Hobson:</strong> Chropowatość i jakość powierzchni.</li>
-              <li>• <strong>TESA Micro-Hite 600:</strong> Wysokościomierz precyzyjny 1D/2D.</li>
-            </ul>
-          </div>
+  .hero-title {
+    font-size: 2.15rem;
+  }
 
-          <div class="p-6 bg-slate-800/80 rounded-xl border border-slate-700">
-            <div class="text-amber-400 text-xl font-bold mb-3">Narzędzia Klasyczne & NDT</div>
-            <ul class="text-slate-300 space-y-2 text-sm leading-relaxed">
-              <li>• <strong>Narzędzia Ręczne:</strong> Mikrometry, suwmiarki, średnicówki.</li>
-              <li>• <strong>Aparatura Badawcza:</strong> Stanowiska do prób ciśnieniowych.</li>
-              <li>• <strong>Defektoskopia NDT:</strong> Testy penetracyjne spoin.</li>
-            </ul>
-          </div>
+  .hero-stats {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-        </div>
-      </div>
-    </div>
-  </section>
+  .hero-actions {
+    flex-direction: column;
+  }
 
-  <!-- SOFTWARE & ENTERPRISE SYSTEMS -->
-  <section id="software" class="py-16 bg-slate-950 border-b border-slate-800">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8 text-blue-400 border-b border-blue-500/20 pb-3" data-i18n-key="software.title">
-          Oprogramowanie & Systemy Klasy Enterprise
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <div class="p-6 bg-slate-900 rounded-xl border border-slate-800">
-            <h3 class="text-lg font-bold text-blue-300 mb-4">Oprogramowanie Metrologiczne</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">Geomagic Control X</span>
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">PolyWorks</span>
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">PC-DMIS</span>
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">HyperScan</span>
-            </div>
-          </div>
+  .timeline::before {
+    left: 10px;
+  }
 
-          <div class="p-6 bg-slate-900 rounded-xl border border-slate-800">
-            <h3 class="text-lg font-bold text-blue-300 mb-4">ERP, PLM & WMS</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">SAP S/4HANA QM</span>
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">Siemens Teamcenter</span>
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">Baan</span>
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">Impuls ERP</span>
-            </div>
-          </div>
+  .timeline-marker {
+    left: 1px;
+  }
 
-          <div class="p-6 bg-slate-900 rounded-xl border border-slate-800">
-            <h3 class="text-lg font-bold text-blue-300 mb-4">Sztuczna Inteligencja & Automatyzacja</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">Google Gemini</span>
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">NotebookLM</span>
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">n8n Automation</span>
-              <span class="px-3 py-1 bg-blue-950/80 text-blue-300 rounded-md text-xs font-mono border border-blue-800">Make.com</span>
-            </div>
-          </div>
+  .timeline-item {
+    padding-left: 35px;
+  }
 
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS SECTION -->
-  <section id="certificates" class="py-20 bg-slate-900">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-white mb-2" data-i18n-key="cert.heading">Certyfikaty & Uprawnienia</h2>
-        <p class="text-slate-400 text-sm mb-10" data-i18n-key="cert.subheading">Certyfikowane szkolenia AIAG, Six Sigma, ISO 9001 oraz SAP</p>
-
-        <div id="certificates-list" class="space-y-10">
-          <!-- Injected via script.js -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="py-8 bg-slate-950 border-t border-slate-800 text-center text-slate-500 text-xs">
-    <div class="container mx-auto px-4">
-      <p>© 2026 Marek Wietecha. Quality Control & Dimensional Metrology Specialist.</p>
-      <p class="mt-1">Płock, Mazowieckie, Poland | GitHub Pages Portfolio</p>
-    </div>
-  </footer>
-
-  <!-- MAIN SCRIPT MODULE -->
-  <script type="module" src="script.js"></script>
-</body>
-</html>
+  .skills-grid,
+  .equipment-grid,
+  .software-grid,
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+}
