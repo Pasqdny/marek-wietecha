@@ -3,300 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marek Wietecha | Quality Control & Metrology Specialist</title>
+    <title>Marek Wietecha - Quality Control & Metrology Specialist</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .lang-switch { display: flex; gap: 10px; margin-left: 20px; align-items: center; }
-        .lang-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px; font-weight: bold; transition: all 0.3s ease; }
-        .lang-btn:hover, .lang-btn.active { background: #60a5fa; border-color: #60a5fa; color: #0a1120; }
-        .tech-category-title { color: #60a5fa; font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600; border-left: 3px solid #60a5fa; padding-left: 10px; }
-        
-        .card-icon-container { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: rgba(96, 165, 250, 0.08); border: 1px solid rgba(96, 165, 250, 0.25); border-radius: 10px; margin-bottom: 16px; color: #60a5fa; transition: all 0.3s ease; }
-        .card:hover .card-icon-container { background: #60a5fa; color: #0a1120; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3); }
-        .card-icon-container svg { stroke: currentcolor; }
-        
-        .btn-sm { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; font-size: 0.8rem; background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.3); color: #60a5fa; border-radius: 4px; text-decoration: none; margin-top: 10px; font-weight: 500; transition: all 0.2s ease; }
-        .btn-sm:hover { background: #60a5fa; color: #0a1120; }
-        .btn-sm svg { fill: currentcolor; }
-
-        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 25px; }
-        .download-grid .btn { display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px 15px; font-size: 0.9rem; }
-    </style>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav class="nav">
         <div class="container nav-container">
-            <div class="logo-custom">
+            <a href="#" class="logo-custom">
                 <span class="logo-text">MW</span>
-            </div>
-            <div class="links" style="margin-left: auto;">
+            </a>
+            <div class="links">
                 <a href="#about">O mnie</a>
-                <a href="#skills">Park Maszynowy & Soft</a>
+                <a href="#machinery">Park Maszynowy & Soft</a>
                 <a href="#certificates">Certyfikaty</a>
                 <a href="#projects">Projekty</a>
                 <a href="#download">Pobierz</a>
                 <a href="#contact">Kontakt</a>
             </div>
             <div class="lang-switch">
-                <a href="./" class="lang-btn active">PL</a>
-                <a href="en.html" class="lang-btn">EN</a>
+                <a href="index.html" class="lang-btn active">PL</a>
+                <a href="index-en.html" class="lang-btn">EN</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero" style="background: #0a1120 url('images/hero-bg.png') no-repeat center center; background-size: contain;">
+    <!-- HERO SECTION -->
+    <section class="hero">
         <div class="container hero-container">
             <div class="hero-text-block">
-                <p class="tag">JAKOŚĆ | METROLOGIA | AUTOMOTIVE & MACHINING</p>
+                <div class="tag">JAKOŚĆ | METROLOGIA | AUTOMOTIVE & MACHINING</div>
                 <h1>Marek Wietecha</h1>
                 <h2>Quality Control & Metrology Specialist</h2>
                 <p class="hero-sub">Ponad 20 lat w branży produkcyjnej | 13+ lat w Kontroli Jakości i Metrologii</p>
+                
                 <div class="buttons">
-                    <a class="btn" href="#projects">Zobacz projekty</a>
-                    <a class="btn ghost" href="#contact">Kontakt</a>
+                    <a href="#projects" class="btn">Zobacz projekty</a>
+                    <a href="#contact" class="btn ghost">Kontakt</a>
                 </div>
             </div>
+
             <div class="profile-block">
                 <div class="profile-photo-new">
                     <img src="images/profile.png" alt="Marek Wietecha">
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="container">
-        <section id="about">
+    <!-- O MNIE -->
+    <section id="about">
+        <div class="container">
             <h2>O mnie</h2>
             <div class="glass">
-                <p>Jestem doświadczonym kontrolerem jakości i pomiarowcem z ponad 13-letnim stażem w obszarze QA/QC oraz ponad 20-letnim doświadczeniem w branży produkcyjnej i maszynowej. Specjalizuję się w kontroli wejściowej komponentów stalowych, aluminiowych oraz odlewów, analizie dokumentacji 2D/3D oraz zaawansowanych pomiarach geometrycznych detali.</p>
-                <p style="margin-top: 15px;">W codziennej pracy łączę precyzję metrologiczną z nowoczesnymi technologiami – od obsługi maszyn współrzędnościowych CMM i skanerów 3D, przez analizę tolerancji GD&T w oprogramowaniu Geomagic Control X i PolyWorks, aż po zarządzanie procesami w systemie SAP QM oraz wdrażanie standardów AIAG Core Tools (FMEA, PPAP, MSA, SPC). Stawiam na analityczne podejście i podejmowanie decyzji w oparciu o fakty.</p>
+                <p>Doświadczony kontroler jakości z ponad 13-letnim doświadczeniem w obszarze kontroli jakości oraz ponad 20-letnim doświadczeniem w branży produkcyjnej i maszynowej. Specjalizuję się w kontroli wejściowej komponentów, analizie dokumentacji technicznej oraz pomiarach detali z wykorzystaniem współrzędnościowych maszyn pomiarowych (CMM), skanerów 3D, ramion pomiarowych, wysokościomierzy, profilometrów i ręcznych przyrządów pomiarowych.</p>
+
+                <p>Posiadam praktyczne doświadczenie w pracy z komponentami stalowymi, aluminiowymi, odlewami oraz elementami stosowanymi w przemyśle motoryzacyjnym i maszynowym. Na co dzień zajmuję się analizą niezgodności, reklamacjami dostawców, pomiarami PPAP, interpretacją GD&T oraz wspieraniem produkcji i montażu w rozwiązywaniu problemów jakościowych.</p>
+
+                <p>W swojej karierze zdobyłem również doświadczenie w audytach procesów, optymalizacji procesów produkcyjnych, Lean Manufacturing, koordynowaniu projektów technicznych oraz współpracy z klientami, dostawcami i działami technicznymi.</p>
+
+                <p>Posiadam doświadczenie w pracy z systemami ERP i PLM, w tym <strong>SAP, SAP QM, Baan, Impuls, Teamcenter</strong> oraz <strong>Microsoft Excel</strong>. Korzystam również z oprogramowania metrologicznego <strong>Geomagic Control X, PolyWorks, HyperScan</strong> i <strong>PC-DMIS</strong> oraz dokumentacji technicznej 2D i 3D.</p>
+
+                <p>Posiadam certyfikaty <strong>Hexagon Metrology, ISO 9001 / TS 16949</strong> oraz kompetencje w zakresie <strong>AIAG Core Tools, SPC, MSA, FMEA i Lean Six Sigma</strong>. W pracy stawiam na dokładność, rzetelną analizę danych pomiarowych, podejmowanie decyzji w oparciu o fakty oraz skuteczną współpracę z działami Produkcji, Jakości, Inżynierii, Logistyki i Dostawcami. Nieustannie rozwijam swoje kompetencje i śledzę nowoczesne rozwiązania wspierające jakość oraz przemysł.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills">
-            <h2>Park Maszynowy & Kompetencje Cyfrowe</h2>
-            
-            <div class="tech-category-title">Aparatura & Sprzęt Pomiarowy</div>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-icon-container">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 20h16"/>
-                            <path d="M6 20V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14"/>
-                            <path d="M9 7h6"/>
-                            <path d="M12 7v7"/>
-                            <circle cx="12" cy="15" r="1" fill="currentColor"/>
-                            <path d="M8 20v-3h8v3"/>
-                        </svg>
-                    </div>
-                    <h3>Maszyny Współrzędnościowe (CMM)</h3>
-                    <p>Współrzędnościowa maszyna pomiarowa <strong>DEA (Hexagon)</strong>. Precyzyjna weryfikacja wymiarowa, sprawdzanie geometrii 3D oraz pomiary odchyłek kształtu i położenia komponentów.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon-container">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 20h16"/>
-                            <rect x="9" y="17" width="6" height="3" rx="1"/>
-                            <path d="M12 17l-3-5 5-4"/>
-                            <circle cx="9" cy="12" r="1.5"/>
-                            <circle cx="14" cy="8" r="1.5"/>
-                            <path d="M14 8l3-3"/>
-                            <path d="M16 4l2 2-4 4"/>
-                        </svg>
-                    </div>
-                    <h3>Ramiona Pomiarowe & Skanery</h3>
-                    <p>Mobilne, 7-osiowe ramię pomiarowe <strong>Hexagon Absolute Arm</strong> oraz optyczny system skanowania 3D <strong>Smart Solutions (ZG-Track)</strong> dedykowany do kontroli konstrukcji spawanych.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon-container">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 18h20"/>
-                            <path d="M4 18l3-4 3 2 4-6 3 3 3-5"/>
-                            <path d="M12 3v7"/>
-                            <circle cx="12" cy="11" r="1" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3>Metrologia Struktury i Powłok</h3>
-                    <p>Pomiary chropowatości (<strong>Taylor Hobson Form Talysurf</strong>, <strong>TESA Rugosurf 90G</strong>), wysokościomierze (<strong>TESA Micro-Hite 6</strong>) oraz nieniszczące badania grubości powłok lakierniczych <strong>ElektroPhysik</strong>.</p>
-                </div>
-            </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Marek Wietecha. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
 
-            <div class="tech-category-title">Oprogramowanie Metrologiczne & Systemy Klasy Enterprise</div>
-            <div class="grid">
-                <div class="card spec-card">
-                    <div class="card-icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 15.4c-.2-.7-.5-1.3-.9-1.9l.4-.4c.5-.5.5-1.3 0-1.8l-1.4-1.4c-.5-.5-1.3-.5-1.8 0l-.4.4c-.6-.4-1.2-.7-1.9-.9V9c0-.7-.6-1.3-1.3-1.3h-2c-.7 0-1.3.6-1.3 1.3v.4c-.7.2-1.3.5-1.9.9l-.4-.4c-.5-.5-1.3-.5-1.8 0L6 11.3c-.5.5-.5 1.3 0 1.8l.4.4c-.4.6-.7 1.2-.9 1.9H5c-.7 0-1.3.6-1.3 1.3v2c0 .7.6 1.3 1.3 1.3h.4c.2.7.5 1.3.9 1.9l-.4.4c-.5.5-.5 1.3 0 1.8l1.4 1.4c.5.5 1.3.5 1.8 0l.4-.4c.6.4 1.2.7 1.9.9v.4c0 .7.6 1.3 1.3 1.3h2c.7 0 1.3-.6 1.3-1.3v-.4c.7-.2 1.3-.5 1.9-.9l.4.4c.5.5 1.3.5 1.8 0l1.4-1.4c.5-.5.5-1.3 0-1.8l-.4-.4c.4-.6.7-1.2.9-1.9h.4c.7 0-1.3-.6-1.3-1.3v-2c0-.7-.6-1.3-1.3-1.3h-.4zM14 18c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
-                    </div>
-                    <h3>Metrologia & Skanowanie 3D</h3>
-                    <ul>
-                        <li><strong>PC-DMIS</strong> – tworzenie rutyn i zaawansowane programowanie maszyn CMM</li>
-                        <li><strong>PolyWorks</strong> – uniwersalne oprogramowanie metrologiczne 3D</li>
-                        <li><strong>Geomagic Control X</strong> – analiza map odchyłek CAD (Color Map) i analizy GD&T</li>
-                        <li><strong>HX HyperScan</strong> – akwizycja i przetwarzanie gęstych chmur punktów</li>
-                    </ul>
-                </div>
-                <div class="card spec-card">
-                    <div class="card-icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
-                    </div>
-                    <h3>Systemy ERP & PLM</h3>
-                    <ul>
-                        <li><strong>SAP / SAP QM</strong> – zarządzanie partiami kontrolnymi, statusami i reklamacjami</li>
-                        <li><strong>Siemens Teamcenter</strong> – operowanie na dokumentacji w środowisku PLM</li>
-                        <li><strong>BAAN / Impuls</strong> – operacyjne wsparcie procesów produkcyjno-logistycznych</li>
-                    </ul>
-                </div>
-                <div class="card spec-card">
-                    <div class="card-icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H7v-7h3v7zm4 0h-3V7h3v10zm4 0h-3v-4h3v4z"/></svg>
-                    </div>
-                    <h3>Analiza Statystyczna & Inżynierska</h3>
-                    <ul>
-                        <li><strong>Minitab / Statistica</strong> – statystyczne sterowanie procesem (SPC) oraz analizy MSA</li>
-                        <li><strong>Microsoft Excel Zaawansowany</strong> – makra, dynamiczne raportowanie i analizy jakościowe</li>
-                        <li><strong>Wsparcie CAD 2D/3D</strong> – bezpośrednia praca na modelach i rysunkach technicznych</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="tech-category-title">Normy, Standardy & Tolerowanie Geometryczne</div>
-            <div class="grid">
-                <div class="card">
-                    <h3>Interpretacja Rysunku & GD&T (ISO GPS)</h3>
-                    <p>Biegła, bezproblemowa interpretacja skomplikowanych rysunków technicznych zgodnie ze standardami <strong>ISO GPS / ASME GD&T</strong>. Weryfikacja pozycji, profilu, płaskości i bicia w złożonych układach bazowych.</p>
-                </div>
-                <div class="card">
-                    <h3>Otoczenie Normatywne & Core Tools</h3>
-                    <p>Praca w reżimie systemów <strong>ISO 9001:2015</strong> oraz <strong>IATF 16949</strong> (Audytor TÜV NORD). Praktyczna znajomość i wdrażanie narzędzi jakościowych <strong>AIAG Core Tools</strong>: PPAP, FMEA, SPC, MSA.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="certificates">
-            <h2>Certyfikaty i Uprawnienia</h2>
-            <div class="grid">
-                <div class="card spec-card">
-                    <h3>Automotive & Zarządzanie Jakością</h3>
-                    <ul>
-                        <li>Certyfikat Hexagon Metrology – Obsługa i Programowanie CMM (PC-DMIS Poziom I & II)</li>
-                        <li>Audytor Wewnętrzny ISO 9001:2015 – Quality Asia Certifications</li>
-                        <li>Audytor Wewnętrzny procesu i organizacji wg ISO 9001 / TS 16949 – TÜV Nord</li>
-                        <li>AIAG & VDA FMEA – Essentials for Transitioning</li>
-                        <li>AIAG APQP/PPAP, SPC, MSA, Control Plan</li>
-                        <li>Quality Management & Certification (UNIDO)</li>
-                        <li>Certified Six Sigma White Belt & Introduction to Six Sigma</li>
-                    </ul>
-                </div>
-                <div class="card spec-card">
-                    <h3>Systemy ERP & Analiza Danych</h3>
-                    <ul>
-                        <li>Applying SAP S/4HANA Quality Management (SAP)</li>
-                        <li>SAP Materials Planning, MRP Strategies & Production Planning (LinkedIn)</li>
-                        <li>Microsoft Excel Zaawansowany (OPENMIND)</li>
-                        <li>Raportowanie i zestawianie danych SQL Server</li>
-                        <li>Metody, techniki i narzędzia analizy danych (Politechnika Częstochowska)</li>
-                    </ul>
-                </div>
-                <div class="card spec-card">
-                    <h3>Zarządzanie, AI & Techniczne</h3>
-                    <ul>
-                        <li>Certyfikat Google – Wykorzystanie AI w rozwoju firmy (98% egzamin)</li>
-                        <li>Zarządzanie Innowacjami & Zrównoważone Zarządzanie Łańcuchem Dostaw (UNIDO)</li>
-                        <li>Umiejętności Kierownicze & Zarządzanie Projektami (PARP / AEH Warsaw)</li>
-                        <li>Rysunek Techniczny Maszynowy (BIMv) & Budowlany (PK)</li>
-                        <li>Uprawnienia UDT (Żurawie stacjonarne, Suwnice, wciągniki i wciągarki)</li>
-                    </ul>
-                </div>
-                <div class="card spec-card">
-                    <h3>Języki Obce i Ojczyste</h3>
-                    <ul>
-                        <li><strong>Polski:</strong> Ojczysty (Native)</li>
-                        <li><strong>Angielski:</strong> Biznesowy C2 (Certyfikat Saylor Academy, USA)</li>
-                        <li><strong>Rosyjski:</strong> Podstawy komunikacji (Kurs DigitalUni)</li>
-                        <li><strong>Hiszpański:</strong> Poziom A1 (W trakcie nauki)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projekty i Doświadczenie</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Inspekcja 3D & Raportowanie PPAP</h3>
-                    <p>Wdrażanie zaawansowanych pomiarów i skanowania 3D dla komponentów maszynowych i motoryzacyjnych. Tworzenie kompletnych raportów wymiarowych i pełnej dokumentacji na potrzeby zatwierdzania części do produkcji seryjnej (PPAP).</p>
-                </div>
-                <div class="card">
-                    <h3>Nadzór i Reklamacje Dostawców</h3>
-                    <p>Prowadzenie kontroli wejściowej, identyfikacja i dokumentowanie niezgodności oraz zarządzanie procesem reklamacji (współpraca interdyscyplinarna Produkcja-Inżynieria-Dostawca) z wykorzystaniem systemów SAP i Teamcenter.</p>
-                </div>
-                <div class="card">
-                    <h3>Optymalizacja Procesów & Lean AI</h3>
-                    <p>Analiza i redukcja strat z wykorzystaniem wskaźnika OEE oraz narzędzi takich jak 5Why czy FMEA. Wykorzystanie rozwiązań z obszaru sztucznej inteligencji (Generative AI) do automatyzacji procesów analizy danych w strukturach biznesowych.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="download" style="text-align: center; padding: 60px 20px;">
-            <h2>Pobierz Dokumenty</h2>
-            <div class="glass" style="max-width: 800px; margin: 0 auto; padding: 30px;">
-                <p style="margin-bottom: 20px; color: #9ca3af;">Zapoznaj się ze szczegółowym opisem moich kwalifikacji, projektów oraz certyfikatów. Wybierz odpowiedni dokument, aby pobrać go w formacie PDF.</p>
-                <div class="download-grid">
-                    <a href="images/Marek_Wietecha_Portfolio.pdf" download="Marek_Wietecha_Portfolio.pdf" class="btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
-                        Portfolio (PL)
-                    </a>
-                    <a href="images/Marek_Wietecha_Portfolio.pdf" download="Marek_Wietecha_Portfolio.pdf" class="btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
-                        Portfolio (EN)
-                    </a>
-                    <a href="images/Marek_Wietecha_CV_PL.pdf" download="Marek_Wietecha_CV_PL.pdf" class="btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
-                        CV (PL)
-                    </a>
-                    <a href="images/Marek_Wietecha_CV_EN.pdf" download="Marek_Wietecha_CV_EN.pdf" class="btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
-                        CV (EN)
-                    </a>
-                    <a href="images/Marek_Wietecha_Certyfikaty_Metrologia.pdf" download="Marek_Wietecha_Certyfikaty_Metrologia.pdf" class="btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
-                        Certyfikaty Pomiarowe
-                    </a>
-                    <a href="images/Marek_Wietecha_Certyfikaty_Jakosc.pdf" download="Marek_Wietecha_Certyfikaty_Jakosc.pdf" class="btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
-                        Certyfikaty Jakościowe
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Kontakt</h2>
-            <div class="glass" style="text-align: center;">
-                <p>Zapraszam do kontaktu biznesowego i technicznego:</p>
-                <div class="contact-links" style="display: flex; flex-direction: column; gap: 15px; max-width: 320px; margin: 20px auto 0;">
-                    <a href="https://www.linkedin.com/in/marek-wietecha" target="_blank" rel="noopener noreferrer" class="contact-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                        LinkedIn
-                    </a>
-                    <a href="mailto:m.p.wietecha@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        m.p.wietecha@gmail.com
-                    </a>
-                    <a href="tel:+48536144501" class="contact-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        +48 536 144 501
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            &copy; 2026 Marek Wietecha. Wszystkie prawa zastrzeżone.
-        </footer>
-    </main>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
