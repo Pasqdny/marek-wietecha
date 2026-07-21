@@ -4,7 +4,254 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Kontrola Jakości & Metrologia</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* CSS osadzony bezpośrednio w pliku */
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: rgba(22, 27, 34, 0.8);
+            --border-color: #30363d;
+            --accent-color: #58a6ff;
+            --accent-ghost: rgba(88, 166, 255, 0.15);
+            --text-main: #c9d1d9;
+            --text-heading: #f0f6fc;
+            --text-muted: #8b949e;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Nav */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            letter-spacing: 1px;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .links a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .links a:hover {
+            color: var(--text-heading);
+            text-decoration: none;
+        }
+
+        .lang-btn {
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid transparent;
+        }
+
+        .lang-btn.active {
+            border-color: var(--accent-color);
+            color: var(--accent-color) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .profile-photo-new img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+            background-color: var(--card-bg);
+        }
+
+        .hero-text-block {
+            flex: 1;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--text-heading);
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .hero-sub {
+            margin-bottom: 15px;
+            font-size: 0.98rem;
+            color: var(--text-main);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: #0d1117;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #79c0ff;
+            text-decoration: none;
+        }
+
+        .btn.ghost {
+            background-color: var(--accent-ghost);
+            color: var(--accent-color);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+        }
+
+        .btn.ghost:hover {
+            background-color: rgba(88, 166, 255, 0.25);
+        }
+
+        /* Sections */
+        section.container {
+            padding-top: 50px;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--text-heading);
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: var(--text-heading);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .glass {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--accent-color);
+            color: #0d1117;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .buttons {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -15,12 +262,10 @@
                 <span class="logo-text">QA</span>
             </div>
             <div class="links">
-                <a href="#about" data-lang-pl="O mnie" data-lang-en="About Me">O mnie</a>
-                <a href="#experience" data-lang-pl="Doświadczenie" data-lang-en="Experience">Doświadczenie</a>
-                <a href="#skills" data-lang-pl="Umiejętności" data-lang-en="Skills">Umiejętności</a>
-                <a href="#contact" data-lang-pl="Kontakt" data-lang-en="Contact">Kontakt</a>
+                <a href="#about">O mnie</a>
+                <a href="#experience">Doświadczenie</a>
+                <a href="#contact">Kontakt</a>
                 
-                <!-- Przełącznik języków -->
                 <a href="#" id="lang-switch-pl" class="lang-btn active">PL</a>
                 <a href="#" id="lang-switch-en" class="lang-btn">EN</a>
             </div>
@@ -31,18 +276,16 @@
     <section id="about" class="hero">
         <div class="container hero-container">
             
-            <!-- Zdjęcie profilowe -->
             <div class="profile-block">
                 <div class="profile-photo-new">
                     <img src="profile.jpg" alt="Profile Photo">
                 </div>
             </div>
 
-            <!-- Wspólny kontener tekstowy dopasowany do stylów CSS -->
             <div class="hero-text-block">
                 
                 <!-- Treść Polska (PL) -->
-                <div class="lang-section-pl">
+                <div id="lang-pl" class="lang-section">
                     <span class="tag">KONTROLA JAKOŚCI & METROLOGIA</span>
                     <h1>Doświadczony Kontroler Jakości</h1>
                     <h2>Specjalista ds. Pomiarów 3D & Analizy Technicznej</h2>
@@ -51,7 +294,7 @@
                         Doświadczony kontroler jakości z ponad 13-letnim doświadczeniem w obszarze kontroli jakości oraz ponad 20-letnim doświadczeniem w branży produkcyjnej i maszynowej. Specjalizuję się w kontroli wejściowej komponentów, analizie dokumentacji technicznej oraz pomiarach detali z wykorzystaniem współrzędnościowych maszyn pomiarowych (CMM), skanerów 3D, ramion pomiarowych, wysokościomierzy, profilometrów i ręcznych przyrządów pomiarowych.
                     </p>
                     <p class="hero-sub">
-                        Posiadam praktyczne doświadczenie w pracy z komponentami stalowymi, aluminiowymi, odlewami oraz elementami stosowanymi w przemyśle motoryzacyjnym i maszynowym. Na co dzień zajmuję się analizą niezgodności, reklamacjami dostawców, pomiarami PPAP, interpretacją GD&T oraz wspieraniem produkcji i montażu w rozwiązywaniu problemów jakościowych.
+                        Posiadam practical doświadczenie w pracy z komponentami stalowymi, aluminiowymi, odlewami oraz elementami stosowanymi w przemyśle motoryzacyjnym i maszynowym. Na co dzień zajmuję się analizą niezgodności, reklamacjami dostawców, pomiarami PPAP, interpretacją GD&T oraz wspieraniem produkcji i montażu w rozwiązywaniu problemów jakościowych.
                     </p>
                     <p class="hero-sub">
                         W swojej karierze zdobyłem również doświadczenie w audytach procesów, optymalizacji procesów produkcyjnych, Lean Manufacturing, koordynowaniu projektów technicznych oraz współpracy z klientami, dostawcami i działami technicznymi.
@@ -70,7 +313,7 @@
                 </div>
 
                 <!-- Treść Angielska (EN) -->
-                <div class="lang-section-en" style="display: none;">
+                <div id="lang-en" class="lang-section" style="display: none;">
                     <span class="tag">QUALITY CONTROL & METROLOGY</span>
                     <h1>Experienced Quality Inspector</h1>
                     <h2>3D Measurement & Technical Analysis Specialist</h2>
@@ -83,12 +326,6 @@
                     </p>
                     <p class="hero-sub">
                         Throughout my career, I have also gained experience in process audits, manufacturing optimization, Lean Manufacturing, technical project coordination, and cross-functional collaboration with customers, suppliers, and engineering departments.
-                    </p>
-                    <p class="hero-sub">
-                        I am proficient in working with ERP and PLM systems, including SAP, SAP QM, Baan, Impuls, Teamcenter, and Microsoft Excel. I also utilize metrology software such as Geomagic Control X, PolyWorks, HyperScan, and PC-DMIS, along with 2D and 3D technical documentation.
-                    </p>
-                    <p class="hero-sub">
-                        I hold certifications from Hexagon Metrology, ISO 9001 / TS 16949, and possess competencies in AIAG Core Tools, SPC, MSA, FMEA, and Lean Six Sigma. In my work, I focus on precision, reliable analysis of measurement data, fact-based decision-making, and effective communication with Production, Quality, Engineering, Logistics, and Suppliers. I constantly develop my skills and follow modern solutions driving quality and modern industry.
                     </p>
 
                     <div class="buttons">
@@ -104,13 +341,13 @@
 
     <!-- Sekcja Doświadczenia -->
     <section id="experience" class="container">
-        <h2 data-lang-pl="Doświadczenie zawodowe" data-lang-en="Professional Experience">Doświadczenie zawodowe</h2>
+        <h2>Doświadczenie zawodowe</h2>
         <div class="grid">
-            <div class="card spec-card">
+            <div class="card">
                 <h3>Hexagon CMM & Skany 3D</h3>
-                <p data-lang-pl="Pomiary 3D, Geomagic, PolyWorks, ramiona pomiarowe." data-lang-en="3D measurements, Geomagic, PolyWorks, measuring arms.">Pomiary 3D, Geomagic, PolyWorks, ramiona pomiarowe.</p>
+                <p>Pomiary 3D, Geomagic, PolyWorks, ramiona pomiarowe.</p>
             </div>
-            <div class="card spec-card">
+            <div class="card">
                 <h3>ERP & PLM System</h3>
                 <p>SAP, SAP QM, Teamcenter, Baan.</p>
             </div>
@@ -119,9 +356,9 @@
 
     <!-- Kontakt -->
     <section id="contact" class="container">
-        <h2 data-lang-pl="Kontakt" data-lang-en="Contact">Kontakt</h2>
+        <h2>Kontakt</h2>
         <div class="glass">
-            <a href="mailto:twoj.email@example.com" class="contact-btn" data-lang-pl="Napisz do mnie" data-lang-en="Send an Email">Napisz do mnie</a>
+            <a href="mailto:twoj.email@example.com" class="contact-btn">Napisz do mnie</a>
         </div>
     </section>
 
@@ -129,6 +366,28 @@
         <p>&copy; 2026 Portfolio. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Skrypt przełączania języków -->
+    <script>
+        const btnPl = document.getElementById('lang-switch-pl');
+        const btnEn = document.getElementById('lang-switch-en');
+        const langPl = document.getElementById('lang-pl');
+        const langEn = document.getElementById('lang-en');
+
+        btnPl.addEventListener('click', (e) => {
+            e.preventDefault();
+            langPl.style.display = 'block';
+            langEn.style.display = 'none';
+            btnPl.classList.add('active');
+            btnEn.classList.remove('active');
+        });
+
+        btnEn.addEventListener('click', (e) => {
+            e.preventDefault();
+            langPl.style.display = 'none';
+            langEn.style.display = 'block';
+            btnEn.classList.add('active');
+            btnPl.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
