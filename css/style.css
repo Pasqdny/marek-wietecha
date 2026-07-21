@@ -115,24 +115,25 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION - ROZCIĄGNIĘTE TŁO (COVER) Z GRADIENTOWĄ NAKŁADKĄ
+   HERO SECTION - NATURALNE PROPORCJE OBRAZU (CONTAIN) I PŁYNNE PRZEJŚCIE
    ========================================================================== */
 .hero {
     padding: 140px 0 80px 0;
     border-bottom: 1px solid var(--card-border);
     position: relative;
     
-    /* Tło rozciągnięte na całą sekcję z delikatną nakładką przyciemniającą prawą stronę */
+    /* Obraz zachowuje proporcje, a prawa strona płynnie wygasza się do ciemnego tła */
     background-image: linear-gradient(
         to right, 
-        rgba(10, 17, 32, 0.3) 0%, 
-        rgba(10, 17, 32, 0.75) 50%, 
-        rgba(10, 17, 32, 0.92) 100%
+        rgba(10, 17, 32, 0.1) 0%, 
+        rgba(10, 17, 32, 0.4) 40%, 
+        rgba(10, 17, 32, 0.95) 70%,
+        var(--bg-color) 100%
     ), url('../images/hero-bg.png') !important;
     
     background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: center !important;
+    background-size: contain !important;
+    background-position: left center !important;
 }
 
 .hero-container {
@@ -423,8 +424,9 @@ footer {
         background-image: linear-gradient(
             to bottom, 
             rgba(10, 17, 32, 0.5) 0%, 
-            rgba(10, 17, 32, 0.9) 100%
+            rgba(10, 17, 32, 0.95) 100%
         ), url('../images/hero-bg.png') !important;
+        background-position: center top !important;
     }
 
     .hero-container {
