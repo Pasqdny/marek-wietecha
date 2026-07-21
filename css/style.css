@@ -1,39 +1,50 @@
-/* Reset i style globalne */
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+:root {
+    --bg-color: #0a1120;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --accent-color: #60a5fa;
+    --accent-hover: #3b82f6;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --nav-bg: rgba(10, 17, 32, 0.85);
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0a1120;
-    color: #f3f4f6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Kontener strukturalny */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    width: 100%;
 }
 
-/* Nawigacja */
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
 .nav {
-    background-color: rgba(10, 17, 32, 0.85);
-    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--card-border);
 }
 
 .nav-container {
@@ -43,90 +54,124 @@ body {
     height: 70px;
 }
 
-/* Nowoczesne Logo CSS */
 .logo-custom {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 42px;
     height: 42px;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    border: 2px solid #3b82f6;
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-    font-family: 'Arial Black', Gadget, sans-serif;
-    letter-spacing: -3px;
-    padding-right: 3px;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(59, 130, 246, 0.05));
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
 }
 
 .logo-text {
-    font-size: 18px;
-    font-weight: 900;
-    background: linear-gradient(135deg, #fff 40%, #60a5fa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
 
-.nav .links a {
-    color: #9ca3af;
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    color: var(--text-secondary);
     text-decoration: none;
-    margin-left: 25px;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
-.nav .links a:hover {
-    color: #3b82f6;
+.links a:hover {
+    color: var(--accent-color);
 }
 
-/* Sekcja Hero - Drastyczne wyciągnięcie zawartości w górę */
-.hero {
-    height: 85vh; /* Zmniejszona wysokość sekcji, by nie pchała elementów w dół */
-    min-height: 500px;
-    padding-top: 70px;
+.lang-switch {
     display: flex;
-    align-items: flex-start; /* Pozycjonowanie od samej góry */
-    position: relative;
-    overflow: hidden;
-    background-position: center center !important;
+    gap: 8px;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover, 
+.lang-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+    padding: 140px 0 80px 0;
+    border-bottom: 1px solid var(--card-border);
 }
 
 .hero-container {
-    display: flex; /* Zmiana na flex pozwala łatwiej grupować elementy */
+    display: flex;
     align-items: center;
-    justify-content: flex-end; /* Wypycha zdjęcie i tekst na prawą stronę, odsłaniając tło */
+    justify-content: space-between;
     gap: 40px;
-    width: 100%;
-    padding-left: 120px; /* Dodatkowy margines wewnętrzny od lewej, by przesunąć zdjęcie bardziej w prawo */
-    margin-top: -25px; /* Obniżono z -85px na -25px – teraz nie jest już za wysoko */
-    position: relative;
-    z-index: 2;
 }
 
-/* Zdjęcie profilowe po lewej stronie wewnątrz kontenera flex */
+.hero-text-block {
+    flex: 1;
+}
+
+.tag {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.hero-sub {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
 .profile-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    order: 1;
+    flex-shrink: 0;
 }
 
 .profile-photo-new {
     width: 220px;
     height: 220px;
-    border-radius: 50% !important;
-    border: 3px solid rgba(59, 130, 246, 0.6);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.15);
+    border-radius: 50%;
     overflow: hidden;
-    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-.profile-photo-new:hover {
-    transform: scale(1.05);
-    border-color: #60a5fa;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 30px rgba(59, 130, 246, 0.3);
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.2);
 }
 
 .profile-photo-new img {
@@ -135,252 +180,227 @@ body {
     object-fit: cover;
 }
 
-/* Blok tekstowy po prawej stronie */
-.hero-text-block {
-    background: linear-gradient(270deg, rgba(10,17,32,0.95) 85%, rgba(10,17,32,0.1) 100%);
-    padding: 25px 35px;
-    border-radius: 16px;
-    order: 2;
-    max-width: 650px;
-}
-
-.hero .tag {
-    color: #3b82f6;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.hero h2 {
-    font-size: 22px;
-    color: #60a5fa;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.hero-sub {
-    font-size: 16px;
-    color: #9ca3af;
-    margin-bottom: 30px;
-    max-width: 540px;
-}
-
-/* Przyciski */
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
 .buttons {
     display: flex;
     gap: 15px;
 }
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: #3b82f6;
-    color: #ffffff;
-    padding: 12px 28px;
-    border-radius: 8px;
-    font-weight: 600;
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border-radius: 6px;
     text-decoration: none;
+    font-weight: 600;
     transition: all 0.3s ease;
-    border: 2px solid #3b82f6;
-    font-size: 15px;
+    border: 1px solid var(--accent-color);
 }
 
 .btn:hover {
-    background-color: #2563eb;
-    border-color: #2563eb;
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
 }
 
 .btn.ghost {
-    background-color: transparent;
-    color: #3b82f6;
-    border: 2px solid #3b82f6;
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--card-border);
 }
 
 .btn.ghost:hover {
-    background-color: rgba(59, 130, 246, 0.1);
-    color: #60a5fa;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
-/* Sekcje ogólne */
-section {
-    padding: 100px 0 40px 0;
-}
-
-section h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    position: relative;
-    padding-bottom: 10px;
-    color: #ffffff;
-}
-
-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background-color: #3b82f6;
-    border-radius: 2px;
-}
-
-/* Efekt szkła */
-.glass {
-    background: rgba(30, 41, 59, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 40px;
-    backdrop-filter: blur(8px);
-}
-
-/* Siatka i Kafelki */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: rgba(30, 41, 59, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 30px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: rgba(30, 41, 59, 0.5);
-    border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.05);
-}
-
-.card h3 {
-    font-size: 20px;
-    color: #ffffff;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.card p {
-    color: #9ca3af;
-    font-size: 15px;
-}
-
-/* Kafelki z listami */
-.spec-card ul {
-    list-style-type: none;
-}
-
-.spec-card li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 10px;
-    color: #9ca3af;
-    font-size: 14px;
-}
-
-.spec-card li::before {
-    content: "■";
-    position: absolute;
-    left: 0;
-    color: #3b82f6;
-    font-size: 10px;
-    top: 2px;
-}
-
-.spec-card li strong {
-    color: #e5e7eb;
-}
-
-/* Stopka i kontakt */
 .contact-btn {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #e5e7eb;
-    padding: 14px;
-    border-radius: 8px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .contact-btn:hover {
-    background: #3b82f6;
-    color: #ffffff;
-    border-color: #3b82f6;
-    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background: rgba(96, 165, 250, 0.05);
 }
 
+/* ==========================================================================
+   SECTIONS & CARDS
+   ========================================================================== */
+section {
+    padding: 70px 0;
+    border-bottom: 1px solid var(--card-border);
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.tech-category-title {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin: 2.5rem 0 1.2rem 0;
+    font-weight: 600;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 12px;
+}
+
+.glass {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(96, 165, 250, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Ikonki w kartach */
+.card-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: rgba(96, 165, 250, 0.08);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 10px;
+    margin-bottom: 18px;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon-container {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+.card-icon-container svg {
+    stroke: currentColor;
+}
+
+/* Karty ze specyfikacjami (listy) */
+.spec-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.spec-card ul li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.spec-card ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.spec-card ul li strong {
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   DOWNLOAD GRID
+   ========================================================================== */
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.download-grid .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 footer {
     text-align: center;
-    padding: 40px 0;
-    color: #6b7280;
-    font-size: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 60px;
+    padding: 30px 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }
 
-/* Responsywność dla urządzeń mobilnych */
-@media (max-width: 968px) {
-    .hero {
-        height: auto;
-        padding-top: 90px;
-        align-items: center;
-    }
-
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
     .hero-container {
-        flex-direction: column; /* Układ pionowy na telefonach */
-        justify-content: center;
+        flex-direction: column-reverse;
         text-align: center;
-        gap: 30px;
-        margin-left: 0;
-        padding-left: 0; /* Wyłączamy przesunięcie w prawo na telefonach */
-        margin-top: 0;
-        width: 100%;
-    }
-    
-    .hero-text-block {
-        background: rgba(10, 17, 32, 0.9);
-        padding: 20px;
-        order: 2;
-        max-width: 100%;
-    }
-
-    .profile-block {
-        order: 1;
-    }
-
-    .profile-photo-new {
-        width: 180px;
-        height: 180px;
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 2.2rem;
     }
 
     .buttons {
         justify-content: center;
     }
 
-    .nav .links {
-        display: none;
+    .links {
+        display: none; /* Możesz podpiąć skrypt menu mobilnego w js/script.js */
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
