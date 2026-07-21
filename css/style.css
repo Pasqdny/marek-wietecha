@@ -115,12 +115,16 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION - PRZESUNIĘCIE BLOKU TEKSTOWEGO W PRAWO
+   HERO SECTION - NATURALNE PROPORCJE TŁA I PRAWIDŁOWY UKŁAD
    ========================================================================== */
 .hero {
     padding: 140px 0 80px 0;
     border-bottom: 1px solid var(--card-border);
     position: relative;
+    /* Zamiast rozciągać (cover), trzymamy oryginalne proporcje i wyśrodkowanie */
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
 }
 
 .hero-container {
@@ -132,13 +136,13 @@ body {
     z-index: 2;
 }
 
-/* Przesuwamy cały tekst mocno w prawo (odsuwamy go od lewej krawędzi) */
+/* Blok z tekstem i nazwiskiem przesunięty w prawo, bez rozciągania grafiki pod spodem */
 .hero-text-block {
-    flex: 0 0 350px !important;
-    width: 350px !important;
-    max-width: 350px !important;
-    margin-left: auto !important; /* Popycha cały blok w prawo */
-    margin-right: 20px !important; /* Odstęp od zdjęcia profilowego po prawej */
+    flex: 0 0 360px !important;
+    width: 360px !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: 20px !important;
     z-index: 10;
 }
 
@@ -174,7 +178,7 @@ body {
     line-height: 1.4;
 }
 
-/* Blok ze zdjęciem profilowym - umieszczony po prawej stronie */
+/* Blok ze zdjęciem profilowym po prawej */
 .profile-block {
     flex-shrink: 0;
     display: flex;
