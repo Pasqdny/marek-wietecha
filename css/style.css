@@ -115,16 +115,22 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION - DOPASOWANIE TŁA DO AKAPITU (CONTAINERA)
+   HERO SECTION - WPISANA POPRAWNA ŚCIEŻKA I WYRÓWNANIE DO AKAPITU
    ========================================================================== */
 .hero {
     padding: 140px 0 80px 0;
     border-bottom: 1px solid var(--card-border);
     position: relative;
-    background: none !important; /* Wyłączamy tło z pełnej szerokości ekranu */
+    
+    /* Ścieżka do pliku widocznego na zrzucie GitHub */
+    background-image: url('../images/hero-bg.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    
+    /* Wyrównanie lewej krawędzi zdjęcia tła równo z lewą krawędzią akapitu (container 1200px) */
+    background-position: calc((100vw - 1200px) / 2 + 20px) center !important;
 }
 
-/* Tło trafia do kontenera z treścią, więc zaczyna się DOKŁADNIE tam gdzie akapit poniżej */
 .hero-container {
     display: flex;
     align-items: center;
@@ -132,12 +138,9 @@ body {
     gap: 20px;
     position: relative;
     z-index: 2;
-    background-position: left center !important;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
 }
 
-/* Blok tekstowy z nazwiskiem umieszczony po prawej stronie baneru */
+/* Blok z tekstem umieszczony po prawej stronie */
 .hero-text-block {
     flex: 0 0 360px !important;
     width: 360px !important;
@@ -411,11 +414,20 @@ footer {
 /* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
+@media (max-width: 1240px) {
+    .hero {
+        background-position: 20px center !important;
+    }
+}
+
 @media (max-width: 768px) {
+    .hero {
+        background-position: center top !important;
+    }
+
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
-        background: none !important;
     }
 
     .hero-text-block {
