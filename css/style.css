@@ -115,25 +115,26 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION - DOPASOWANY OBRAZ NA CAŁĄ SZEROKOŚĆ BEZ NADMIERNIE DUŻEGO KADRU
+   HERO SECTION - SKONTROLOWANA WYSOKOŚĆ TŁA I BRAK NADMIERNIE DUŻEGO KADRU
    ========================================================================== */
 .hero {
-    padding: 120px 0 60px 0;
+    padding: 110px 0 50px 0;
     border-bottom: 1px solid var(--card-border);
     position: relative;
+    overflow: hidden;
     
-    /* Ciemniejszy gradient pod tekstem i zdjęciem, delikatniejszy nad maszyną */
+    /* Precyzyjny kadrujący gradient, który nie pozwala obrazkowi sztucznie pęcznieć */
     background-image: linear-gradient(
         to right, 
-        rgba(10, 17, 32, 0.2) 0%, 
-        rgba(10, 17, 32, 0.5) 40%, 
-        rgba(10, 17, 32, 0.9) 75%,
-        rgba(10, 17, 32, 0.98) 100%
+        rgba(10, 17, 32, 0.1) 0%, 
+        rgba(10, 17, 32, 0.4) 45%, 
+        rgba(10, 17, 32, 0.92) 75%,
+        var(--bg-color) 100%
     ), url('../images/hero-bg.png') !important;
     
     background-repeat: no-repeat !important;
-    background-size: 100% auto !important; /* Rozciąga na całą szerokość, zachowując proporcje wysokości */
-    background-position: center center !important;
+    background-size: auto 100% !important; /* Sztywno dopasowuje wysokość obrazu do wysokości sekcji */
+    background-position: left center !important;
 }
 
 .hero-container {
