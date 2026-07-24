@@ -187,7 +187,7 @@
       .header-container {
         display: flex;
         align-items: center;
-        justify-between: space-between;
+        justify-content: space-between;
         height: 100%;
       }
 
@@ -293,19 +293,66 @@
       .cert-card { background-color: var(--bg-card); padding: 1.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); display: flex; gap: 1.25rem; align-items: center; }
       .cert-icon { color: #f59e0b; background-color: var(--accent-amber-light); padding: 0.75rem; border-radius: var(--border-radius-sm); font-weight: bold; }
 
-      /* Knowledge Center Section (Teaser Preview) */
+      /* Knowledge Center Section */
       .knowledge { background-color: var(--bg-secondary); }
+      .knowledge-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        max-width: 900px;
+        margin: 0 auto 2.5rem auto;
+      }
+      .knowledge-search-input {
+        width: 100%;
+        background-color: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-sm);
+        padding: 0.85rem 1.25rem;
+        color: var(--text-primary);
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color var(--transition-fast);
+      }
+      .knowledge-search-input:focus {
+        outline: none;
+        border-color: #f59e0b;
+      }
+      .knowledge-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+      .knowledge-filter-btn {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        padding: 0.5rem 1.25rem;
+        border-radius: var(--border-radius-sm);
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+      }
+      .knowledge-filter-btn:hover {
+        background-color: var(--bg-card-hover);
+        color: var(--text-primary);
+      }
+      .knowledge-filter-btn.active {
+        background-color: var(--accent-amber);
+        color: #ffffff;
+        border-color: var(--accent-amber);
+      }
       .knowledge-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
-        margin-bottom: 2.5rem;
       }
       .knowledge-card {
         background-color: var(--bg-card);
         border: 1px solid var(--border-color);
         border-radius: var(--border-radius-md);
-        padding: 1.5rem;
+        padding: 1.75rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -319,7 +366,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 0.85rem;
+        margin-bottom: 1rem;
       }
       .knowledge-card-badge {
         font-size: 0.75rem;
@@ -335,17 +382,17 @@
         color: var(--text-muted);
       }
       .knowledge-card-title {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         font-weight: 700;
         color: var(--text-primary);
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.75rem;
         line-height: 1.4;
       }
       .knowledge-card-desc {
-        font-size: 0.9rem;
+        font-size: 0.925rem;
         color: var(--text-secondary);
-        line-height: 1.5;
-        margin-bottom: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
       }
       .knowledge-card-tags {
         display: flex;
@@ -359,12 +406,14 @@
         padding: 0.15rem 0.5rem;
         border-radius: var(--border-radius-sm);
       }
-      .knowledge-action {
+      .knowledge-no-results {
         text-align: center;
-      }
-      .knowledge-more-btn {
-        padding: 1rem 2.25rem;
-        font-size: 1rem;
+        padding: 3rem 1rem;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-md);
+        color: var(--text-muted);
+        font-size: 1.1rem;
       }
 
       /* Contact Section */
@@ -838,4 +887,531 @@
                             <div class="timeline-body">
                                 <ul>
                                     <li>Obsługa i konserwacja maszyn oraz urządzeń produkcyjnych.</li>
-                                    <li>Diagnozowani
+                                    <li>Diagnozowanie awarii i wykonywanie podstawowych napraw.</li>
+                                    <li>Współpraca z zespołami technicznymi w celu zapewnienia ciągłości produkcji.</li>
+                                    <li>Prowadzenie dokumentacji związanej z awariami i pracami technicznymi.</li>
+                                    <li>Analiza stanu technicznego maszyn i identyfikacja potrzeb konserwacyjnych.</li>
+                                    <li>Współpraca z dostawcami w zakresie przeglądów, napraw i modernizacji.</li>
+                                    <li>Dbałość o przestrzeganie zasad BHP oraz organizację pracy.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Umiejętności i Oprogramowanie</h2>
+                </header>
+
+                <div class="skills-grid">
+                    <article class="skill-category">
+                        <h3>Główne umiejętności</h3>
+                        <ul class="skill-list">
+                            <li>DMAIC</li>
+                            <li>Six Sigma</li>
+                            <li>Doskonalenie procesów biznesowych</li>
+                            <li>Analiza GD&amp;T i rysunku technicznego</li>
+                            <li>Kontrola wejściowa komponentów</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-category">
+                        <h3>Oprogramowanie i Systemy</h3>
+                        <ul class="skill-list">
+                            <li>SAP</li>
+                            <li>Teamcenter</li>
+                            <li>MS Excel</li>
+                            <li>Obsługa maszyn CMM i Skanerów 3D</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-category">
+                        <h3>Języki obce</h3>
+                        <ul class="skill-list">
+                            <li>Polski (Native or Bilingual)</li>
+                            <li>Angielski (Professional Working)</li>
+                            <li>Rosyjski (Limited Working)</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+       <!-- Certificates Section -->
+<section id="certificates" class="certificates section">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">Licencje i certyfikaty</h2>
+        </header>
+
+        <div class="certificates-grid">
+            <!-- AIAG & VDA FMEA / Core Tools -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                    <h3>AIAG and VDA FMEA: Essentials for Transitioning</h3>
+                    <p>AIAG (Lipiec 2026) – Siedmioetapowy proces FMEA, analiza ryzyka i działania zapobiegawcze.</p>
+                </div>
+            </article>
+
+            <!-- APQP/PPAP -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <div>
+                    <h3>APQP/PPAP e-Learning</h3>
+                    <p>AIAG (Lipiec 2026) – Zaawansowane planowanie jakości i proces zatwierdzania części do produkcji.</p>
+                </div>
+            </article>
+
+            <!-- FMEA Introduction -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div>
+                    <h3>Failure Mode and Effects Analysis: Introduction</h3>
+                    <p>AIAG (Lipiec 2026) – Podstawowe zasady identyfikacji ryzyka i analizy potencjalnych wad.</p>
+                </div>
+            </article>
+
+            <!-- Introduction to APQP -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                </div>
+                <div>
+                    <h3>Introduction to APQP e-Learning</h3>
+                    <p>AIAG (Lipiec 2026) – Podstawowe założenia procesu APQP i rozwój nowych wyrobów.</p>
+                </div>
+            </article>
+
+            <!-- Introduction to Control Plan -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div>
+                    <h3>Introduction to Control Plan e-Learning</h3>
+                    <p>AIAG (Lipiec 2026) – Tworzenie i stosowanie planów kontroli oraz powiązanie z Core Tools.</p>
+                </div>
+            </article>
+
+            <!-- MSA e-Learning -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M2 6h20M2 18h20"/></svg>
+                </div>
+                <div>
+                    <h3>MSA e-Learning</h3>
+                    <p>AIAG (Lipiec 2026) – Analiza systemów pomiarowych, badania Gage R&R i błędy pomiarowe.</p>
+                </div>
+            </article>
+
+            <!-- Quality Core Tools -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                </div>
+                <div>
+                    <h3>Quality Core Tools – Connect the Dots</h3>
+                    <p>AIAG (Lipiec 2026) – Wzajemne powiązania narzędzi APQP, PPAP, FMEA, MSA, SPC i Control Plan.</p>
+                </div>
+            </article>
+
+            <!-- SPC e-Learning -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <div>
+                    <h3>SPC e-Learning</h3>
+                    <p>AIAG (Lipiec 2026) – Statystyczne sterowanie procesem, karty kontrolne i analiza zmienności.</p>
+                </div>
+            </article>
+
+            <!-- Six Sigma Introduction & White Belt -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div>
+                    <h3>Six Sigma (Introduction &amp; White Belt)</h3>
+                    <p>Simplilearn / CSSC (Lipiec 2026) – Cykl DMAIC, redukcja zmienności i ciągłe doskonalenie.</p>
+                </div>
+            </article>
+
+            <!-- SAP S/4HANA -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div>
+                    <h3>Applying SAP S/4HANA Quality Management</h3>
+                    <p>SAP (Lipiec 2026) – Planowanie jakości, kontrola i zarządzanie reklamacjami w SAP.</p>
+                </div>
+            </article>
+
+            <!-- Google AI -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+                <div>
+                    <h3>Certyfikat Google – Wykorzystanie AI w rozwoju firmy</h3>
+                    <p>Google / SGH (Czerwiec 2026) – Generatywna AI, automatyzacja procesów, Gemini i agenci AI (wynik 98%).</p>
+                </div>
+            </article>
+
+            <!-- ISO 9001:2015 Internal Auditor -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div>
+                    <h3>Audytor Wewnętrzny ISO 9001:2015</h3>
+                    <p>Quality Asia Certifications (Czerwiec 2026) – Prowadzenie audytów wewnętrznych i ocena zgodności procesów.</p>
+                </div>
+            </article>
+
+            <!-- UNIDO - SSCM & Quality Management -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div>
+                    <h3>Zarządzanie Łańcuchem Dostaw &amp; Quality Management (UNIDO)</h3>
+                    <p>UNIDO (Czerwiec 2026) – Standardy ESG, zarządzanie ryzykiem, podejście procesowe i innowacje.</p>
+                </div>
+            </article>
+
+            <!-- Hexagon Metrology -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+                <div>
+                    <h3>PC-DMIS v4.3 – CMM Operation and Programming (Level I & II)</h3>
+                    <p>Hexagon Metrology Solutions (Styczeń 2013) – Obsługa i programowanie współrzędnościowych maszyn pomiarowych.</p>
+                </div>
+            </article>
+
+            <!-- TÜV Nord - Auditor -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                </div>
+                <div>
+                    <h3>TÜV Nord Auditor Wewnętrzny Organizacji i Procesu (ISO 9001/IATF 16949)</h3>
+                    <p>TUV NORD Polska (Maj 2012) – Systemy zarządzania jakością i auditowanie procesów produkcyjnych.</p>
+                </div>
+            </article>
+
+            <!-- SAP / ERP / Excel / SQL -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                </div>
+                <div>
+                    <h3>Zarządzanie Produkcją, SAP, MRP &amp; Excel Zaawansowany</h3>
+                    <p>LinkedIn / OPENMIND (2024–2025) – Planowanie zapotrzebowania, produkcja i arkusze kalkulacyjne.</p>
+                </div>
+            </article>
+
+            <!-- UDT / TDT - Wózki, Suwnice, Żurawie (ikona wózka widłowego / transportu) -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </div>
+                <div>
+                    <h3>Uprawnienia UDT / TDT (Suwnice, Żurawie, Wózki UNO)</h3>
+                    <p>UDT / TDT (2008 – 2017) – Obsługa urządzeń transportu bliskiego i dźwignic.</p>
+                </div>
+            </article>
+
+            <!-- Języki -->
+            <article class="cert-card">
+                <div class="cert-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div>
+                    <h3>Język Angielski Biznesowy (C2) &amp; Język Rosyjski</h3>
+                    <p>Saylor Academy / DigitalUni (Czerwiec 2026) – Profesjonalna komunikacja zawodowa i biznesowa.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+        <!-- Knowledge Center Section -->
+        <section id="knowledge" class="knowledge section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Knowledge Center</h2>
+                </header>
+
+                <div class="knowledge-controls">
+                    <div class="knowledge-search-wrapper">
+                        <input type="text" id="knowledgeSearch" class="knowledge-search-input" placeholder="Szukaj artykułów, pojęć (np. GD&amp;T, CMM, SAP)..." aria-label="Wyszukaj artykuł w Knowledge Center">
+                    </div>
+                    <div class="knowledge-filters" id="knowledgeFilters">
+                        <button type="button" class="knowledge-filter-btn active" data-category="all">Wszystkie</button>
+                        <button type="button" class="knowledge-filter-btn" data-category="Metrologia">Metrologia</button>
+                        <button type="button" class="knowledge-filter-btn" data-category="Jakość">Jakość</button>
+                        <button type="button" class="knowledge-filter-btn" data-category="Systemy IT">Systemy IT</button>
+                    </div>
+                </div>
+
+                <div class="knowledge-grid" id="knowledgeGrid">
+                    <!-- Dynamicznie wygenerowane karty z JS -->
+                </div>
+
+                <div class="knowledge-no-results" id="knowledgeNoResults" style="display: none;">
+                    <p>Brak wyników spełniających kryteria wyszukiwania.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Kontakt</h2>
+                </header>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Dane kontaktowe</h3>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-item">
+                                <span class="contact-icon" aria-hidden="true">✉</span>
+                                <div>
+                                    <span class="contact-label">E-mail:</span>
+                                    <a href="mailto:m.p.wietecha@gmail.com" class="contact-link">m.p.wietecha@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-icon" aria-hidden="true">☎</span>
+                                <div>
+                                    <span class="contact-label">Telefon:</span>
+                                    <a href="tel:+48536144501" class="contact-link">+48 536 144 501</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-icon" aria-hidden="true">in</span>
+                                <div>
+                                    <span class="contact-label">LinkedIn:</span>
+                                    <a href="https://www.linkedin.com/in/marek-wietecha" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/marek-wietecha</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-icon" aria-hidden="true">📍</span>
+                                <div>
+                                    <span class="contact-label">Lokalizacja:</span>
+                                    <span class="contact-text">Płock i okolice</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h3>Formularz kontaktowy</h3>
+                        <p class="form-disabled-notice">Formularz kontaktowy jest obecnie nieaktywny. Prosimy o kontakt bezpośredni poprzez adres e-mail lub telefon.</p>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Imię i Nazwisko / Firma</label>
+                                <input type="text" id="name" name="name" disabled class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Adres e-mail</label>
+                                <input type="email" id="email" name="email" disabled class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Wiadomość</label>
+                                <textarea id="message" name="message" rows="4" disabled class="form-input"></textarea>
+                            </div>
+
+                            <button type="button" disabled class="btn btn-primary form-submit">Wyślij wiadomość (Nieaktywny)</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-copyright">&copy; 2026 Marek Wietecha. Wszelkie prawa zastrzeżone.</p>
+            <p class="footer-role">Quality Controller | Metrology | CMM | 3D Scanning | GD&amp;T</p>
+        </div>
+    </footer>
+
+    <!-- Embedded Production JS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('navToggle');
+        const primaryNav = document.getElementById('primary-navigation');
+
+        if (navToggle && primaryNav) {
+          navToggle.addEventListener('click', () => {
+            const isOpen = primaryNav.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', isOpen.toString());
+          });
+        }
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (primaryNav && primaryNav.classList.contains('is-open')) {
+              primaryNav.classList.remove('is-open');
+              if (navToggle) {
+                navToggle.setAttribute('aria-expanded', 'false');
+              }
+            }
+          });
+        });
+
+        /* --- Knowledge Center Logic --- */
+        const knowledgeArticles = [
+          {
+            id: 1,
+            title: "Podstawy tolerowania geometrycznego GD&T w kontroli jakości",
+            category: "Metrologia",
+            date: "2026-06-15",
+            description: "Praktyczny przewodnik po podstawowych symbolach baz pomiarowych oraz tolerancji kształtu i położenia stosowanych na rysunkach technicznych 2D/3D.",
+            tags: ["GD&T", "Rysunek Techniczny", "Metrologia"]
+          },
+          {
+            id: 2,
+            title: "Współrzędnościowa Maszyna Pomiarowa (CMM) – Dobre praktyki",
+            category: "Metrologia",
+            date: "2026-05-20",
+            description: "Jak zaplanować pomiar na maszynie CMM (PC-DMIS), aby zminimalizować błędy pomiarowe i zapewnić powtarzalność wyników.",
+            tags: ["CMM", "PC-DMIS", "Pomiary 3D"]
+          },
+          {
+            id: 3,
+            title: "Skanowanie 3D w inspekcji jakości odlewów i detali spawanych",
+            category: "Metrologia",
+            date: "2026-04-10",
+            description: "Wykorzystanie skanerów optycznych i ramion pomiarowych do szybkiej weryfikacji odchyleń geometrii skomplikowanych komponentów stalowych.",
+            tags: ["Skanowanie 3D", "Ramiona Pomiarowe", "Kontrola Wejściowa"]
+          },
+          {
+            id: 4,
+            title: "Analiza przyczyn źródłowych (Root Cause Analysis) i procedura 8D",
+            category: "Jakość",
+            date: "2026-03-28",
+            description: "Metodyka rozwiązywania problemów jakościowych w produkcji maszynowej i przemysłowej z wykorzystaniem raportu 8D i 5-Why.",
+            tags: ["8D", "DMAIC", "Reklamacje", "Suppliers"]
+          },
+          {
+            id: 5,
+            title: "Narzędzia Quality Core Tools (FMEA, PPAP, MSA, SPC) w praktyce",
+            category: "Jakość",
+            date: "2026-02-14",
+            description: "Przegląd podstawowych narzędzi zarządzania jakością według standardów AIAG & VDA wspierających ciągłe doskonalenie procesów.",
+            tags: ["FMEA", "PPAP", "MSA", "SPC", "ISO 9001"]
+          },
+          {
+            id: 6,
+            title: "Moduł Quality Management (QM) w systemach SAP S/4HANA",
+            category: "Systemy IT",
+            date: "2026-01-08",
+            description: "Ewidencjonowanie niezgodności, kontrola dostaw i tworzenie protokołów pomiarowych w systemie SAP oraz Teamcenter.",
+            tags: ["SAP QM", "Teamcenter", "ERP", "Dokumentacja"]
+          }
+        ];
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        const grid = document.getElementById('knowledgeGrid');
+        const noResults = document.getElementById('knowledgeNoResults');
+        const searchInput = document.getElementById('knowledgeSearch');
+        const filterBtns = document.querySelectorAll('.knowledge-filter-btn');
+
+        function escapeHtml(str) {
+          return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        }
+
+        function filterAndRenderKnowledge() {
+          if (!grid || !noResults) return;
+
+          const filtered = knowledgeArticles.filter(article => {
+            const matchesCategory = currentCategory === 'all' || article.category === currentCategory;
+            const q = searchQuery.toLowerCase().trim();
+            const matchesSearch = !q ||
+              article.title.toLowerCase().includes(q) ||
+              article.description.toLowerCase().includes(q) ||
+              article.category.toLowerCase().includes(q) ||
+              article.tags.some(tag => tag.toLowerCase().includes(q));
+
+            return matchesCategory && matchesSearch;
+          });
+
+          if (filtered.length === 0) {
+            grid.innerHTML = '';
+            noResults.style.display = 'block';
+          } else {
+            noResults.style.display = 'none';
+            grid.innerHTML = filtered.map(article => `
+              <article class="knowledge-card">
+                <div>
+                  <div class="knowledge-card-header">
+                    <span class="knowledge-card-badge">${escapeHtml(article.category)}</span>
+                    <span class="knowledge-card-date">${escapeHtml(article.date)}</span>
+                  </div>
+                  <h3 class="knowledge-card-title">${escapeHtml(article.title)}</h3>
+                  <p class="knowledge-card-desc">${escapeHtml(article.description)}</p>
+                </div>
+                <div class="knowledge-card-tags">
+                  ${article.tags.map(tag => `<span class="knowledge-tag">#${escapeHtml(tag)}</span>`).join('')}
+                </div>
+              </article>
+            `).join('');
+          }
+        }
+
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            filterAndRenderKnowledge();
+          });
+        }
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCategory = btn.getAttribute('data-category');
+            filterAndRenderKnowledge();
+          });
+        });
+
+        filterAndRenderKnowledge();
+      });
+    </script>
+</body>
+</html>
