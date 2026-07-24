@@ -293,6 +293,129 @@
       .cert-card { background-color: var(--bg-card); padding: 1.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); display: flex; gap: 1.25rem; align-items: center; }
       .cert-icon { color: #f59e0b; background-color: var(--accent-amber-light); padding: 0.75rem; border-radius: var(--border-radius-sm); font-weight: bold; }
 
+      /* Knowledge Center Section */
+      .knowledge { background-color: var(--bg-secondary); }
+      .knowledge-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        max-width: 900px;
+        margin: 0 auto 2.5rem auto;
+      }
+      .knowledge-search-input {
+        width: 100%;
+        background-color: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-sm);
+        padding: 0.85rem 1.25rem;
+        color: var(--text-primary);
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color var(--transition-fast);
+      }
+      .knowledge-search-input:focus {
+        outline: none;
+        border-color: #f59e0b;
+      }
+      .knowledge-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+      .knowledge-filter-btn {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        padding: 0.5rem 1.25rem;
+        border-radius: var(--border-radius-sm);
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+      }
+      .knowledge-filter-btn:hover {
+        background-color: var(--bg-card-hover);
+        color: var(--text-primary);
+      }
+      .knowledge-filter-btn.active {
+        background-color: var(--accent-amber);
+        color: #ffffff;
+        border-color: var(--accent-amber);
+      }
+      .knowledge-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .knowledge-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-md);
+        padding: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform var(--transition-fast), border-color var(--transition-fast);
+      }
+      .knowledge-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--border-color-light);
+      }
+      .knowledge-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .knowledge-card-badge {
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        color: #f59e0b;
+        background-color: var(--accent-amber-light);
+        padding: 0.2rem 0.6rem;
+        border-radius: var(--border-radius-sm);
+        font-weight: 600;
+      }
+      .knowledge-card-date {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+      .knowledge-card-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+      }
+      .knowledge-card-desc {
+        font-size: 0.925rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+      }
+      .knowledge-card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .knowledge-tag {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        background-color: var(--bg-primary);
+        padding: 0.15rem 0.5rem;
+        border-radius: var(--border-radius-sm);
+      }
+      .knowledge-no-results {
+        text-align: center;
+        padding: 3rem 1rem;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-md);
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
       /* Contact Section */
       .contact { background-color: var(--bg-secondary); }
       .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1000px; margin: 0 auto; }
@@ -319,7 +442,7 @@
       /* Responsive Rules */
       @media (max-width: 992px) {
         .about-grid, .contact-grid { grid-template-columns: 1fr; }
-        .skills-grid { grid-template-columns: 1fr; }
+        .skills-grid, .knowledge-grid { grid-template-columns: 1fr 1fr; }
       }
       @media (max-width: 768px) {
         .nav-toggle { display: flex; }
@@ -327,7 +450,7 @@
         .nav.is-open { display: block; }
         .nav-list { flex-direction: column; gap: 1rem; }
         .hero-title { font-size: 2.15rem; }
-        .hero-stats, .certificates-grid { grid-template-columns: 1fr; }
+        .hero-stats, .certificates-grid, .knowledge-grid { grid-template-columns: 1fr; }
         .hero-actions { flex-direction: column; }
       }
     </style>
@@ -389,6 +512,7 @@
                     <li><a href="#experience" class="nav-link">Doświadczenie</a></li>
                     <li><a href="#skills" class="nav-link">Umiejętności</a></li>
                     <li><a href="#certificates" class="nav-link">Certyfikaty</a></li>
+                    <li><a href="#knowledge" class="nav-link">Knowledge Center</a></li>
                     <li><a href="#contact" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
@@ -1026,6 +1150,36 @@
         </div>
     </div>
 </section>
+
+        <!-- Knowledge Center Section -->
+        <section id="knowledge" class="knowledge section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Knowledge Center</h2>
+                </header>
+
+                <div class="knowledge-controls">
+                    <div class="knowledge-search-wrapper">
+                        <input type="text" id="knowledgeSearch" class="knowledge-search-input" placeholder="Szukaj artykułów, pojęć (np. GD&amp;T, CMM, SAP)..." aria-label="Wyszukaj artykuł w Knowledge Center">
+                    </div>
+                    <div class="knowledge-filters" id="knowledgeFilters">
+                        <button type="button" class="knowledge-filter-btn active" data-category="all">Wszystkie</button>
+                        <button type="button" class="knowledge-filter-btn" data-category="Metrologia">Metrologia</button>
+                        <button type="button" class="knowledge-filter-btn" data-category="Jakość">Jakość</button>
+                        <button type="button" class="knowledge-filter-btn" data-category="Systemy IT">Systemy IT</button>
+                    </div>
+                </div>
+
+                <div class="knowledge-grid" id="knowledgeGrid">
+                    <!-- Dynamicznie wygenerowane karty z JS -->
+                </div>
+
+                <div class="knowledge-no-results" id="knowledgeNoResults" style="display: none;">
+                    <p>Brak wyników spełniających kryteria wyszukiwania.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="contact section">
             <div class="container">
@@ -1132,6 +1286,131 @@
             }
           });
         });
+
+        /* --- Knowledge Center Logic --- */
+        const knowledgeArticles = [
+          {
+            id: 1,
+            title: "Podstawy tolerowania geometrycznego GD&T w kontroli jakości",
+            category: "Metrologia",
+            date: "2026-06-15",
+            description: "Praktyczny przewodnik po podstawowych symbolach baz pomiarowych oraz tolerancji kształtu i położenia stosowanych na rysunkach technicznych 2D/3D.",
+            tags: ["GD&T", "Rysunek Techniczny", "Metrologia"]
+          },
+          {
+            id: 2,
+            title: "Współrzędnościowa Maszyna Pomiarowa (CMM) – Dobre praktyki",
+            category: "Metrologia",
+            date: "2026-05-20",
+            description: "Jak zaplanować pomiar na maszynie CMM (PC-DMIS), aby zminimalizować błędy pomiarowe i zapewnić powtarzalność wyników.",
+            tags: ["CMM", "PC-DMIS", "Pomiary 3D"]
+          },
+          {
+            id: 3,
+            title: "Skanowanie 3D w inspekcji jakości odlewów i detali spawanych",
+            category: "Metrologia",
+            date: "2026-04-10",
+            description: "Wykorzystanie skanerów optycznych i ramion pomiarowych do szybkiej weryfikacji odchyleń geometrii skomplikowanych komponentów stalowych.",
+            tags: ["Skanowanie 3D", "Ramiona Pomiarowe", "Kontrola Wejściowa"]
+          },
+          {
+            id: 4,
+            title: "Analiza przyczyn źródłowych (Root Cause Analysis) i procedura 8D",
+            category: "Jakość",
+            date: "2026-03-28",
+            description: "Metodyka rozwiązywania problemów jakościowych w produkcji maszynowej i przemysłowej z wykorzystaniem raportu 8D i 5-Why.",
+            tags: ["8D", "DMAIC", "Reklamacje", "Suppliers"]
+          },
+          {
+            id: 5,
+            title: "Narzędzia Quality Core Tools (FMEA, PPAP, MSA, SPC) w praktyce",
+            category: "Jakość",
+            date: "2026-02-14",
+            description: "Przegląd podstawowych narzędzi zarządzania jakością według standardów AIAG & VDA wspierających ciągłe doskonalenie procesów.",
+            tags: ["FMEA", "PPAP", "MSA", "SPC", "ISO 9001"]
+          },
+          {
+            id: 6,
+            title: "Moduł Quality Management (QM) w systemach SAP S/4HANA",
+            category: "Systemy IT",
+            date: "2026-01-08",
+            description: "Ewidencjonowanie niezgodności, kontrola dostaw i tworzenie protokołów pomiarowych w systemie SAP oraz Teamcenter.",
+            tags: ["SAP QM", "Teamcenter", "ERP", "Dokumentacja"]
+          }
+        ];
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        const grid = document.getElementById('knowledgeGrid');
+        const noResults = document.getElementById('knowledgeNoResults');
+        const searchInput = document.getElementById('knowledgeSearch');
+        const filterBtns = document.querySelectorAll('.knowledge-filter-btn');
+
+        function escapeHtml(str) {
+          return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        }
+
+        function filterAndRenderKnowledge() {
+          if (!grid || !noResults) return;
+
+          const filtered = knowledgeArticles.filter(article => {
+            const matchesCategory = currentCategory === 'all' || article.category === currentCategory;
+            const q = searchQuery.toLowerCase().trim();
+            const matchesSearch = !q ||
+              article.title.toLowerCase().includes(q) ||
+              article.description.toLowerCase().includes(q) ||
+              article.category.toLowerCase().includes(q) ||
+              article.tags.some(tag => tag.toLowerCase().includes(q));
+
+            return matchesCategory && matchesSearch;
+          });
+
+          if (filtered.length === 0) {
+            grid.innerHTML = '';
+            noResults.style.display = 'block';
+          } else {
+            noResults.style.display = 'none';
+            grid.innerHTML = filtered.map(article => `
+              <article class="knowledge-card">
+                <div>
+                  <div class="knowledge-card-header">
+                    <span class="knowledge-card-badge">${escapeHtml(article.category)}</span>
+                    <span class="knowledge-card-date">${escapeHtml(article.date)}</span>
+                  </div>
+                  <h3 class="knowledge-card-title">${escapeHtml(article.title)}</h3>
+                  <p class="knowledge-card-desc">${escapeHtml(article.description)}</p>
+                </div>
+                <div class="knowledge-card-tags">
+                  ${article.tags.map(tag => `<span class="knowledge-tag">#${escapeHtml(tag)}</span>`).join('')}
+                </div>
+              </article>
+            `).join('');
+          }
+        }
+
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            filterAndRenderKnowledge();
+          });
+        }
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCategory = btn.getAttribute('data-category');
+            filterAndRenderKnowledge();
+          });
+        });
+
+        filterAndRenderKnowledge();
       });
     </script>
 </body>
